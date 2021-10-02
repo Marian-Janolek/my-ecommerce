@@ -6,12 +6,29 @@ import { AiOutlineUserAdd } from 'react-icons/ai';
 import { BiCart } from 'react-icons/bi';
 import { useSidebarContext } from '../context/sidebarContext';
 import { FaBars } from 'react-icons/fa';
+import { useSubmenuContext } from '../context/submenuContext';
 
 const Navbar = () => {
   const { openSidebar } = useSidebarContext();
+  const { openSubmenu, closeSubmenu } = useSubmenuContext();
+
+  const displaySubmenu = (e) => {
+    const page = e.target.textContent;
+    const tempBtn = e.target.getBoundingClientRect();
+    const center = (tempBtn.left + tempBtn.right) / 2;
+    const bottom = tempBtn.bottom - 3;
+
+    openSubmenu(page, { center, bottom });
+  };
+
+  const handleSubmenu = (e) => {
+    if (!e.target.classList.contains('btn-links')) {
+      closeSubmenu();
+    }
+  };
 
   return (
-    <NavContainer>
+    <NavContainer onMouseOver={handleSubmenu}>
       <div className="nav-center">
         <div className="nav-header">
           {/* <Link to="/">logo</Link> */}
@@ -25,7 +42,11 @@ const Navbar = () => {
             const { id, text, url } = link;
             return (
               <li key={id}>
-                <Link to={url} className="btn-links">
+                <Link
+                  to={url}
+                  className="btn-links"
+                  onMouseOver={displaySubmenu}
+                >
                   {text}
                 </Link>
               </li>
@@ -46,6 +67,7 @@ const NavContainer = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 
   .nav-center {
     width: 90vw;

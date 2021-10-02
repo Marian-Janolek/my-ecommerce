@@ -70,3 +70,72 @@ export const socials = [
     url: 'https://www.twitter.com',
   },
 ];
+
+export const aboutUs = [
+  {
+    id: 1,
+    text: 'sortiment',
+    url: '/sortiment',
+  },
+  {
+    id: 2,
+    text: 'our stores',
+    url: '/stores',
+  },
+  {
+    id: 3,
+    text: 'FAQ',
+    url: '/faq',
+  },
+];
+
+export const supportLinks = [
+  {
+    id: 1,
+    text: 'product help',
+    url: '/help',
+  },
+  {
+    id: 2,
+    text: 'customer care',
+    url: '/care',
+  },
+  {
+    id: 3,
+    text: 'authorized service',
+    url: '/service',
+  },
+];
+
+export const sublinks = [
+  {
+    page: 'men',
+    links: [
+      {
+        id: 1,
+        text: 'sneakers',
+        url: '/sneakers',
+      },
+      {
+        id: 2,
+        text: 'boots',
+        url: '/boots',
+      },
+      {
+        id: 3,
+        text: 'outdoor',
+        url: '/outdoor',
+      },
+      {
+        id: 4,
+        text: 'sandals',
+        url: '/sandals',
+      },
+      {
+        id: 5,
+        text: 'socks',
+        url: '/socks',
+      },
+    ],
+  },
+];

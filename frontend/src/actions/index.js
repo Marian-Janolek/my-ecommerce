@@ -1,2 +1,4 @@
 export const SIDEBAR_OPEN = 'SIDEBAR_OPEN';
 export const SIDEBAR_CLOSE = 'SIDEBAR_CLOSE';
+export const SUBMENU_OPEN = 'SUBMENU_OPEN';
+export const SUBMENU_CLOSE = 'SUBMENU_CLOSE';
