@@ -216,3 +216,24 @@ export const sublinks = [
     links: [],
   },
 ];
+
+export const featured = [
+  {
+    id: 1,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634569119/featured1_sdhs8k.png',
+    name: 'Nike Jordan',
+  },
+  {
+    id: 2,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634569119/featured2_gmq9rk.png',
+    name: 'Nike Free RN',
+  },
+  {
+    id: 3,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634569119/featured3_tlxbxv.png',
+    name: 'Yeezy boost ',
+  },
+];
