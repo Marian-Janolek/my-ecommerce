@@ -138,4 +138,81 @@ export const sublinks = [
       },
     ],
   },
+  {
+    page: 'women',
+    links: [
+      {
+        id: 1,
+        text: 'sneakers',
+        url: '/sneakers',
+      },
+      {
+        id: 2,
+        text: 'boots',
+        url: '/boots',
+      },
+      {
+        id: 3,
+        text: 'outdoor',
+        url: '/outdoor',
+      },
+      {
+        id: 4,
+        text: 'winter boots',
+        url: '/winterBoots',
+      },
+      {
+        id: 5,
+        text: 'sandals',
+        url: '/sandals',
+      },
+      {
+        id: 6,
+        text: 'leggins',
+        url: '/leggins',
+      },
+      {
+        id: 7,
+        text: 'socks',
+        url: '/socks',
+      },
+    ],
+  },
+  {
+    page: 'children',
+    links: [
+      {
+        id: 1,
+        text: 'sneakers',
+        url: '/sneakers',
+      },
+      {
+        id: 2,
+        text: 'boots',
+        url: '/boots',
+      },
+      {
+        id: 3,
+        text: 'outdoor',
+        url: '/outdoor',
+      },
+      {
+        id: 4,
+        text: 'winter boots',
+        url: '/winterBoots',
+      },
+    ],
+  },
+  {
+    page: 'home',
+    links: [],
+  },
+  {
+    page: 'new',
+    links: [],
+  },
+  {
+    page: 'sale',
+    links: [],
+  },
 ];
