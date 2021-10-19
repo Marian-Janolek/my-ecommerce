@@ -32,14 +32,8 @@ const NewCollection = () => {
 const NewCollectionWrapper = styled.section`
   background-color: var(--white-color);
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 4rem;
 
-  .underline {
-    width: 8rem;
-    height: 0.18rem;
-    background-color: var(--dark-color);
-    margin: 1rem auto;
-  }
   h2 {
     text-transform: uppercase;
     text-align: center;

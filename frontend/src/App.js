@@ -9,6 +9,7 @@ import {
   Featured,
   Card,
   NewCollection,
+  OurSortiment,
 } from './components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -24,6 +25,7 @@ const App = () => {
       {/* <Loading /> */}
       <Featured />
       <NewCollection />
+      <OurSortiment />
       <Footer />
     </Router>
   );

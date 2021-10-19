@@ -33,11 +33,16 @@ const CardWrapper = styled.article`
   border-radius: calc(var(--radius) * 2);
   :hover .new-size {
     transform: translateY(-50%);
-    background-color: var(--white-color);
+    background-color: var(--dark-color-lighten);
     opacity: 1;
   }
   :hover .new-img {
     transform: rotate(-30deg) translateY(-5%);
+    transition: 0.3s;
+  }
+  :hover {
+    background-color: var(--white-color);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   }
   .new {
     position: absolute;
@@ -74,7 +79,6 @@ const CardWrapper = styled.article`
     bottom: 30%;
     left: 0;
     transform: translateY(100%);
-    /* display: flex; */
     text-align: center;
     display: inline-block;
     transition: 0.3s;

@@ -282,3 +282,24 @@ export const newCollection = [
     size: ['E', 37, 38, 38.5, 39.5, 40, 41, 41.5, 43],
   },
 ];
+
+export const ourSortiment = [
+  {
+    id: 1,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634655483/my-ecommerce/ourSortiment1_iwoh0z.jpg',
+    title: 'sandals',
+  },
+  {
+    id: 2,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634654510/my-ecommerce/ourSortiment2_fcyvts.jpg',
+    title: 'outdoor',
+  },
+  {
+    id: 3,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634655380/my-ecommerce/ourSortiment3_e5kax7.jpg',
+    title: 'boots',
+  },
+];

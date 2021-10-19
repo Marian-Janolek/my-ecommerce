@@ -6,6 +6,7 @@ import Loading from './Loading';
 import Featured from './Featured';
 import Card from './Card';
 import NewCollection from './NewCollection';
+import OurSortiment from './OurSortiment';
 
 export {
   Navbar,
@@ -16,4 +17,5 @@ export {
   Featured,
   Card,
   NewCollection,
+  OurSortiment,
 };

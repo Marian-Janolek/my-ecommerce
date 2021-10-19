@@ -84,6 +84,12 @@ img {
   margin-left: var(--mb-2);
   margin-right: var(--mb-2);
 }
+.underline {
+  width: 8rem;
+  height: 0.18rem;
+  background-color: var(--dark-color);
+  margin: 1rem auto;
+}
 @media screen and (max-width: 768px) {
   .nav_menu {
     position: fixed;
