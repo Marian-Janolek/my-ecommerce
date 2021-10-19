@@ -112,9 +112,11 @@ img {
   transition: var(--transition);
   font-size: 0.875rem;
   cursor: pointer;
+  background-color: var(--dark-color);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: var(--radius);
   border-color: transparent;
+  color: var(--white-color);
 }
 
 .btn-links {
