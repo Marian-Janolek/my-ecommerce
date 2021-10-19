@@ -1,12 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const Card = ({ id, image, name, price, size }) => {
+const Card = ({ id, image, name, price, size, data }) => {
   return (
     <CardWrapper key={id}>
       <div className="new">New</div>
       <img src={image} alt={name} className="new-img" />
-      <div className="new-size">{size}</div>
+      <div className="new-size-parent">
+        {data.map((el, index) => {
+          return (
+            <Link to="/" className="new-size" key={id}>
+              {size[index]}
+            </Link>
+          );
+        })}{' '}
+      </div>
       <span className="new-price">{price} €</span>
       <span className="new-name">{name}</span>
     </CardWrapper>
@@ -18,7 +27,7 @@ const CardWrapper = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
+  padding: 1.5rem;
   transition: 0.3s;
   background-color: var(--dark-color-lighten);
   border-radius: calc(var(--radius) * 2);
@@ -26,6 +35,9 @@ const CardWrapper = styled.article`
     transform: translateY(-50%);
     background-color: var(--white-color);
     opacity: 1;
+  }
+  :hover .new-img {
+    transform: rotate(-30deg) translateY(-5%);
   }
   .new {
     position: absolute;
@@ -51,17 +63,29 @@ const CardWrapper = styled.article`
     font-weight: var(--font-bold);
     align-self: flex-start;
   }
+  .new-size-parent {
+    display: flex;
+    flex-direction: row;
+    gap: 0.4rem;
+  }
   .new-size {
-    position: absolute;
-    width: 100%;
+    position: relative;
+    width: 20%;
     bottom: 30%;
     left: 0;
     transform: translateY(100%);
-    display: flex;
-    transition: var(--transition);
+    /* display: flex; */
+    text-align: center;
+    display: inline-block;
+    transition: 0.3s;
     letter-spacing: var(--spacing);
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     opacity: 0;
+  }
+
+  .new-size:hover {
+    background-color: var(--dark-color);
+    color: var(--white-color);
   }
 `;
 

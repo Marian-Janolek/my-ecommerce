@@ -5,24 +5,27 @@ import { newCollection } from '../utils/constants';
 
 const NewCollection = () => {
   return (
-    <NewCollectionWrapper className="section-center">
-      <div className="underline"></div>
-      <h2>new collection</h2>
-      <div className="new-card">
-        {newCollection.map((newC) => {
-          const { id, name, image, size, price } = newC;
-          return (
-            <Card
-              key={id}
-              name={name}
-              image={image}
-              size={size}
-              price={price}
-            />
-          );
-        })}
-      </div>
-    </NewCollectionWrapper>
+    <div className="bg">
+      <NewCollectionWrapper className="section-center">
+        <div className="underline"></div>
+        <h2>new collection</h2>
+        <div className="new-card">
+          {newCollection.map((newC) => {
+            const { id, name, image, size, price } = newC;
+            return (
+              <Card
+                key={id}
+                name={name}
+                image={image}
+                size={size}
+                price={price}
+                data={newCollection}
+              />
+            );
+          })}
+        </div>
+      </NewCollectionWrapper>
+    </div>
   );
 };
 

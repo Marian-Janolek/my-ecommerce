@@ -129,6 +129,9 @@ img {
   font-size: var(--normal-font-size);
   cursor: pointer;
 }
+.bg {
+  background-color: var(--white-color);
+}
 
 .show {
   left: 0;
