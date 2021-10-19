@@ -7,6 +7,8 @@ import {
   Submenu,
   Loading,
   Featured,
+  Card,
+  NewCollection,
 } from './components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -21,6 +23,7 @@ const App = () => {
       </Switch>
       {/* <Loading /> */}
       <Featured />
+      <NewCollection />
       <Footer />
     </Router>
   );

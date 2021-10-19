@@ -221,22 +221,64 @@ export const featured = [
   {
     id: 1,
     image:
-      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634569119/featured1_sdhs8k.png',
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630181/my-ecommerce/featured1_c78blm.png',
     name: 'Nike Jordan',
     price: 149.99,
   },
   {
     id: 2,
     image:
-      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634569119/featured2_gmq9rk.png',
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630181/my-ecommerce/featured2_fowjzh.png',
     name: 'Nike Free RN',
     price: 129.99,
   },
   {
     id: 3,
     image:
-      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634569119/featured3_tlxbxv.png',
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630180/my-ecommerce/featured3_xorptb.png',
     name: 'Yeezy boost ',
     price: 179.99,
+  },
+];
+export const newCollection = [
+  {
+    id: 1,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630180/my-ecommerce/women1_hyh6az.png',
+    name: 'Nike Performance',
+    price: 89.9,
+    size: [37, 38, 38.5, 39.5, 40, 41, 41.5, 43],
+  },
+  {
+    id: 2,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630181/my-ecommerce/women2_gtiblg.png',
+    name: 'Nike Performance',
+    price: 59.9,
+    size: [37, 38, 38.5, 39.5, 40, 41, 41.5, 43],
+  },
+  {
+    id: 3,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630180/my-ecommerce/women3_xl4gal.png',
+    name: 'Nike Performance',
+    price: 49.9,
+    size: [37, 38, 38.5, 39.5, 40, 41, 41.5, 43],
+  },
+  {
+    id: 4,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630181/my-ecommerce/women4_rc5vix.png',
+    name: 'Nike Performance',
+    price: 109.9,
+    size: [37, 38, 38.5, 39.5, 40, 41, 41.5, 43],
+  },
+  {
+    id: 5,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630181/my-ecommerce/women4_rc5vix.png',
+    name: 'Nike Performance',
+    price: 109.9,
+    size: [37, 38, 38.5, 39.5, 40, 41, 41.5, 43],
   },
 ];
