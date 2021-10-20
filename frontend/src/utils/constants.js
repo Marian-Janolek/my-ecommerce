@@ -193,8 +193,8 @@ export const sublinks = [
       },
       {
         id: 3,
-        text: 'outdoor',
-        url: '/outdoor',
+        text: 'footbal boots',
+        url: '/footballBoots',
       },
       {
         id: 4,
@@ -313,5 +313,108 @@ export const ourSortiment = [
     image:
       'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634712131/my-ecommerce/ourSortiment5_fxw3gh.jpg',
     title: 'leggins',
+  },
+];
+
+export const men = [
+  {
+    id: 1,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634739156/my-ecommerce/men_sneakers_mnb8lz.jpg',
+    title: 'sneakers',
+  },
+  {
+    id: 2,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634739156/my-ecommerce/men_boots_hszhwt.jpg',
+    title: 'boots',
+  },
+  {
+    id: 3,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634654510/my-ecommerce/ourSortiment2_fcyvts.jpg',
+    title: 'outdoor',
+  },
+  {
+    id: 4,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634739156/my-ecommerce/men_sandals_vljetn.jpg',
+    title: 'sandals',
+  },
+  {
+    id: 5,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634739156/my-ecommerce/men_socks_ng3kcb.jpg',
+    title: 'socks',
+  },
+];
+export const women = [
+  {
+    id: 1,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634740555/my-ecommerce/women_sneakers_dqm87k.jpg',
+    title: 'sneakers',
+  },
+  {
+    id: 2,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634740555/my-ecommerce/women_boots_qd2znw.jpg',
+    title: 'boots',
+  },
+  {
+    id: 3,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634654510/my-ecommerce/ourSortiment2_fcyvts.jpg',
+    title: 'outdoor',
+  },
+  {
+    id: 4,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634740555/my-ecommerce/women_winter_boots_kcs7ul.jpg',
+    title: 'winter',
+  },
+  {
+    id: 5,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634655483/my-ecommerce/ourSortiment1_iwoh0z.jpg',
+    title: 'sandals',
+  },
+  {
+    id: 6,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634712131/my-ecommerce/ourSortiment5_fxw3gh.jpg',
+    title: 'leggins',
+  },
+  {
+    id: 7,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634712131/my-ecommerce/ourSortiment4_yjyi7y.jpg',
+    title: 'socks',
+  },
+];
+export const children = [
+  {
+    id: 1,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634742462/my-ecommerce/children_sneakers_eaeavu.jpg',
+    title: 'sneakers',
+  },
+  {
+    id: 2,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634742662/my-ecommerce/children_football_anx3jt.jpg',
+    title: 'football',
+  },
+  {
+    id: 3,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634742462/my-ecommerce/children_outdoor_pb5w41.jpg',
+    title: 'outdoor',
+  },
+  {
+    id: 4,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634742662/my-ecommerce/children_winter2_rt37dv.jpg',
+    title: 'winter',
   },
 ];

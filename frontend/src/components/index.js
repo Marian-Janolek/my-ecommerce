@@ -8,6 +8,10 @@ import Card from './Card';
 import NewCollection from './NewCollection';
 import OurSortiment from './OurSortiment';
 import Subscribe from './Subscribe';
+import CardCategory from './CardCategory';
+import Men from './Men';
+import Women from './Women';
+import Children from './Children';
 
 export {
   Navbar,
@@ -20,4 +24,8 @@ export {
   NewCollection,
   OurSortiment,
   Subscribe,
+  CardCategory,
+  Men,
+  Women,
+  Children,
 };

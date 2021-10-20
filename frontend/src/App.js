@@ -1,17 +1,8 @@
 import './index.css';
 import React from 'react';
-import {
-  Navbar,
-  Sidebar,
-  Footer,
-  Submenu,
-  Loading,
-  Featured,
-  Card,
-  NewCollection,
-  OurSortiment,
-} from './components';
+import { Navbar, Sidebar, Submenu, Loading, Footer } from './components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { MenPage, Home, WomenPage, ChildrenPage } from './pages';
 
 const App = () => {
   return (
@@ -20,13 +11,21 @@ const App = () => {
       <Sidebar />
       <Submenu />
       <Switch>
-        <Route exact path="/"></Route>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/men">
+          <MenPage />
+        </Route>
+        <Route exact path="/women">
+          <WomenPage />
+        </Route>
+        <Route exact path="/children">
+          <ChildrenPage />
+        </Route>
       </Switch>
-      {/* <Loading /> */}
-      <Featured />
-      <NewCollection />
-      <OurSortiment />
       <Footer />
+      {/* <Loading /> */}
     </Router>
   );
 };

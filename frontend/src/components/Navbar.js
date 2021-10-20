@@ -46,6 +46,7 @@ const Navbar = () => {
                   to={url}
                   className="btn-links"
                   onMouseOver={displaySubmenu}
+                  onClick={closeSubmenu}
                 >
                   {text}
                 </Link>
