@@ -26,12 +26,12 @@ const OurSortiment = () => {
 };
 
 const OurSortimentWrapper = styled.section`
-  padding-bottom: 4rem;
+  padding-bottom: 5rem;
   h2 {
     text-transform: uppercase;
     text-align: center;
     letter-spacing: var(--spacing);
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
   }
   .sortiment-grid {
     display: grid;

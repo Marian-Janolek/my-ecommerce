@@ -31,14 +31,14 @@ const NewCollection = () => {
 
 const NewCollectionWrapper = styled.section`
   background-color: var(--white-color);
-  padding-top: 2rem;
+  padding-top: 1rem;
   padding-bottom: 4rem;
 
   h2 {
     text-transform: uppercase;
     text-align: center;
     letter-spacing: var(--spacing);
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
   }
   .new-card {
     display: grid;

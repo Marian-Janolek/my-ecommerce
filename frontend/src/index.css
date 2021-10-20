@@ -89,6 +89,7 @@ img {
   height: 0.18rem;
   background-color: var(--dark-color);
   margin: 1rem auto;
+  margin-top: 2rem;
 }
 @media screen and (max-width: 768px) {
   .nav_menu {

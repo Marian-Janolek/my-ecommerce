@@ -7,11 +7,13 @@ import {
   aboutUs,
   supportLinks,
 } from '../utils/constants';
+import Subscribe from './Subscribe';
 
 const Footer = () => {
   return (
     <div className="bg-dark">
-      <FooterContainer className="section-center">
+      <Subscribe />
+      <FooterWrapper className="section-center">
         <div>
           <h3>About Us</h3>
           <ul className="footer-about">
@@ -61,16 +63,16 @@ const Footer = () => {
             })}
           </ul>
         </div>
-      </FooterContainer>
+      </FooterWrapper>
     </div>
   );
 };
 
-const FooterContainer = styled.footer`
+const FooterWrapper = styled.footer`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
-  padding-top: 3rem;
+  padding-top: 4rem;
   padding-bottom: 3rem;
 
   .footer-about {
@@ -111,6 +113,9 @@ const FooterContainer = styled.footer`
   }
   .padding {
     padding-top: 0.5rem;
+  }
+  a:hover {
+    color: var(--dark-color-light);
   }
 `;
 
