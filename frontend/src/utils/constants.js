@@ -299,7 +299,19 @@ export const ourSortiment = [
   {
     id: 3,
     image:
-      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634655380/my-ecommerce/ourSortiment3_e5kax7.jpg',
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634712131/my-ecommerce/ourSortiment3_tm3emk.jpg',
     title: 'boots',
+  },
+  {
+    id: 4,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634712131/my-ecommerce/ourSortiment4_yjyi7y.jpg',
+    title: 'socks',
+  },
+  {
+    id: 5,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634712131/my-ecommerce/ourSortiment5_fxw3gh.jpg',
+    title: 'leggins',
   },
 ];

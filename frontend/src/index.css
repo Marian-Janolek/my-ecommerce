@@ -138,6 +138,9 @@ img {
 .bg {
   background-color: var(--white-color);
 }
+.bg-dark {
+  background-color: var(--dark-color);
+}
 
 .show {
   left: 0;

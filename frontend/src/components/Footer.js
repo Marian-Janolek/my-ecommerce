@@ -10,57 +10,59 @@ import {
 
 const Footer = () => {
   return (
-    <FooterContainer className="section-center">
-      <div>
-        <h3>About Us</h3>
-        <ul className="footer-about">
-          {aboutUs.map(({ id, url, text }) => {
-            return (
-              <li key={id}>
-                <Link to={url}> {text}</Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-      <div>
-        <ul className="footer-links">
-          <h3>for customers</h3>
-          {footerLinks.map((link) => {
-            const { id, text, url } = link;
-            return (
-              <li key={id}>
-                <Link to={url}>{text}</Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-      <div className="footer-support">
-        <h3>Support</h3>
-        <ul className="support">
-          {supportLinks.map(({ id, text, url }) => {
-            return (
-              <li key={id}>
-                <Link to={url}> {text}</Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-      <div className="social-flex">
-        <h3>You can follow us:</h3>
-        <ul className="social-icons">
-          {socials.map(({ id, icon, url }) => {
-            return (
-              <a href={url} key={id} target="_blank" rel="noreferrer">
-                {icon}
-              </a>
-            );
-          })}
-        </ul>
-      </div>
-    </FooterContainer>
+    <div className="bg-dark">
+      <FooterContainer className="section-center">
+        <div>
+          <h3>About Us</h3>
+          <ul className="footer-about">
+            {aboutUs.map(({ id, url, text }) => {
+              return (
+                <li key={id} className="padding">
+                  <Link to={url}> {text}</Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <div>
+          <ul className="footer-links">
+            <h3>for customers</h3>
+            {footerLinks.map((link) => {
+              const { id, text, url } = link;
+              return (
+                <li key={id} className="padding">
+                  <Link to={url}>{text}</Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <div className="footer-support">
+          <h3>Support</h3>
+          <ul className="support">
+            {supportLinks.map(({ id, text, url }) => {
+              return (
+                <li key={id} className="padding">
+                  <Link to={url}> {text}</Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <div className="social-flex">
+          <h3>You can follow us:</h3>
+          <ul className="social-icons">
+            {socials.map(({ id, icon, url }) => {
+              return (
+                <a href={url} key={id} target="_blank" rel="noreferrer">
+                  {icon}
+                </a>
+              );
+            })}
+          </ul>
+        </div>
+      </FooterContainer>
+    </div>
   );
 };
 
@@ -68,6 +70,8 @@ const FooterContainer = styled.footer`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 
   .footer-about {
     display: flex;
@@ -97,6 +101,16 @@ const FooterContainer = styled.footer`
   }
   .footer-links {
     text-transform: capitalize;
+  }
+  h3 {
+    color: var(--dark-color-light);
+    padding-bottom: 0.8rem;
+  }
+  a {
+    color: var(--dark-color-lighten);
+  }
+  .padding {
+    padding-top: 0.5rem;
   }
 `;
 
