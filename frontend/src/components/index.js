@@ -12,6 +12,7 @@ import CardCategory from './CardCategory';
 import Men from './Men';
 import Women from './Women';
 import Children from './Children';
+import Login from './Login';
 
 export {
   Navbar,
@@ -28,4 +29,5 @@ export {
   Men,
   Women,
   Children,
+  Login,
 };

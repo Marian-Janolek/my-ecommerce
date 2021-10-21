@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { links } from '../utils/constants';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -11,6 +11,7 @@ import { useSubmenuContext } from '../context/submenuContext';
 const Navbar = () => {
   const { openSidebar } = useSidebarContext();
   const { openSubmenu, closeSubmenu } = useSubmenuContext();
+  const [navbar, setNavbar] = useState(false);
 
   const displaySubmenu = (e) => {
     const page = e.target.textContent;
@@ -21,6 +22,15 @@ const Navbar = () => {
     openSubmenu(page, { center, bottom });
   };
 
+  const showNavbar = () => {
+    if (window.scrollY >= 70) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+  window.addEventListener('scroll', showNavbar);
+
   const handleSubmenu = (e) => {
     if (!e.target.classList.contains('btn-links')) {
       closeSubmenu();
@@ -29,7 +39,7 @@ const Navbar = () => {
 
   return (
     <NavContainer onMouseOver={handleSubmenu}>
-      <div className="nav-center">
+      <div className={navbar ? 'nav-center active' : 'nav-center'}>
         <div className="nav-header">
           {/* <Link to="/">logo</Link> */}
           <h1>hello</h1>
@@ -120,6 +130,14 @@ const NavContainer = styled.nav`
   }
   .icon-wrapper {
     display: none;
+  }
+  .active {
+    background-color: var(--white-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    /* -webkit-box-shadow: 0px 10px 13px -7px #000000,
+      5px 5px 6px 5px rgba(142, 142, 142, 0);
+    box-shadow: 0px 10px 13px -7px #000000,
+      5px 5px 6px 5px rgba(142, 142, 142, 0); */
   }
   @media screen and (min-width: 992px) {
     .icon-wrapper {
