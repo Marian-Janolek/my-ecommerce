@@ -53,7 +53,7 @@ const SubmenuContainer = styled.div`
     top: 4rem;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 3;
+    z-index: 10;
     display: none;
     padding: 2rem;
     border-radius: var(--radius);
@@ -84,6 +84,7 @@ const SubmenuContainer = styled.div`
   .submenu-flex {
     display: flex;
     flex-direction: column;
+    width: 7rem;
     gap: 1rem;
   }
   .submenu-flex a {

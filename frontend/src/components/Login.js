@@ -82,6 +82,8 @@ const LoginWrapper = styled.section`
   align-items: center;
   min-height: 100vh;
   transition: var(--transition);
+  margin-top: 2rem;
+  margin-bottom: 3rem;
   .container {
     position: relative;
     width: 800px;
@@ -231,6 +233,7 @@ const LoginWrapper = styled.section`
     .box.singin {
       top: 0;
     }
+
     .form-container.active {
       left: 0;
       top: 150px;

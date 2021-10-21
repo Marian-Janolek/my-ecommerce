@@ -4,6 +4,7 @@ import { FaTimes } from 'react-icons/fa';
 import { links } from '../utils/constants';
 import styled from 'styled-components';
 import { useSidebarContext } from '../context/sidebarContext';
+import CartButtons from './CartButtons';
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useSidebarContext();
@@ -30,6 +31,9 @@ const Sidebar = () => {
             );
           })}
         </ul>
+        <div onClick={closeSidebar}>
+          <CartButtons />
+        </div>
       </aside>
     </SidebarContainer>
   );

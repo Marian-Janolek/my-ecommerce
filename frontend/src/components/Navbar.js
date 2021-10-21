@@ -17,7 +17,7 @@ const Navbar = () => {
     const page = e.target.textContent;
     const tempBtn = e.target.getBoundingClientRect();
     const center = (tempBtn.left + tempBtn.right) / 2;
-    const bottom = tempBtn.bottom - 3;
+    const bottom = tempBtn.bottom + 2;
     if (page === 'home' || page === 'new' || page === 'sale') {
       closeSubmenu();
     } else {
@@ -81,7 +81,7 @@ const Navbar = () => {
 };
 
 const NavContainer = styled.nav`
-  height: 4rem;
+  height: var(--header-height);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -150,6 +150,11 @@ const NavContainer = styled.nav`
       display: grid;
       grid-template-columns: auto 1fr auto;
       align-items: center;
+      /* width: 100%;
+      position: fixed;
+      height: var(--header-height);
+      z-index: 10;
+      transition: 0.3s; */
     }
     .nav-header {
     }
@@ -159,6 +164,21 @@ const NavContainer = styled.nav`
     }
     li {
       margin: 0 0.5rem;
+    }
+    .btn-links::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 0.1rem;
+      background-color: var(--dark-color);
+      top: 10%;
+      left: 50%;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+    .btn-links:hover::after {
+      left: 0%;
+      width: 100%;
     }
   }
 `;
