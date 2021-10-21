@@ -7,8 +7,8 @@ const NewCollection = () => {
   return (
     <div className="bg">
       <NewCollectionWrapper className="section-center">
-        <div className="underline"></div>
         <h2>new collection</h2>
+        <div className="underline"></div>
         <div className="new-card">
           {newCollection.map((newC) => {
             const { id, name, image, size, price } = newC;
@@ -38,7 +38,7 @@ const NewCollectionWrapper = styled.section`
     text-transform: uppercase;
     text-align: center;
     letter-spacing: var(--spacing);
-    padding-bottom: 3rem;
+    margin-top: 1rem;
   }
   .new-card {
     display: grid;

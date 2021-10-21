@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useSubmenuContext } from '../context/submenuContext';
 
 const Login = () => {
+  const { closeSubmenu } = useSubmenuContext();
+
   const formBtn = document.querySelector('.form-container');
   const wrapper = document.getElementById('wrapper');
 
@@ -16,7 +19,11 @@ const Login = () => {
   };
 
   return (
-    <LoginWrapper className="section-center" id="wrapper">
+    <LoginWrapper
+      className="section-center"
+      id="wrapper"
+      onMouseOver={closeSubmenu}
+    >
       <div className="container">
         <div className="login-bg">
           <div className="box singin">

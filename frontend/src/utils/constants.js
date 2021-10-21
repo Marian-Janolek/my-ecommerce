@@ -1,4 +1,4 @@
-import { FaFacebook, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaTumblrSquare } from 'react-icons/fa';
 import { FiInstagram } from 'react-icons/fi';
 
 export const links = [
@@ -68,6 +68,11 @@ export const socials = [
     id: 3,
     icon: <FaTwitter />,
     url: 'https://www.twitter.com',
+  },
+  {
+    id: 4,
+    icon: <FaTumblrSquare />,
+    url: 'https://www.tumblr.com',
   },
 ];
 

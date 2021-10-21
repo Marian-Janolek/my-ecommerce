@@ -2,10 +2,12 @@ import React from 'react';
 import { CardCategory } from '../components';
 import { women } from '../utils/constants';
 import styled from 'styled-components';
+import { useSubmenuContext } from '../context/submenuContext';
 
 const Women = () => {
+  const { closeSubmenu } = useSubmenuContext();
   return (
-    <WomenWrapper className="section-center">
+    <WomenWrapper className="section-center" onMouseOver={closeSubmenu}>
       <h1>women sortiment</h1>
       <div className="underline"></div>
       <div className="women">
@@ -22,7 +24,7 @@ const WomenWrapper = styled.article`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
     margin-bottom: 5rem;
   }
   h1 {

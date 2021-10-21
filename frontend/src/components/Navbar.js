@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { links } from '../utils/constants';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { AiOutlineUserAdd } from 'react-icons/ai';
-import { BiCart } from 'react-icons/bi';
 import { useSidebarContext } from '../context/sidebarContext';
 import { FaBars } from 'react-icons/fa';
 import { useSubmenuContext } from '../context/submenuContext';
+import SearchBox from './SearchBox';
+import CartButtons from './CartButtons';
 
 const Navbar = () => {
   const { openSidebar } = useSidebarContext();
@@ -18,8 +18,11 @@ const Navbar = () => {
     const tempBtn = e.target.getBoundingClientRect();
     const center = (tempBtn.left + tempBtn.right) / 2;
     const bottom = tempBtn.bottom - 3;
-
-    openSubmenu(page, { center, bottom });
+    if (page === 'home' || page === 'new' || page === 'sale') {
+      closeSubmenu();
+    } else {
+      openSubmenu(page, { center, bottom });
+    }
   };
 
   const showNavbar = () => {
@@ -43,6 +46,7 @@ const Navbar = () => {
         <div className="nav-header">
           {/* <Link to="/">logo</Link> */}
           <h1>hello</h1>
+          <SearchBox />
           <button type="button" className="nav-toggle" onClick={openSidebar}>
             <FaBars />
           </button>
@@ -65,8 +69,11 @@ const Navbar = () => {
           })}
         </ul>
         <div className="icon-wrapper">
-          <AiOutlineUserAdd className="user-icon" />
-          <BiCart className="cart-icon" />
+          {/* <Link to="/login">
+            <AiOutlineUserAdd className="user-icon" />
+          </Link>
+          <BiCart className="cart-icon" /> */}
+          <CartButtons />
         </div>
       </div>
     </NavContainer>
@@ -120,14 +127,6 @@ const NavContainer = styled.nav`
     transform: scale(1.06);
   }
 
-  .user-icon {
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  .cart-icon {
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
   .icon-wrapper {
     display: none;
   }
@@ -152,10 +151,11 @@ const NavContainer = styled.nav`
       grid-template-columns: auto 1fr auto;
       align-items: center;
     }
+    .nav-header {
+    }
     .nav-links {
       display: flex;
       justify-content: flex-end;
-      margin-right: 1rem;
     }
     li {
       margin: 0 0.5rem;

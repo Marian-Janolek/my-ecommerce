@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 const OurSortiment = () => {
   return (
     <OurSortimentWrapper className="section-center">
-      <div className="underline"></div>
       <h2>our sortiment</h2>
+      <div className="underline"></div>
       <article className="sortiment-grid">
         {ourSortiment.map((sortiment, index) => {
           const { id, image, title } = sortiment;
@@ -31,7 +31,7 @@ const OurSortimentWrapper = styled.section`
     text-transform: uppercase;
     text-align: center;
     letter-spacing: var(--spacing);
-    padding-bottom: 3rem;
+    margin-top: 2rem;
   }
   .sortiment-grid {
     display: grid;
