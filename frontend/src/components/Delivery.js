@@ -1,12 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSubmenuContext } from '../context/submenuContext';
 
 const Delivery = () => {
+  const { closeSubmenu } = useSubmenuContext();
+
   return (
-    <Wrapper className="section-center">
+    <Wrapper className="section-center" onMouseOver={closeSubmenu}>
       <h1>Delivery</h1>
       <div className="underline"></div>
-      <div>
+      <div className="div-center">
         <h2>Slovakia Post</h2>
         <h4>Courier (next day)</h4>
         <p>
@@ -27,8 +30,7 @@ const Delivery = () => {
             </tr>
           </tbody>
         </table>
-      </div>
-      <div>
+
         <h2>Slovakia Parcel Servis</h2>
         <h4>Courier (next day)</h4>
 
@@ -44,8 +46,7 @@ const Delivery = () => {
             </tr>
           </tbody>
         </table>
-      </div>
-      <div>
+
         <h2>Personal pickup of goods</h2>
         <p>
           Personal pickup of your order in our store is <strong>free.</strong>{' '}

@@ -5,6 +5,7 @@ import { stores, storesInfo } from '../utils/constants';
 
 const OurStores = () => {
   const { closeSubmenu } = useSubmenuContext();
+
   const days = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
   const hours = ['10:00 - 20: 00', '09:00 - 20:00'];
 

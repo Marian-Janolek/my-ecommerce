@@ -97,6 +97,12 @@ img {
   margin: 1rem auto;
   margin-bottom: 3rem;
 }
+.div-center {
+  max-width: 60vw;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+}
 
 @media screen and (max-width: 768px) {
   .nav_menu {

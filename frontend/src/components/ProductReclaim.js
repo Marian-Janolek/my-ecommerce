@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSubmenuContext } from '../context/submenuContext';
 
 const ProductReclaim = () => {
+  const { closeSubmenu } = useSubmenuContext();
   return (
-    <Wrapper className="section-center">
+    <Wrapper className="section-center" onMouseOver={closeSubmenu}>
       <h1>product reclaim</h1>
       <div className="underline"></div>;
       <div>

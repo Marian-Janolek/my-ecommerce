@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSubmenuContext } from '../context/submenuContext';
 
 const Payments = () => {
+  const { closeSubmenu } = useSubmenuContext();
   return (
-    <Wrapper className="section-center">
+    <Wrapper className="section-center" onMouseOver={closeSubmenu}>
       <h1>Payments</h1>
       <div className="underline"></div>
-      <div>
+      <div className="div-center">
         <h3>
           For security reasons, we only accept VISA, MASTERCARD and PayPal
           payments
