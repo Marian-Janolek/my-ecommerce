@@ -472,3 +472,44 @@ export const storesInfo = [
     address: 'pitniky 2',
   },
 ];
+
+export const faqQuestions = [
+  {
+    id: 1,
+    question: 'I am not sure which size I need. Where I can  get information?',
+    info: 'If you are between two sizes, we recommend to size down. If you are not sure, please use our sizing tool here: http://localhost:3000/help',
+  },
+  {
+    id: 2,
+    question:
+      'I am interested in buying a product that is not available anymore, what can I do?',
+    info: 'If the product you want is currently out of stock on our website, please get in touch with us ! There is a big chance that the product is either available in one of our many shops or that it will be back shortly.',
+  },
+
+  {
+    id: 3,
+    question: 'What payment method can I use?',
+    info: 'For security reasons, we only accept VISA, MASTERCARD and PayPal payments',
+  },
+  {
+    id: 4,
+    question: 'I have a discount code, how do I use it?',
+    info: 'If you have a discount code, simply add products in your basket and once you are done, add the discount code on the "I have a Discount" box on your basket. Press "OK" and if the discount code is correct, it will automatically be added to your basket.',
+  },
+
+  {
+    id: 5,
+    question: 'Do you offer free delivery?',
+    info: 'Yes, free delivery is available for orders over €60 that are delivered to Slovakia.',
+  },
+  {
+    id: 6,
+    question: 'Are parcels tracked?',
+    info: 'Yes, all our parcels are sent via DPD and are tracked. Once the order has left our warehouse, an email is sent to you with the tracking number.',
+  },
+  {
+    id: 7,
+    question: 'Where can you deliver?',
+    info: 'Delivery is available in Slovak and Czech Republic.',
+  },
+];

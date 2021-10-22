@@ -15,6 +15,8 @@ import Children from './Children';
 import Login from './Login';
 import CartButtons from './CartButtons';
 import OurStores from './OurStores';
+import FAQ from './FAQ';
+import Question from './Question';
 
 export {
   Navbar,
@@ -34,4 +36,6 @@ export {
   Login,
   CartButtons,
   OurStores,
+  FAQ,
+  Question,
 };

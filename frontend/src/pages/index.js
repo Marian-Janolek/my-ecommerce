@@ -4,5 +4,14 @@ import WomenPage from './WomenPage';
 import ChildrenPage from './ChildrenPage';
 import LoginPage from './LoginPage';
 import OurStoresPage from './OurStoresPage';
+import FAQPage from './FAQPage';
 
-export { MenPage, Home, WomenPage, ChildrenPage, LoginPage, OurStoresPage };
+export {
+  MenPage,
+  Home,
+  WomenPage,
+  ChildrenPage,
+  LoginPage,
+  OurStoresPage,
+  FAQPage,
+};

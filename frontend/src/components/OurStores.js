@@ -29,10 +29,10 @@ const OurStores = () => {
         })}
       </article>
       <article className="info-grid">
-        {storesInfo.map((store) => {
+        {storesInfo.map((store, index) => {
           const { id, city, name, postCode, address } = store;
           return (
-            <div className="info-flex">
+            <div className="info-flex" key={index}>
               <div className="info-stores" key={id}>
                 <p className="p-city">{city}</p>
                 <p className="p-name">{name}</p>
@@ -45,7 +45,7 @@ const OurStores = () => {
                 <tbody>
                   {days.map((day, index) => {
                     return (
-                      <tr>
+                      <tr key={index}>
                         <th>{day} : </th>
                         <td>{displayHours(index)}</td>
                       </tr>
@@ -76,16 +76,18 @@ const Wrapper = styled.article`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
+    margin-bottom: 3rem;
   }
   .sortiment-card {
     height: 16rem;
-    margin-bottom: 3rem;
   }
   .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
     column-gap: 3rem;
     row-gap: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
   .info-flex {
     display: flex;
