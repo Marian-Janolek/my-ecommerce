@@ -80,7 +80,7 @@ export const aboutUs = [
   {
     id: 1,
     text: 'sortiment',
-    url: '/sortiment',
+    url: '/men',
   },
   {
     id: 2,
@@ -421,5 +421,54 @@ export const children = [
     image:
       'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634742662/my-ecommerce/children_winter2_rt37dv.jpg',
     title: 'winter',
+  },
+];
+
+export const stores = [
+  {
+    id: 1,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634887937/my-ecommerce/store1_aoazfz.jpg',
+  },
+  {
+    id: 2,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634887937/my-ecommerce/store2_cgzyxp.jpg',
+  },
+  {
+    id: 3,
+    image:
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634887937/my-ecommerce/store3_ilnsni.jpg',
+  },
+];
+
+export const storesInfo = [
+  {
+    id: 1,
+    city: 'bratislava',
+    name: 'sport, avion shopping',
+    postCode: '811 09',
+    address: 'pribinova 8',
+  },
+  {
+    id: 2,
+    city: 'nitra',
+    name: 'sport, galeria mlyny',
+    postCode: '949 01',
+    address: 'stefanikova 61',
+  },
+  {
+    id: 3,
+    city: 'zvolen',
+    name: 'sport, zvolenska europa',
+    postCode: '960 01',
+    address: 'nam SNP 63',
+  },
+  {
+    id: 4,
+    city: 'poprad',
+    name: 'sport, oc forum poprad',
+    postCode: '058 01',
+    address: 'pitniky 2',
   },
 ];

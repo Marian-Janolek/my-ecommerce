@@ -2,7 +2,14 @@ import './index.css';
 import React from 'react';
 import { Navbar, Sidebar, Submenu, Loading, Footer } from './components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { MenPage, Home, WomenPage, ChildrenPage, LoginPage } from './pages';
+import {
+  MenPage,
+  Home,
+  WomenPage,
+  ChildrenPage,
+  LoginPage,
+  OurStoresPage,
+} from './pages';
 
 const App = () => {
   return (
@@ -25,6 +32,9 @@ const App = () => {
         </Route>
         <Route exact path="/login">
           <LoginPage />
+        </Route>
+        <Route exact path="/stores">
+          <OurStoresPage />
         </Route>
       </Switch>
       <Footer />

@@ -14,6 +14,7 @@ import Women from './Women';
 import Children from './Children';
 import Login from './Login';
 import CartButtons from './CartButtons';
+import OurStores from './OurStores';
 
 export {
   Navbar,
@@ -32,4 +33,5 @@ export {
   Children,
   Login,
   CartButtons,
+  OurStores,
 };
