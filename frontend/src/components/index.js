@@ -17,6 +17,7 @@ import CartButtons from './CartButtons';
 import OurStores from './OurStores';
 import FAQ from './FAQ';
 import Question from './Question';
+import Delivery from './Delivery';
 
 export {
   Navbar,
@@ -38,4 +39,5 @@ export {
   OurStores,
   FAQ,
   Question,
+  Delivery,
 };

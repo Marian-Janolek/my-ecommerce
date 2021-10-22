@@ -5,6 +5,7 @@ import ChildrenPage from './ChildrenPage';
 import LoginPage from './LoginPage';
 import OurStoresPage from './OurStoresPage';
 import FAQPage from './FAQPage';
+import DeliveryPage from './DeliveryPage';
 
 export {
   MenPage,
@@ -14,4 +15,5 @@ export {
   LoginPage,
   OurStoresPage,
   FAQPage,
+  DeliveryPage,
 };

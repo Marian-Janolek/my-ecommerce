@@ -10,6 +10,7 @@ import {
   LoginPage,
   OurStoresPage,
   FAQPage,
+  DeliveryPage,
 } from './pages';
 
 const App = () => {
@@ -39,6 +40,9 @@ const App = () => {
         </Route>
         <Route exact path="/faq">
           <FAQPage />
+        </Route>
+        <Route exact path="/delivery">
+          <DeliveryPage />
         </Route>
       </Switch>
       <Footer />

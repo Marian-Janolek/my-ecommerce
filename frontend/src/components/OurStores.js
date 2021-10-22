@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSubmenuContext } from '../context/submenuContext';
 import { stores, storesInfo } from '../utils/constants';
 
 const OurStores = () => {
+  const { closeSubmenu } = useSubmenuContext();
   const days = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
   const hours = ['10:00 - 20: 00', '09:00 - 20:00'];
 
@@ -15,7 +17,7 @@ const OurStores = () => {
   };
 
   return (
-    <Wrapper className="section-center">
+    <Wrapper className="section-center" onMouseOver={closeSubmenu}>
       <h1>our stores</h1>
       <div className="underline"></div>
       <article className="store-grid">

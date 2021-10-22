@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useSubmenuContext } from '../context/submenuContext';
 import { faqQuestions } from '../utils/constants';
 import Question from './Question';
 
 const FAQ = () => {
   const [questions, setQuestions] = useState(faqQuestions);
+  const { closeSubmenu } = useSubmenuContext();
+
   return (
-    <Wrapper className="section-center">
+    <Wrapper className="section-center" onMouseOver={closeSubmenu}>
       {' '}
       <h1>FAQ</h1>
       <div className="underline"></div>
