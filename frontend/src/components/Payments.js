@@ -5,7 +5,7 @@ const Payments = () => {
   return (
     <Wrapper className="section-center">
       <h1>Payments</h1>
-      <div className="underline"></div>;
+      <div className="underline"></div>
       <div>
         <h3>
           For security reasons, we only accept VISA, MASTERCARD and PayPal
@@ -38,20 +38,14 @@ const Payments = () => {
 
 const Wrapper = styled.article`
   margin-bottom: 4rem;
-  h1 {
-    text-transform: capitalize;
-    margin-top: 2rem;
-  }
-  .underline {
-    display: inline-block;
-    text-align: left;
-  }
+
   h3 {
     text-align: center;
     margin-bottom: 2rem;
   }
   table {
     margin: 0 auto;
+    background: var(--white-color);
   }
   table th {
     text-align: left;

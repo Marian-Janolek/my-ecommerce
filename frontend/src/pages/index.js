@@ -9,6 +9,7 @@ import DeliveryPage from './DeliveryPage';
 import PaymentsPage from './PaymentsPage';
 import ProductReclaimPage from './ProductReclaimPage';
 import ProductExchangePage from './ProductExchangePage';
+import ProductHelpPage from './ProductHelpPage';
 
 export {
   MenPage,
@@ -22,4 +23,5 @@ export {
   PaymentsPage,
   ProductReclaimPage,
   ProductExchangePage,
+  ProductHelpPage,
 };

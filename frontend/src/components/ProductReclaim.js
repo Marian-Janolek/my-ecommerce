@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const ProductReclaim = () => {
   return (
     <Wrapper className="section-center">
-      <h1>Payments</h1>
+      <h1>product reclaim</h1>
       <div className="underline"></div>;
       <div>
         <h2>How to proceed when i want to return the goods?</h2>
@@ -49,14 +49,8 @@ const ProductReclaim = () => {
 
 const Wrapper = styled.article`
   margin-bottom: 4rem;
-
-  h1 {
-    text-transform: capitalize;
-    margin-top: 2rem;
-  }
   .underline {
-    display: inline-block;
-    text-align: left;
+    margin-bottom: 1rem;
   }
   h2 {
     margin-bottom: 1rem;

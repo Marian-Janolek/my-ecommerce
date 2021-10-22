@@ -45,7 +45,7 @@ const Navbar = () => {
       <div className={navbar ? 'nav-center active' : 'nav-center'}>
         <div className="nav-header">
           {/* <Link to="/">logo</Link> */}
-          <h1>hello</h1>
+          <h2>hello</h2>
           <SearchBox />
           <button type="button" className="nav-toggle" onClick={openSidebar}>
             <FaBars />

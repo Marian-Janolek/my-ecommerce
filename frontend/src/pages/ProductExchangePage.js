@@ -5,7 +5,7 @@ const ProductExchangePage = () => {
   return (
     <Wrapper className="section-center">
       <h1>Product exchange</h1>
-      <div className="underline"></div>;
+      <div className="underline"></div>
       <div>
         <p>
           We are confident that you will be more than pleased with your item
@@ -54,14 +54,7 @@ const ProductExchangePage = () => {
 
 const Wrapper = styled.article`
   margin-bottom: 4rem;
-  h1 {
-    text-transform: capitalize;
-    margin-top: 2rem;
-  }
-  .underline {
-    display: inline-block;
-    text-align: left;
-  }
+
   p {
     line-height: 2rem;
   }

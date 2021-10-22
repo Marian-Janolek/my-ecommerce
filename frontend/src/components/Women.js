@@ -27,15 +27,6 @@ const WomenWrapper = styled.article`
     margin-top: 1.5rem;
     margin-bottom: 5rem;
   }
-  h1 {
-    text-transform: capitalize;
-    margin-top: 2rem;
-  }
-  .underline {
-    display: inline-block;
-    text-align: left;
-    margin-top: 1rem;
-  }
 `;
 
 export default Women;

@@ -5,7 +5,7 @@ const Delivery = () => {
   return (
     <Wrapper className="section-center">
       <h1>Delivery</h1>
-      <div className="underline"></div>;
+      <div className="underline"></div>
       <div>
         <h2>Slovakia Post</h2>
         <h4>Courier (next day)</h4>
@@ -58,14 +58,7 @@ const Delivery = () => {
 
 const Wrapper = styled.section`
   margin-bottom: 4rem;
-  h1 {
-    text-transform: capitalize;
-    margin-top: 2rem;
-  }
-  .underline {
-    display: inline-block;
-    text-align: left;
-  }
+
   h2 {
     margin-bottom: 1rem;
   }
@@ -80,6 +73,7 @@ const Wrapper = styled.section`
   }
   .table-slovakia {
     margin: 2rem auto;
+    background-color: var(--white-color);
   }
   .table-slovakia,
   td {

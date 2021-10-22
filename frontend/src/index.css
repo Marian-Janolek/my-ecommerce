@@ -57,6 +57,12 @@ p,
 ul {
   margin: 0;
 }
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 3rem;
+  font-size: var(--bigger-font-size);
+}
 ul {
   padding: 0;
   list-style: none;

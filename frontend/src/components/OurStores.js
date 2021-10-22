@@ -65,15 +65,7 @@ const OurStores = () => {
 
 const Wrapper = styled.article`
   margin-bottom: 4rem;
-  h1 {
-    text-transform: capitalize;
-    margin-top: 2rem;
-  }
-  .underline {
-    display: inline-block;
-    text-align: left;
-    margin-top: 1rem;
-  }
+
   .store-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

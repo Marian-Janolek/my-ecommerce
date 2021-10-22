@@ -20,6 +20,7 @@ import Question from './Question';
 import Delivery from './Delivery';
 import Payments from './Payments';
 import ProductReclaim from './ProductReclaim';
+import ProductHelp from './ProductHelp';
 
 export {
   Navbar,
@@ -44,4 +45,5 @@ export {
   Delivery,
   Payments,
   ProductReclaim,
+  ProductHelp,
 };

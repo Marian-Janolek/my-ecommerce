@@ -24,14 +24,7 @@ const FAQ = () => {
 
 const Wrapper = styled.article`
   margin-bottom: 4rem;
-  h1 {
-    text-transform: capitalize;
-    margin-top: 2rem;
-  }
-  .underline {
-    display: inline-block;
-    text-align: left;
-  }
+
   h2 {
     text-transform: uppercase;
     letter-spacing: var(--spacing);
