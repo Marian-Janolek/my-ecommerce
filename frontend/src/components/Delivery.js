@@ -68,14 +68,14 @@ const Wrapper = styled.section`
   }
   h2 {
     margin-bottom: 1rem;
-    text-align: center;
   }
   h4 {
     margin-bottom: 0.7rem;
-    text-align: center;
   }
+
+  h2,
+  h4,
   p {
-    text-align: left;
     text-align: center;
   }
   .table-slovakia {

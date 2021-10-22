@@ -6,6 +6,9 @@ import LoginPage from './LoginPage';
 import OurStoresPage from './OurStoresPage';
 import FAQPage from './FAQPage';
 import DeliveryPage from './DeliveryPage';
+import PaymentsPage from './PaymentsPage';
+import ProductReclaimPage from './ProductReclaimPage';
+import ProductExchangePage from './ProductExchangePage';
 
 export {
   MenPage,
@@ -16,4 +19,7 @@ export {
   OurStoresPage,
   FAQPage,
   DeliveryPage,
+  PaymentsPage,
+  ProductReclaimPage,
+  ProductExchangePage,
 };
