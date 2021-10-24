@@ -21,6 +21,8 @@ const Submenu = () => {
     submenu.style.top = `${bottom}px`;
   }, [location, links]);
 
+  const displayPreviewImg = () => {};
+
   return (
     <SubmenuContainer>
       <aside
@@ -32,7 +34,12 @@ const Submenu = () => {
             {links.map((link) => {
               const { id, text, url } = link;
               return (
-                <Link to={url} key={id}>
+                <Link
+                  to={url}
+                  key={id}
+                  className="submenu-links"
+                  onMouseOver={displayPreviewImg}
+                >
                   {text}{' '}
                 </Link>
               );
@@ -100,6 +107,25 @@ const SubmenuContainer = styled.div`
     border-radius: var(--radius);
     border: 2px solid var(--dark-color);
     z-index: 3;
+  }
+  .submenu-links {
+    display: inline-block;
+    position: relative;
+  }
+  .submenu-links::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 0.1rem;
+    background-color: var(--dark-color);
+    bottom: 0%;
+    left: 50%;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  .submenu-links:hover::after {
+    left: 0%;
+    width: 100%;
   }
 `;
 
