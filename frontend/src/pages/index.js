@@ -11,6 +11,7 @@ import ProductReclaimPage from './ProductReclaimPage';
 import ProductExchangePage from './ProductExchangePage';
 import ProductHelpPage from './ProductHelpPage';
 import CustomerCarePage from './CustomerCarePage';
+import ProductPage from './ProductPage';
 
 export {
   MenPage,
@@ -26,4 +27,5 @@ export {
   ProductExchangePage,
   ProductHelpPage,
   CustomerCarePage,
+  ProductPage,
 };

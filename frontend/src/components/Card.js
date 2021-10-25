@@ -8,7 +8,7 @@ const Card = ({ id, image, name, price, data }) => {
       <div className="new">New</div>
       <img src={image} alt={name} className="new-img" />
       <div className="new-size-parent">
-        {data.map((nested, index) => {
+        {data.map((nested) => {
           const { id, size } = nested;
           return (
             <>
@@ -79,6 +79,7 @@ const CardWrapper = styled.article`
   .new-size-parent {
     position: absolute;
     justify-content: center;
+    align-items: flex-end;
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;

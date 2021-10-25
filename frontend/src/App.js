@@ -16,6 +16,7 @@ import {
   ProductExchangePage,
   ProductHelpPage,
   CustomerCarePage,
+  ProductPage,
 } from './pages';
 
 const App = () => {
@@ -63,6 +64,9 @@ const App = () => {
         </Route>
         <Route exact path="/care">
           <CustomerCarePage />
+        </Route>
+        <Route path="/products">
+          <ProductPage />
         </Route>
       </Switch>
       <Footer />
