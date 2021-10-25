@@ -63,6 +63,19 @@ const Footer = () => {
             })}
           </ul>
         </div>
+        <p className="footer-creator">
+          <span>
+            &copy; <span>{new Date().getFullYear().toString()}</span> Created by
+            <a
+              href="https://www.facebook.com/majko.janolek"
+              target="_blank"
+              className="creator"
+            >
+              {' '}
+              Majko Janolek
+            </a>
+          </span>
+        </p>
       </FooterWrapper>
     </div>
   );
@@ -73,7 +86,8 @@ const FooterWrapper = styled.footer`
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   padding-top: 4rem;
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
+  position: relative;
 
   .footer-about {
     display: flex;
@@ -115,6 +129,19 @@ const FooterWrapper = styled.footer`
     padding-top: 0.5rem;
   }
   a:hover {
+    color: var(--dark-color-light);
+  }
+  .footer-creator {
+    position: absolute;
+    color: var(--white-color);
+    left: 50%;
+    bottom: 1rem;
+    transform: translateX(-50%);
+  }
+  .creator {
+    text-transform: uppercase;
+  }
+  .creator:hover {
     color: var(--dark-color-light);
   }
 `;
