@@ -2,17 +2,24 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const Card = ({ id, image, name, price, size, data }) => {
+const Card = ({ id, image, name, price, data }) => {
   return (
     <CardWrapper key={id}>
       <div className="new">New</div>
       <img src={image} alt={name} className="new-img" />
       <div className="new-size-parent">
-        {data.map((el, index) => {
+        {data.map((nested, index) => {
+          const { id, size } = nested;
           return (
-            <Link to="/" className="new-size" key={id}>
-              {size[index]}
-            </Link>
+            <>
+              {size.map((element, i) => {
+                return (
+                  <Link to="/" className="new-size" key={id + i}>
+                    {element}
+                  </Link>
+                );
+              })}
+            </>
           );
         })}{' '}
       </div>
@@ -44,6 +51,7 @@ const CardWrapper = styled.article`
     background-color: var(--white-color);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   }
+
   .new {
     position: absolute;
     left: 0.5rem;
@@ -69,10 +77,13 @@ const CardWrapper = styled.article`
     align-self: flex-start;
   }
   .new-size-parent {
+    position: absolute;
+    justify-content: center;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     gap: 0.4rem;
   }
+
   .new-size {
     position: relative;
     width: 20%;
@@ -80,11 +91,11 @@ const CardWrapper = styled.article`
     left: 0;
     transform: translateY(100%);
     text-align: center;
-    display: inline-block;
     transition: 0.3s;
     letter-spacing: var(--spacing);
-    padding: 0.5rem;
+    padding: 0.5rem 0rem;
     opacity: 0;
+    font-size: var(--smaller-font-size);
   }
 
   .new-size:hover {

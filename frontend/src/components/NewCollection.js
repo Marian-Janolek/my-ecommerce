@@ -11,13 +11,12 @@ const NewCollection = () => {
         <div className="underline"></div>
         <div className="new-card">
           {newCollection.map((newC) => {
-            const { id, name, image, size, price } = newC;
+            const { id, name, image, price } = newC;
             return (
               <Card
                 key={id}
                 name={name}
                 image={image}
-                size={size}
                 price={price}
                 data={newCollection}
               />

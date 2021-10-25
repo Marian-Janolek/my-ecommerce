@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSubmenuContext } from '../context/submenuContext';
 import styled from 'styled-components';
+import { submenuImg } from '../utils/constants';
 
 const Submenu = () => {
   const {
@@ -21,7 +22,9 @@ const Submenu = () => {
     submenu.style.top = `${bottom}px`;
   }, [location, links]);
 
-  const displayPreviewImg = () => {};
+  const displayPreviewImg = (e) => {
+    const link = document.getElementById('id');
+  };
 
   return (
     <SubmenuContainer>
@@ -35,6 +38,7 @@ const Submenu = () => {
               const { id, text, url } = link;
               return (
                 <Link
+                  id={id}
                   to={url}
                   key={id}
                   className="submenu-links"
@@ -45,7 +49,12 @@ const Submenu = () => {
               );
             })}
           </ul>
-          <section className="submenu-img"></section>
+          <section className="submenu-img">
+            <img
+              src="https://res.cloudinary.com/do5rzxmh3/image/upload/v1634739156/my-ecommerce/men_sneakers_mnb8lz.jpg"
+              alt=""
+            />
+          </section>
         </div>
       </aside>
     </SubmenuContainer>
@@ -106,7 +115,7 @@ const SubmenuContainer = styled.div`
     height: 100%;
     border-radius: var(--radius);
     border: 2px solid var(--dark-color);
-    z-index: 3;
+    z-index: 20;
   }
   .submenu-links {
     display: inline-block;

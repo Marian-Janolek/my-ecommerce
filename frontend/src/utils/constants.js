@@ -252,7 +252,7 @@ export const newCollection = [
       'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630180/my-ecommerce/women1_hyh6az.png',
     name: 'Nike Performance',
     price: 89.9,
-    size: ['A', 37, 38, 38.5, 39.5, 40, 41, 41.5, 43],
+    size: ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A'],
   },
   {
     id: 2,
@@ -260,7 +260,7 @@ export const newCollection = [
       'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630181/my-ecommerce/women2_gtiblg.png',
     name: 'Nike Air Huarache',
     price: 59.9,
-    size: ['B', 36, 38, 38.5, 39.5, 40, 43],
+    size: ['B', 'B', 'B', 'B', 'B'],
   },
   {
     id: 3,
@@ -268,7 +268,7 @@ export const newCollection = [
       'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630180/my-ecommerce/women3_xl4gal.png',
     name: 'Nike Air Max LTD 3',
     price: 49.9,
-    size: ['C', 37, 38, 38.5, 39.5, 40, 41, 41.5, 43],
+    size: ['C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C', 'C'],
   },
   {
     id: 4,
@@ -276,7 +276,7 @@ export const newCollection = [
       'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630181/my-ecommerce/women4_rc5vix.png',
     name: 'Nike Air Max 270',
     price: 109.9,
-    size: ['D', 37, 38, 38.5, 39.5, 40, 41, 41.5, 43],
+    size: ['D', 'D', 'D', 'D', 'D'],
   },
   {
     id: 5,
@@ -284,7 +284,7 @@ export const newCollection = [
       'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634648111/my-ecommerce/new5_h7jlhd.png',
     name: 'Nike Revolution 5',
     price: 109.9,
-    size: ['E', 37, 38, 38.5, 39.5, 40, 41, 41.5, 43],
+    size: ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
   },
 ];
 
@@ -511,5 +511,17 @@ export const faqQuestions = [
     id: 7,
     question: 'Where can you deliver?',
     info: 'Delivery is available in Slovak and Czech Republic.',
+  },
+];
+
+export const submenuImg = [
+  {
+    image: [
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634887937/my-ecommerce/store3_ilnsni.jpg',
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634739156/my-ecommerce/men_sneakers_mnb8lz.jpg',
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630181/my-ecommerce/women2_gtiblg.png',
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634739156/my-ecommerce/men_sneakers_mnb8lz.jpg',
+      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630181/my-ecommerce/women2_gtiblg.png',
+    ],
   },
 ];
