@@ -9,20 +9,14 @@ const Card = ({ id, image, name, price, data }) => {
       <img src={image} alt={name} className="new-img" />
       <div className="new-size-parent">
         {data.map((nested) => {
-          const { id, size } = nested;
           return (
-            <>
-              {size.map((element, i) => {
-                return (
-                  <Link to="/" className="new-size" key={id + i}>
-                    {element}
-                  </Link>
-                );
-              })}
-            </>
+            <Link to="/" className="new-size" key={id + nested}>
+              {nested}
+            </Link>
           );
         })}{' '}
       </div>
+
       <span className="new-price">{price} €</span>
       <span className="new-name">{name}</span>
     </CardWrapper>
@@ -80,8 +74,8 @@ const CardWrapper = styled.article`
     position: absolute;
     justify-content: center;
     align-items: flex-end;
+    bottom: 22%;
     display: flex;
-    flex-wrap: wrap;
     gap: 0.4rem;
   }
 

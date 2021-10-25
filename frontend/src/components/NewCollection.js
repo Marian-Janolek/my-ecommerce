@@ -18,7 +18,7 @@ const NewCollection = () => {
                 name={name}
                 image={image}
                 price={price}
-                data={newCollection}
+                data={newC.size}
               />
             );
           })}
