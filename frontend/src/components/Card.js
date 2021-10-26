@@ -72,23 +72,23 @@ const CardWrapper = styled.article`
   }
   .new-size-parent {
     position: absolute;
-    justify-content: center;
-    align-items: flex-end;
     bottom: 22%;
     display: flex;
-    gap: 0.4rem;
+    justify-content: right;
+    flex-wrap: wrap-reverse;
+    gap: 0.5rem;
+    padding-right: 0.8rem;
   }
 
   .new-size {
     position: relative;
-    width: 20%;
     bottom: 30%;
     left: 0;
+    padding: 0.5rem;
     transform: translateY(100%);
     text-align: center;
     transition: 0.3s;
     letter-spacing: var(--spacing);
-    padding: 0.5rem 0rem;
     opacity: 0;
     font-size: var(--smaller-font-size);
   }

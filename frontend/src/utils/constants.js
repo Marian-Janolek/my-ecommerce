@@ -252,7 +252,7 @@ export const newCollection = [
       'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630180/my-ecommerce/women1_hyh6az.png',
     name: 'Nike Performance',
     price: 89.9,
-    size: ['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A'],
+    size: ['S', 'M', 'A', 'J', 'D', 'O', 'V', 'A', 'M', 'A', 'M', 'K', 'A'],
   },
   {
     id: 2,
