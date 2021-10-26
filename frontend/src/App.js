@@ -18,59 +18,62 @@ import {
   CustomerCarePage,
   ProductPage,
 } from './pages';
+import ScrollToTop from './context/scrollToTop';
 
 const App = () => {
   return (
     <Router>
-      <Navbar />
-      <Sidebar />
-      <Submenu />
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/men">
-          <MenPage />
-        </Route>
-        <Route exact path="/women">
-          <WomenPage />
-        </Route>
-        <Route exact path="/children">
-          <ChildrenPage />
-        </Route>
-        <Route exact path="/login">
-          <LoginPage />
-        </Route>
-        <Route exact path="/stores">
-          <OurStoresPage />
-        </Route>
-        <Route exact path="/faq">
-          <FAQPage />
-        </Route>
-        <Route exact path="/delivery">
-          <DeliveryPage />
-        </Route>
-        <Route exact path="/payments">
-          <PaymentsPage />
-        </Route>
-        <Route exact path="/reclaim">
-          <ProductReclaimPage />
-        </Route>
-        <Route exact path="/exchange">
-          <ProductExchangePage />
-        </Route>
-        <Route exact path="/help">
-          <ProductHelpPage />
-        </Route>
-        <Route exact path="/care">
-          <CustomerCarePage />
-        </Route>
-        <Route path="/products">
-          <ProductPage />
-        </Route>
-      </Switch>
-      <Footer />
-      {/* <Loading /> */}
+      <ScrollToTop>
+        <Navbar />
+        <Sidebar />
+        <Submenu />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/men">
+            <MenPage />
+          </Route>
+          <Route exact path="/women">
+            <WomenPage />
+          </Route>
+          <Route exact path="/children">
+            <ChildrenPage />
+          </Route>
+          <Route exact path="/login">
+            <LoginPage />
+          </Route>
+          <Route exact path="/stores">
+            <OurStoresPage />
+          </Route>
+          <Route exact path="/faq">
+            <FAQPage />
+          </Route>
+          <Route exact path="/delivery">
+            <DeliveryPage />
+          </Route>
+          <Route exact path="/payments">
+            <PaymentsPage />
+          </Route>
+          <Route exact path="/reclaim">
+            <ProductReclaimPage />
+          </Route>
+          <Route exact path="/exchange">
+            <ProductExchangePage />
+          </Route>
+          <Route exact path="/help">
+            <ProductHelpPage />
+          </Route>
+          <Route exact path="/care">
+            <CustomerCarePage />
+          </Route>
+          <Route path="/products">
+            <ProductPage />
+          </Route>
+        </Switch>
+        <Footer />
+        {/* <Loading /> */}
+      </ScrollToTop>
     </Router>
   );
 };

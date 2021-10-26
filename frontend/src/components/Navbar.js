@@ -12,8 +12,12 @@ const Navbar = () => {
   const { openSidebar } = useSidebarContext();
   const { openSubmenu, closeSubmenu } = useSubmenuContext();
   const [navbar, setNavbar] = useState(false);
+  const [navPosition, setNavPosition] = useState(0);
 
   const displaySubmenu = (e) => {
+    // const nav = document.getElementById('nav');
+    // setNavPosition(nav.getBoundingClientRect().bottom);
+
     const page = e.target.textContent;
     const tempBtn = e.target.getBoundingClientRect();
     const center = (tempBtn.left + tempBtn.right) / 2;
@@ -42,7 +46,7 @@ const Navbar = () => {
 
   return (
     <NavContainer onMouseOver={handleSubmenu}>
-      <div className={navbar ? 'nav-center active' : 'nav-center'}>
+      <div className={navbar ? 'nav-center active' : 'nav-center'} id="nav">
         <div className="nav-header">
           {/* <Link to="/">logo</Link> */}
           <h2>hello</h2>

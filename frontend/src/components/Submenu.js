@@ -100,6 +100,7 @@ const SubmenuContainer = styled.div`
   .submenu-flex {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 7rem;
     gap: 1rem;
   }
