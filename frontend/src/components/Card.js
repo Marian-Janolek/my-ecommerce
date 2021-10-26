@@ -82,9 +82,7 @@ const CardWrapper = styled.article`
 
   .new-size {
     position: relative;
-    bottom: 30%;
-    left: 0;
-    padding: 0.5rem;
+    padding: 0.3rem;
     transform: translateY(100%);
     text-align: center;
     transition: 0.3s;

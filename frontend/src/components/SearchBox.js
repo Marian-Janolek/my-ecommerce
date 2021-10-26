@@ -32,7 +32,7 @@ const SearchBox = () => {
 const SearchBoxWrapper = styled.div`
   .search-form {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     column-gap: 0.25rem;
     background-color: var(--white-color);
     border-radius: var(--radius);

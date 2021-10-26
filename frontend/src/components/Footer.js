@@ -8,10 +8,12 @@ import {
   supportLinks,
 } from '../utils/constants';
 import Subscribe from './Subscribe';
+import { useSubmenuContext } from '../context/submenuContext';
 
 const Footer = () => {
+  const { closeSubmenu } = useSubmenuContext();
   return (
-    <div className="bg-dark">
+    <div className="bg-dark" onMouseOver={closeSubmenu}>
       <Subscribe />
       <FooterWrapper className="section-center">
         <div>

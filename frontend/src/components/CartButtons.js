@@ -23,8 +23,7 @@ const CartButtons = () => {
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
-  justify-content: center;
+  place-items: center;
   column-gap: 1rem;
   .user-icon,
   .cart-icon {

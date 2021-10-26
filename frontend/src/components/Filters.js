@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { sublinks } from '../utils/constants';
 
 const Filters = () => {
   return (
@@ -7,12 +8,15 @@ const Filters = () => {
       <div className="content">
         <form onSubmit={(e) => e.preventDefault()}>
           <div className="form-control">
-            <input
-              type="text"
-              name="text"
-              placeholder="search"
-              className="search-input"
-            />
+            <div className="form-control">
+              <h3>category</h3>
+              <div>
+                {sublinks.map((link, index) => {
+                  const { links } = link;
+                  return <button key={index}>{links.text}</button>;
+                })}
+              </div>
+            </div>
           </div>
         </form>
       </div>

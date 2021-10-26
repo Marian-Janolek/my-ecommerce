@@ -17,7 +17,7 @@ const Navbar = () => {
     const page = e.target.textContent;
     const tempBtn = e.target.getBoundingClientRect();
     const center = (tempBtn.left + tempBtn.right) / 2;
-    const bottom = tempBtn.bottom + 2;
+    let bottom = tempBtn.bottom + 2;
     if (page === 'home' || page === 'new' || page === 'sale') {
       closeSubmenu();
     } else {
@@ -69,10 +69,6 @@ const Navbar = () => {
           })}
         </ul>
         <div className="icon-wrapper">
-          {/* <Link to="/login">
-            <AiOutlineUserAdd className="user-icon" />
-          </Link>
-          <BiCart className="cart-icon" /> */}
           <CartButtons />
         </div>
       </div>
@@ -82,15 +78,10 @@ const Navbar = () => {
 
 const NavContainer = styled.nav`
   height: var(--header-height);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
 
   .nav-center {
-    width: 90vw;
-    margin: 0 auto;
-    max-width: var(--max-width);
+    width: 100vw;
+    margin: 1rem auto;
   }
 
   .nav-header {
@@ -130,14 +121,7 @@ const NavContainer = styled.nav`
   .icon-wrapper {
     display: none;
   }
-  .active {
-    background-color: var(--white-color);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    /* -webkit-box-shadow: 0px 10px 13px -7px #000000,
-      5px 5px 6px 5px rgba(142, 142, 142, 0);
-    box-shadow: 0px 10px 13px -7px #000000,
-      5px 5px 6px 5px rgba(142, 142, 142, 0); */
-  }
+
   @media screen and (min-width: 992px) {
     .icon-wrapper {
       display: flex;
@@ -148,15 +132,23 @@ const NavContainer = styled.nav`
     }
     .nav-center {
       display: grid;
-      grid-template-columns: auto 1fr auto;
+      grid-template-columns: auto 0.7fr 0.45fr;
       align-items: center;
-      /* width: 100%;
       position: fixed;
       height: var(--header-height);
       z-index: 10;
-      transition: 0.3s; */
+      transition: 0.3s;
+      margin: 0 auto;
+      padding: 0 6vw;
+      column-gap: 1rem;
     }
     .nav-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      img {
+        width: 175px;
+      }
     }
     .nav-links {
       display: flex;
@@ -179,6 +171,11 @@ const NavContainer = styled.nav`
     .btn-links:hover::after {
       left: 0%;
       width: 100%;
+    }
+    .active {
+      background-color: var(--white-color);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 5px 10px -7px var(--dark-color);
     }
   }
 `;
