@@ -88,7 +88,7 @@ const FooterWrapper = styled.footer`
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   padding-top: 4rem;
-  padding-bottom: 5rem;
+  padding-bottom: 6rem;
   position: relative;
 
   .footer-about {
@@ -137,7 +137,7 @@ const FooterWrapper = styled.footer`
     position: absolute;
     color: var(--white-color);
     left: 50%;
-    bottom: 1rem;
+    bottom: 2rem;
     transform: translateX(-50%);
   }
   .creator {

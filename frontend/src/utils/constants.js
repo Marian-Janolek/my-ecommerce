@@ -514,14 +514,12 @@ export const faqQuestions = [
   },
 ];
 
-export const submenuImg = [
-  {
-    image: [
-      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634887937/my-ecommerce/store3_ilnsni.jpg',
-      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634739156/my-ecommerce/men_sneakers_mnb8lz.jpg',
-      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630181/my-ecommerce/women2_gtiblg.png',
-      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634739156/my-ecommerce/men_sneakers_mnb8lz.jpg',
-      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630181/my-ecommerce/women2_gtiblg.png',
-    ],
-  },
-];
+export const submenuImg = {
+  image: [
+    'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634887937/my-ecommerce/store3_ilnsni.jpg',
+    'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634739156/my-ecommerce/men_sneakers_mnb8lz.jpg',
+    'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630181/my-ecommerce/women2_gtiblg.png',
+    'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634739156/my-ecommerce/men_sneakers_mnb8lz.jpg',
+    'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630181/my-ecommerce/women2_gtiblg.png',
+  ],
+};

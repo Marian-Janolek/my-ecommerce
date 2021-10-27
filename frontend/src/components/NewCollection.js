@@ -2,10 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import Card from './Card';
 import { newCollection } from '../utils/constants';
+import { useSubmenuContext } from '../context/submenuContext';
 
 const NewCollection = () => {
+  const { closeSubmenu } = useSubmenuContext();
+
   return (
-    <div className="bg">
+    <div className="bg" onMouseOver={closeSubmenu}>
       <NewCollectionWrapper className="section-center">
         <h2>new collection</h2>
         <div className="underline"></div>

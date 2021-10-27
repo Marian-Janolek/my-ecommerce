@@ -12,7 +12,7 @@ const Navbar = () => {
   const { openSidebar } = useSidebarContext();
   const { openSubmenu, closeSubmenu } = useSubmenuContext();
   const [navbar, setNavbar] = useState(false);
-  const [navPosition, setNavPosition] = useState(0);
+  // const [navPosition, setNavPosition] = useState(0);
 
   const displaySubmenu = (e) => {
     // const nav = document.getElementById('nav');
@@ -21,7 +21,7 @@ const Navbar = () => {
     const page = e.target.textContent;
     const tempBtn = e.target.getBoundingClientRect();
     const center = (tempBtn.left + tempBtn.right) / 2;
-    let bottom = tempBtn.bottom + 2;
+    let bottom = tempBtn.bottom - 3;
     if (page === 'home' || page === 'new' || page === 'sale') {
       closeSubmenu();
     } else {
@@ -84,7 +84,7 @@ const NavContainer = styled.nav`
   height: var(--header-height);
 
   .nav-center {
-    width: 100vw;
+    width: 90vw;
     margin: 1rem auto;
   }
 
@@ -139,6 +139,7 @@ const NavContainer = styled.nav`
       grid-template-columns: auto 0.7fr 0.45fr;
       align-items: center;
       position: fixed;
+      width: 100vw;
       height: var(--header-height);
       z-index: 10;
       transition: 0.3s;

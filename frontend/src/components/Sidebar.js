@@ -47,6 +47,10 @@ const SidebarContainer = styled.div`
     align-items: center;
     padding: 1rem 1.5rem;
   }
+  h1 {
+    margin: 0;
+    padding: 0.5rem;
+  }
   .close-btn {
     font-size: 2rem;
     background: transparent;

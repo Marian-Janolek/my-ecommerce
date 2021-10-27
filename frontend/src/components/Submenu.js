@@ -13,6 +13,7 @@ const Submenu = () => {
 
   const container = useRef(null);
   const [columns, setColumns] = useState('col-2');
+  const [img, setImg] = useState(submenuImg.image[0]);
 
   useEffect(() => {
     setColumns('col-2');
@@ -22,8 +23,8 @@ const Submenu = () => {
     submenu.style.top = `${bottom}px`;
   }, [location, links]);
 
-  const displayPreviewImg = (e) => {
-    const link = document.getElementById('id');
+  const displayPreviewImg = ({ index }) => {
+    setImg(submenuImg.image[index]);
   };
 
   return (
@@ -34,26 +35,17 @@ const Submenu = () => {
       >
         <div className={`submenu-center ${columns}`}>
           <ul className="submenu-flex">
-            {links.map((link) => {
+            {links.map((link, index) => {
               const { id, text, url } = link;
               return (
-                <Link
-                  id={id}
-                  to={url}
-                  key={id}
-                  className="submenu-links"
-                  onMouseOver={displayPreviewImg}
-                >
+                <Link id={id} to={url} key={id} className="submenu-links">
                   {text}{' '}
                 </Link>
               );
             })}
           </ul>
           <section className="submenu-img">
-            <img
-              src="https://res.cloudinary.com/do5rzxmh3/image/upload/v1634739156/my-ecommerce/men_sneakers_mnb8lz.jpg"
-              alt=""
-            />
+            <img src={img} />
           </section>
         </div>
       </aside>
@@ -65,7 +57,7 @@ const SubmenuContainer = styled.div`
   .submenu {
     background: var(--white-color);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    position: absolute;
+    position: fixed;
     top: 4rem;
     left: 50%;
     transform: translateX(-50%);
@@ -100,7 +92,7 @@ const SubmenuContainer = styled.div`
   .submenu-flex {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     width: 7rem;
     gap: 1rem;
   }
@@ -117,6 +109,8 @@ const SubmenuContainer = styled.div`
     border-radius: var(--radius);
     border: 2px solid var(--dark-color);
     z-index: 20;
+    object-fit: cover;
+    background: no-repeat;
   }
   .submenu-links {
     display: inline-block;
