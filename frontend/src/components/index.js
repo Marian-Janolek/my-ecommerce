@@ -22,6 +22,7 @@ import Payments from './Payments';
 import ProductReclaim from './ProductReclaim';
 import ProductHelp from './ProductHelp';
 import Filters from './Filters';
+import Sort from './Sort';
 
 export {
   Navbar,
@@ -48,4 +49,5 @@ export {
   ProductReclaim,
   ProductHelp,
   Filters,
+  Sort,
 };
