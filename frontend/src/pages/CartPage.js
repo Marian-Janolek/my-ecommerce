@@ -1,8 +1,11 @@
 import React from 'react';
-import { CartHeader } from '../components';
-
+import { CartContent } from '../components';
 const CartPage = () => {
-  return <CartHeader />;
+  return (
+    <>
+      <CartContent />
+    </>
+  );
 };
 
 export default CartPage;
