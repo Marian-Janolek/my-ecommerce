@@ -67,6 +67,21 @@ const Checkout = () => {
               </i>
             </div>
           </div>
+
+          <h2>shipping</h2>
+          <div className="form-container">
+            <form className="flex-form">
+              <label htmlFor="adress">Your address</label>
+              <input type="text" placeholder="Enter adress" />
+              <label htmlFor="city">City</label>
+              <input type="text" placeholder="Enter City" />
+              <label htmlFor="postal">Postal Code</label>
+              <input type="text" placeholder="Enter postal code" />
+              <label htmlFor="country">Country</label>
+              <input type="text" placeholder="Enter country" />
+            </form>
+          </div>
+
           <button
             type="button"
             className="btn"
@@ -127,12 +142,12 @@ const Wrapper = styled.main`
   }
   .progress-container::before {
     content: '';
-    background-color: var(--white-color);
+    background-color: var(--dark-color-light);
     position: absolute;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    height: 4px;
+    height: 2px;
     width: 100%;
     z-index: -1;
     transition: var(--transition);
@@ -176,6 +191,47 @@ const Wrapper = styled.main`
   .btn:disabled {
     background-color: var(--dark-color-light);
     cursor: not-allowed;
+  }
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white-color);
+    border: 1px solid var(--dark-color-light);
+    width: 100%;
+    transition: 0.3s ease;
+  }
+  .form-container:hover {
+    border-color: var(--dark-color);
+  }
+  .flex-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+  }
+  .flex-form input {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-bold);
+  }
+  .flex-form input::placeholder {
+    font-size: var(--smaller-font-size);
+    color: var(--dark-color-light);
+    letter-spacing: var(--spacing);
+    font-weight: var(--font-medium);
+  }
+
+  .flex-form label {
+    margin: 0.5rem;
+    text-align: left;
+  }
+  h2 {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: var(--spacing);
   }
 `;
 

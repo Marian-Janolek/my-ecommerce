@@ -46,7 +46,6 @@ const SearchBoxWrapper = styled.div`
     font-size: var(--normal-font-size);
     padding: 0.5rem;
     font-weight: var(--font-bold);
-    font-size: var(--fonts-semi-bold);
     padding-left: 1rem;
   }
   .search-input::placeholder {
