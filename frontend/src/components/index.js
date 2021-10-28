@@ -23,6 +23,7 @@ import ProductReclaim from './ProductReclaim';
 import ProductHelp from './ProductHelp';
 import Filters from './Filters';
 import Sort from './Sort';
+import Checkout from './Checkout';
 
 export {
   Navbar,
@@ -50,4 +51,5 @@ export {
   ProductHelp,
   Filters,
   Sort,
+  Checkout,
 };

@@ -17,6 +17,7 @@ import {
   ProductHelpPage,
   CustomerCarePage,
   ProductPage,
+  CheckoutPage,
 } from './pages';
 import ScrollToTop from './context/scrollToTop';
 
@@ -69,6 +70,9 @@ const App = () => {
           </Route>
           <Route path="/products">
             <ProductPage />
+          </Route>
+          <Route path="/checkout">
+            <CheckoutPage />
           </Route>
         </Switch>
         <Footer />

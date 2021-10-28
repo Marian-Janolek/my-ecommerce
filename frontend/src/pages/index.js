@@ -12,6 +12,7 @@ import ProductExchangePage from './ProductExchangePage';
 import ProductHelpPage from './ProductHelpPage';
 import CustomerCarePage from './CustomerCarePage';
 import ProductPage from './ProductPage';
+import CheckoutPage from './CheckoutPage';
 
 export {
   MenPage,
@@ -28,4 +29,5 @@ export {
   ProductHelpPage,
   CustomerCarePage,
   ProductPage,
+  CheckoutPage,
 };

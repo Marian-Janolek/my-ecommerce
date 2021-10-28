@@ -76,11 +76,16 @@ img {
   height: auto;
   display: block;
 }
+
+select {
+  font-weight: 550;
+}
 .section-center {
   width: 90vw;
   margin: 0 auto;
   max-width: var(--max-width);
 }
+
 .grid {
   max-width: 1024px;
   display: grid;
