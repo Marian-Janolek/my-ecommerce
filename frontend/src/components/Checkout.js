@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { RiNumber1, RiNumber2, RiNumber3, RiNumber4 } from 'react-icons/ri';
+import { useSubmenuContext } from '../context/submenuContext';
 
 const Checkout = () => {
   const [currentActive, setCurrentActive] = useState(1);
@@ -8,6 +9,7 @@ const Checkout = () => {
   const progress = document.querySelector('.progress');
   const prev = document.getElementById('prev');
   const next = document.getElementById('next');
+  const { closeSubmenu } = useSubmenuContext();
 
   const update = () => {
     {
@@ -34,7 +36,7 @@ const Checkout = () => {
   };
 
   return (
-    <div>
+    <div onMouseOver={closeSubmenu}>
       <Wrapper className="section-center">
         <div className="container">
           <h2>step progress bar</h2>
@@ -70,15 +72,28 @@ const Checkout = () => {
 
           <h2>shipping</h2>
           <div className="form-container">
-            <form className="flex-form">
+            <form className="flex-form" id="shipping">
               <label htmlFor="adress">Your address</label>
-              <input type="text" placeholder="Enter adress" />
+              <input type="text" placeholder="Enter adress" required />
               <label htmlFor="city">City</label>
-              <input type="text" placeholder="Enter City" />
+              <input type="text" placeholder="Enter City" required />
               <label htmlFor="postal">Postal Code</label>
-              <input type="text" placeholder="Enter postal code" />
+              <input type="text" placeholder="Enter postal code" required />
               <label htmlFor="country">Country</label>
-              <input type="text" placeholder="Enter country" />
+              <input type="text" placeholder="Enter country" required />
+            </form>
+          </div>
+
+          <h2>payment method</h2>
+          <div className="form-container">
+            <form className="flex-form">
+              <label htmlFor="payment">Select Method</label>
+              <div className="check-flex">
+                <input type="checkbox" name="paypal" id="PayPal" />
+                <label htmlFor="payment">PayPal or Credit Card</label>
+                <input type="checkbox" name="cash" id="cash" />
+                <label htmlFor="cash">Cash on delivery</label>
+              </div>
             </form>
           </div>
 
@@ -232,6 +247,12 @@ const Wrapper = styled.main`
     margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: var(--spacing);
+  }
+  .check-flex {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    justify-content: left;
+    align-items: center;
   }
 `;
 

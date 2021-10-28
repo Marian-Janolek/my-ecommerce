@@ -24,6 +24,7 @@ import ProductHelp from './ProductHelp';
 import Filters from './Filters';
 import Sort from './Sort';
 import Checkout from './Checkout';
+import CartHeader from './CartHeader';
 
 export {
   Navbar,
@@ -52,4 +53,5 @@ export {
   Filters,
   Sort,
   Checkout,
+  CartHeader,
 };
