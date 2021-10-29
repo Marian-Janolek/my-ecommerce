@@ -88,8 +88,14 @@ const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
-    align-items: center;
+    width: 100%;
     margin-top: 1rem;
+  }
+  .btn {
+    transition: none;
+  }
+  .btn:active {
+    transform: scale(0.97);
   }
   .btns a {
     text-align: center;

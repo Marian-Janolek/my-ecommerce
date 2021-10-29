@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import CartHeader from './CartHeader';
 import CartItem from './CartItem';
 import { useSubmenuContext } from '../context/submenuContext';
@@ -8,6 +7,7 @@ import { CartTotals } from '.';
 
 const CartContent = () => {
   const { closeSubmenu } = useSubmenuContext();
+
   return (
     <div onMouseOver={closeSubmenu}>
       <Wrapper className="section-center">
