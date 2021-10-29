@@ -29,6 +29,12 @@ import CartItem from './CartItem';
 import AmountButtons from './AmountButtons';
 import CartContent from './CartContent';
 import CartTotals from './CartTotals';
+import ProfileHeader from './ProfileHeader';
+import ProfileMenu from './ProfileMenu';
+import ProfileContent from './ProfileContent';
+import Order from './Order';
+import UserUpdate from './UserUpdate';
+import UserReviews from './UserReviews';
 
 export {
   Navbar,
@@ -62,4 +68,10 @@ export {
   AmountButtons,
   CartContent,
   CartTotals,
+  ProfileHeader,
+  ProfileMenu,
+  ProfileContent,
+  Order,
+  UserUpdate,
+  UserReviews,
 };

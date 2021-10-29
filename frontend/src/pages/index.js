@@ -14,6 +14,7 @@ import CustomerCarePage from './CustomerCarePage';
 import ProductPage from './ProductPage';
 import CheckoutPage from './CheckoutPage';
 import CartPage from './CartPage';
+import ProfilePage from './ProfilePage';
 
 export {
   MenPage,
@@ -32,4 +33,5 @@ export {
   ProductPage,
   CheckoutPage,
   CartPage,
+  ProfilePage,
 };
