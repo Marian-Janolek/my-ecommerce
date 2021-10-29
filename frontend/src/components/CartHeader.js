@@ -19,8 +19,9 @@ const CartHeader = () => {
 const Wrapper = styled.div`
   .content {
     display: grid;
-    grid-template-columns: 15rem 1fr 1fr 1fr auto;
-    justify-content: center;
+    /* grid-template-columns: 15rem 1fr 1fr 1fr auto; */
+    grid-template-columns: 316px 1fr 1fr 1fr auto;
+    justify-items: center;
     column-gap: 1rem;
     h5 {
       color: var(--dark-color-light);
@@ -32,10 +33,6 @@ const Wrapper = styled.div`
   span {
     width: 2rem;
     height: 2rem;
-  }
-  hr {
-    margin-top: 0.5rem;
-    margin-bottom: 3rem;
   }
 `;
 

@@ -11,7 +11,7 @@ const CartItem = () => {
         <div>
           <h5 className="name">nike performance</h5>
           <p className="color">
-            color: <span>blue</span>
+            color: <span></span>
           </p>
           <h5 className="price-small">129</h5>
         </div>
@@ -55,6 +55,7 @@ const Wrapper = styled.article`
   h5 {
     font-size: 0.75rem;
     margin-bottom: 0;
+    text-transform: capitalize;
   }
   .color {
     color: var(--dark-color-lighten);
@@ -151,6 +152,7 @@ const Wrapper = styled.article`
     }
     .color {
       font-size: var(--smaller-font-size);
+      color: var(--dark-color);
       span {
         width: 0.75rem;
         height: 0.75rem;

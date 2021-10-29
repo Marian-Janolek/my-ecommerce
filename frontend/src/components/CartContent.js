@@ -3,28 +3,38 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import CartHeader from './CartHeader';
 import CartItem from './CartItem';
+import { useSubmenuContext } from '../context/submenuContext';
+import { CartTotals } from '.';
 
 const CartContent = () => {
+  const { closeSubmenu } = useSubmenuContext();
   return (
-    <Wrapper className="section-center ">
-      <CartHeader />
-      <CartItem />
-      <hr />
-      <div className="link-container">
-        <Link to="/products" className="btn">
-          continue shopping
-        </Link>
-        <button type="button" className="btn">
-          clear shopping cart
-        </button>
-      </div>
-    </Wrapper>
+    <div onMouseOver={closeSubmenu}>
+      <Wrapper className="section-center">
+        <div>
+          <CartHeader />
+          <CartItem />
+          <hr />
+          <CartItem />
+          <hr />
+          <CartItem />
+          <hr />
+          <CartItem />
+          <hr />
+        </div>
+        <CartTotals />
+      </Wrapper>
+    </div>
   );
 };
 
 const Wrapper = styled.section`
   margin-top: 3rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: flex-end;
+  column-gap: 2.5rem;
+
   .link-container {
     display: flex;
     justify-content: space-between;
