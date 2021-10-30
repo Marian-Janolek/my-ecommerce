@@ -55,6 +55,7 @@ const Wrapper = styled.article`
   width: 50vw;
   background-color: var(--white-color);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
   .order-flex {
     display: flex;
     justify-content: space-between;

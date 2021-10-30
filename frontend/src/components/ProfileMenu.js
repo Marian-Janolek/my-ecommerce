@@ -41,6 +41,30 @@ const Wrapper = styled.div`
     justify-content: center;
     column-gap: 2rem;
   }
+
+  .btn-links {
+    border: none;
+    color: var(--dark-color-light);
+    font-weight: var(--font-semi-bold);
+  }
+  .btn-links:hover {
+    color: var(--dark-color);
+  }
+  .btn-links::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 0.1rem;
+    background-color: var(--dark-color);
+    bottom: 0%;
+    left: 50%;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  .btn-links:hover::after {
+    left: 0%;
+    width: 100%;
+  }
 `;
 
 export default ProfileMenu;
