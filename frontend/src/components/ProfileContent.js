@@ -3,13 +3,17 @@ import styled from 'styled-components';
 
 import ProfileHeader from '../components/ProfileHeader';
 import ProfileMenu from '../components/ProfileMenu';
+import { useSubmenuContext } from '../context/submenuContext';
 
 const ProfileContent = () => {
+  const { closeSubmenu } = useSubmenuContext();
   return (
-    <Wrapper className="section-center">
-      <ProfileHeader />
-      <ProfileMenu />
-    </Wrapper>
+    <div onMouseOver={closeSubmenu}>
+      <Wrapper className="section-center">
+        <ProfileHeader />
+        <ProfileMenu />
+      </Wrapper>
+    </div>
   );
 };
 

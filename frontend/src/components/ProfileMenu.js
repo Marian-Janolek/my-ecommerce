@@ -19,9 +19,11 @@ const ProfileMenu = () => {
           Personal information
         </button>
       </div>
-      <Order />
-      <UserReviews />
-      <UserUpdate />
+      <article>
+        <Order />
+        <UserReviews />
+        <UserUpdate />
+      </article>
     </Wrapper>
   );
 };
