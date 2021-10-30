@@ -20,6 +20,7 @@ import {
   CheckoutPage,
   CartPage,
   ProfilePage,
+  AdminPage,
 } from './pages';
 import ScrollToTop from './context/scrollToTop';
 
@@ -81,6 +82,9 @@ const App = () => {
           </Route>
           <Route path="/profile">
             <ProfilePage />
+          </Route>
+          <Route path="/admin">
+            <AdminPage />
           </Route>
         </Switch>
         <Footer />

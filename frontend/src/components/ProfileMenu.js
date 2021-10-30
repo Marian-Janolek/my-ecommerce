@@ -4,25 +4,36 @@ import { Order, UserReviews, UserUpdate } from '.';
 
 const ProfileMenu = () => {
   const [buttons, setButtons] = useState([]);
-  const [value, setValue] = useState(0);
-
+  const [value, setValue] = useState(1);
+  const id = [1, 2, 3];
   return (
     <Wrapper>
       <div className="btn-flex">
-        <button className="btn-links" onClick={() => setValue(1)}>
+        <button
+          className={`btn-links ${value === 1 && `btn-active`}`}
+          onClick={() => setValue(1)}
+        >
           Orders
         </button>
-        <button className="btn-links" onClick={() => setValue(2)}>
+        <button
+          className={`btn-links ${value === 2 && `btn-active`}`}
+          onClick={() => setValue(2)}
+        >
           Your reviews
         </button>
-        <button className="btn-links" onClick={() => setValue(3)}>
+        <button
+          className={`btn-links ${value === 3 && `btn-active`}`}
+          onClick={() => setValue(3)}
+        >
           Personal information
         </button>
       </div>
       <article>
-        <Order />
-        <UserReviews />
-        <UserUpdate />
+        {value === 1 && <Order />}
+
+        {value === 2 && <UserReviews />}
+
+        {value === 3 && <UserUpdate />}
       </article>
     </Wrapper>
   );
@@ -50,7 +61,11 @@ const Wrapper = styled.div`
   .btn-links:hover {
     color: var(--dark-color);
   }
-  .btn-links::after {
+  button {
+    position: relative;
+  }
+  .btn-links::after,
+  .btn-active::after {
     content: '';
     position: absolute;
     width: 0%;
@@ -61,9 +76,16 @@ const Wrapper = styled.div`
     border-radius: 10px;
     transition: all 0.3s ease;
   }
+  .btn-active::after {
+    width: 100%;
+    left: 0%;
+  }
   .btn-links:hover::after {
     left: 0%;
     width: 100%;
+  }
+  .btn-active {
+    color: var(--dark-color);
   }
 `;
 

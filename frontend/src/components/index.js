@@ -35,6 +35,10 @@ import ProfileContent from './ProfileContent';
 import Order from './Order';
 import UserUpdate from './UserUpdate';
 import UserReviews from './UserReviews';
+import AdminUsers from './AdminUsers';
+import AdminProducts from './AdminProducts';
+import AdminOrders from './AdminOrders';
+import AdminContent from './AdminContent';
 
 export {
   Navbar,
@@ -74,4 +78,8 @@ export {
   Order,
   UserUpdate,
   UserReviews,
+  AdminUsers,
+  AdminProducts,
+  AdminOrders,
+  AdminContent,
 };

@@ -15,6 +15,7 @@ import ProductPage from './ProductPage';
 import CheckoutPage from './CheckoutPage';
 import CartPage from './CartPage';
 import ProfilePage from './ProfilePage';
+import AdminPage from './AdminPage';
 
 export {
   MenPage,
@@ -34,4 +35,5 @@ export {
   CheckoutPage,
   CartPage,
   ProfilePage,
+  AdminPage,
 };
