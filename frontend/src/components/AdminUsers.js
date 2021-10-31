@@ -34,17 +34,17 @@ const AdminUsers = () => {
             <th>id</th>
             <th>name</th>
             <th>email</th>
-            <th>admin</th>
-            <th></th>
+            <th className="admin">admin</th>
+            <th className="icons"></th>
           </tr>
           {people.map((person) => {
             const { id, name, email, admin } = person;
             return (
               <tr>
                 <td>{id}</td>
-                <td>{name}</td>
+                <td className="name">{name}</td>
                 <td>{email}</td>
-                <td>
+                <td className="admin-icon">
                   {admin ? (
                     <i>
                       <GrFormCheckmark />
@@ -55,7 +55,7 @@ const AdminUsers = () => {
                     </i>
                   )}
                 </td>
-                <td>
+                <td className="icons-flex">
                   <i>
                     <BsPencilSquare />
                   </i>
@@ -72,6 +72,43 @@ const AdminUsers = () => {
   );
 };
 
-const Wrapper = styled.article``;
+const Wrapper = styled.article`
+  table {
+    max-width: 80vw;
+    background-color: var(--white-color);
+  }
+  table,
+  th {
+    border: 1px solid var(--dark-color-light);
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 0.5rem;
+  }
+  th {
+    text-transform: uppercase;
+  }
+  td {
+    color: var(--dark-color);
+  }
+  tr:nth-child(even) {
+    background-color: var(--dark-color-lighten);
+  }
+  .name,
+  .admin,
+  .icons {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .admin-icon {
+    text-align: center;
+  }
+  .icons-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+`;
 
 export default AdminUsers;
