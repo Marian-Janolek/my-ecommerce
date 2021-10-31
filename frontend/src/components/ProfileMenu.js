@@ -3,9 +3,7 @@ import styled from 'styled-components';
 import { Order, UserReviews, UserUpdate } from '.';
 
 const ProfileMenu = () => {
-  const [buttons, setButtons] = useState([]);
   const [value, setValue] = useState(1);
-  const id = [1, 2, 3];
   return (
     <Wrapper>
       <div className="btn-flex">
