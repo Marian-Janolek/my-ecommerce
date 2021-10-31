@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaTrash, FaYenSign } from 'react-icons/fa';
+import { FaTrash } from 'react-icons/fa';
 import { BsPencilSquare } from 'react-icons/bs';
 import { GrFormCheckmark, GrFormClose } from 'react-icons/gr';
 
@@ -28,6 +28,7 @@ const AdminUsers = () => {
 
   return (
     <Wrapper>
+      <h2>users</h2>
       <table>
         <tbody>
           <tr>
@@ -43,7 +44,7 @@ const AdminUsers = () => {
               <tr>
                 <td>{id}</td>
                 <td className="name">{name}</td>
-                <td>{email}</td>
+                <td className="email">{email}</td>
                 <td className="admin-icon">
                   {admin ? (
                     <i>
@@ -73,6 +74,13 @@ const AdminUsers = () => {
 };
 
 const Wrapper = styled.article`
+  h2 {
+    text-transform: uppercase;
+    letter-spacing: var(--spacing);
+    font-size: 2rem;
+    font-weight: var(--font-semi-bold);
+    margin-bottom: 1rem;
+  }
   table {
     max-width: 80vw;
     background-color: var(--white-color);
@@ -98,12 +106,15 @@ const Wrapper = styled.article`
   }
   .name,
   .admin,
-  .icons {
+  .icons,
+  .email {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+
   .admin-icon {
     text-align: center;
+    font-size: 1.2rem;
   }
   .icons-flex {
     display: flex;
