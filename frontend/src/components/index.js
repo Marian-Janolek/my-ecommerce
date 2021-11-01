@@ -41,7 +41,8 @@ import AdminOrders from './AdminOrders';
 import AdminContent from './AdminContent';
 import SingleProduct from './SingleProduct';
 import AddToCart from './AddToCart';
-import ProductImage from './ProductImage';
+import ProductImages from './ProductImages';
+import Stars from './Stars';
 
 export {
   Navbar,
@@ -87,5 +88,6 @@ export {
   AdminContent,
   SingleProduct,
   AddToCart,
-  ProductImage,
+  ProductImages,
+  Stars,
 };

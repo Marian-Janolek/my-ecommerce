@@ -72,24 +72,26 @@ const App = () => {
           <Route exact path="/care">
             <CustomerCarePage />
           </Route>
-          <Route path="/products">
+          <Route exact path="/products">
             <ProductPage />
           </Route>
-          <Route path="/checkout">
+          <Route exact path="/checkout">
             <CheckoutPage />
           </Route>
-          <Route path="/cart">
+          <Route exact path="/cart">
             <CartPage />
           </Route>
-          <Route path="/profile">
+          <Route exact path="/profile">
             <ProfilePage />
           </Route>
-          <Route path="/admin">
+          <Route exact path="/admin">
             <AdminPage />
           </Route>
-          <Route exact path="/products/:id" children={<SingleProductPage />}>
-            <AdminPage />
-          </Route>
+          <Route
+            exact
+            path="/products/:id"
+            children={<SingleProductPage />}
+          ></Route>
         </Switch>
         <Footer />
         {/* <Loading /> */}

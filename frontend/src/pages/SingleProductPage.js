@@ -1,7 +1,8 @@
 import React from 'react';
+import { SingleProduct } from '../components';
 
 const SingleProductPage = () => {
-  return <div></div>;
+  return <SingleProduct />;
 };
 
 export default SingleProductPage;
