@@ -32,6 +32,7 @@ const Wrapper = styled.section`
   }
   .gallery {
     margin-top: 1rem;
+    margin-bottom: 4rem;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     column-gap: 1rem;
@@ -42,6 +43,7 @@ const Wrapper = styled.section`
   }
   .active {
     box-shadow: var(--shadow);
+    transform: scale(1.1);
   }
   @media (max-width: 576px) {
     .main {

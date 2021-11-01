@@ -38,6 +38,7 @@ const Wrapper = styled.div`
   p {
     margin-left: 0.5rem;
     margin-bottom: 0;
+    text-transform: capitalize;
   }
 `;
 

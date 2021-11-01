@@ -59,9 +59,8 @@ const SingleProduct = () => {
       <div className="product-center">
         <ProductImages images={images} />
         <section className="content">
-          <h2>nike Performance</h2>
+          <h2>{name}</h2>
           <Stars stars={stars} reviews={reviews} />
-          <p className="desc">{desc}</p>
           <div className="info">
             <h5 className="price">{price} €</h5>
             <div className="sizes">{sizes}</div>
@@ -71,6 +70,14 @@ const SingleProduct = () => {
           </div>
         </section>
       </div>
+      <h2 className="h2">Product Description</h2>
+      <section className="product-desc">
+        <img src="https://res.cloudinary.com/do5rzxmh3/image/upload/v1634654510/my-ecommerce/ourSortiment2_fcyvts.jpg" />
+        <section>
+          <h2>{name}</h2>
+          <p className="desc">{desc}</p>
+        </section>
+      </section>
     </Wrapper>
   );
 };
@@ -90,7 +97,7 @@ const Wrapper = styled.article`
 
   .desc {
     line-height: 2;
-    /* max-width: 30rem; */
+    max-width: 30rem;
   }
   span {
     font-weight: var(--font-bold);
@@ -111,14 +118,28 @@ const Wrapper = styled.article`
     padding: 0.7rem;
     text-transform: uppercase;
   }
+  .h2 {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
 
   @media (min-width: 992px) {
     .product-center {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.3fr 1fr;
       align-items: center;
+      margin-left: 3rem;
     }
     .price {
       font-size: var(--bigger-font-size);
+    }
+    .product-desc {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      img {
+        width: 100%;
+        border-radius: calc(var(--radius) * 2);
+      }
     }
   }
 `;
