@@ -39,6 +39,9 @@ import AdminUsers from './AdminUsers';
 import AdminProducts from './AdminProducts';
 import AdminOrders from './AdminOrders';
 import AdminContent from './AdminContent';
+import SingleProduct from './SingleProduct';
+import AddToCart from './AddToCart';
+import ProductImage from './ProductImage';
 
 export {
   Navbar,
@@ -82,4 +85,7 @@ export {
   AdminProducts,
   AdminOrders,
   AdminContent,
+  SingleProduct,
+  AddToCart,
+  ProductImage,
 };

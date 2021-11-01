@@ -23,6 +23,7 @@ import {
   AdminPage,
 } from './pages';
 import ScrollToTop from './context/scrollToTop';
+import SingleProductPage from './pages/SingleProductPage';
 
 const App = () => {
   return (
@@ -84,6 +85,9 @@ const App = () => {
             <ProfilePage />
           </Route>
           <Route path="/admin">
+            <AdminPage />
+          </Route>
+          <Route exact path="/products/:id" children={<SingleProductPage />}>
             <AdminPage />
           </Route>
         </Switch>

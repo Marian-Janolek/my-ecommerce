@@ -6,6 +6,7 @@ import { useSubmenuContext } from '../context/submenuContext';
 const AdminContent = () => {
   const [value, setValue] = React.useState(1);
   const { closeSubmenu } = useSubmenuContext();
+
   return (
     <div onMouseOver={closeSubmenu}>
       <Wrapper className="section-center">
