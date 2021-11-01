@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import { useSidebarContext } from '../context/sidebarContext';
 import { FaBars } from 'react-icons/fa';
 import { useSubmenuContext } from '../context/submenuContext';
+import logo from '../assets/logo.png';
+import logoLetters from '../assets/logo_letters.png';
 import SearchBox from './SearchBox';
 import CartButtons from './CartButtons';
 
@@ -44,8 +46,10 @@ const Navbar = () => {
     <NavContainer onMouseOver={handleSubmenu}>
       <div className={navbar ? 'nav-center active' : 'nav-center'} id="nav">
         <div className="nav-header">
-          {/* <Link to="/">logo</Link> */}
-          <h2>hello</h2>
+          <Link to="/" className="link-header">
+            <img src={logo} alt="logo" />
+            <img src={logoLetters} alt="logo_letters" />
+          </Link>
           <SearchBox />
           <button type="button" className="nav-toggle" onClick={openSidebar}>
             <FaBars />
@@ -84,14 +88,6 @@ const NavContainer = styled.nav`
     margin: 1rem auto;
   }
 
-  .nav-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    img {
-      width: 175px;
-    }
-  }
   .nav-toggle {
     background: transparent;
     border: transparent;
@@ -103,6 +99,18 @@ const NavContainer = styled.nav`
   }
   .nav-links {
     display: none;
+  }
+  .nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img {
+      width: 4rem;
+      margin-left: -15px;
+    }
+  }
+  .link-header {
+    display: flex;
   }
   .nav-toggle {
     background: transparent;
@@ -142,14 +150,6 @@ const NavContainer = styled.nav`
       margin: 0 auto;
       padding: 0 6vw;
       column-gap: 1rem;
-    }
-    .nav-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      img {
-        width: 175px;
-      }
     }
     .nav-links {
       display: flex;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 import { AddToCart } from '.';
@@ -6,18 +6,23 @@ import { ProductImages, Stars } from '.';
 
 const SingleProduct = () => {
   const { id } = useParams();
+  const [brandLogo, setBrandLogo] = useState('');
+  const logo = [
+    'https://res.cloudinary.com/do5rzxmh3/image/upload/v1635788814/my-ecommerce/adidas_logo_do6xd1.png',
+    'https://res.cloudinary.com/do5rzxmh3/image/upload/v1635787598/my-ecommerce/nike_logo_wb1pj1.png',
+    'https://res.cloudinary.com/do5rzxmh3/image/upload/v1635788814/my-ecommerce/puma_logo_a73rvr.png',
+  ];
 
   const products = {
     id: 1,
     name: 'nike performance',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum aliquid pariatur, consequuntur nobis molestias laudantium reiciendis. Minima reiciendis nulla fugiat explicabo deleniti id exercitationem, eaque facilis ipsam vero iusto ipsa quibusdam placeat quaerat beatae tenetur magni veritatis quod debitis ipsum inventore corporis non! Iusto eius amet at veritatis adipisci nihil, omnis architecto tempora voluptate, accusamus possimus non alias repellendus consectetur!',
-    stock: 21,
     stars: 4.6,
     reviews: 22,
     price: 119,
     brand: 'nike',
-    sizes: 38,
+    sizes: ['36', '37 1/3', '40', '40 2/3', '42', '42 2/3', '42', '42 2/3'],
     images: [
       {
         id: '2413432432',
@@ -49,21 +54,41 @@ const SingleProduct = () => {
     reviews,
     brand,
     images,
-    stock,
     sizes,
     price,
   } = products;
+
+  useEffect(() => {
+    if (brand === 'adidas') {
+      setBrandLogo(logo[0]);
+    } else if (brand === 'nike') {
+      setBrandLogo(logo[1]);
+    } else if (brand === 'puma') {
+      setBrandLogo(logo[2]);
+    }
+  }, []);
 
   return (
     <Wrapper className="section-center">
       <div className="product-center">
         <ProductImages images={images} />
         <section className="content">
+          <img src={brandLogo} alt="nike-logo" className="logo" />
           <h2>{name}</h2>
           <Stars stars={stars} reviews={reviews} />
           <div className="info">
+            <div className="sizes">
+              {sizes.map((size, index) => {
+                return (
+                  <button key={index} type="submit" className="size">
+                    {size}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+          <div className="flex-right">
             <h5 className="price">{price} €</h5>
-            <div className="sizes">{sizes}</div>
             <button type="submit" className="btn">
               add to cart
             </button>
@@ -88,7 +113,7 @@ const Wrapper = styled.article`
 
   .product-center {
     display: grid;
-    gap: 5rem;
+    gap: 4rem;
   }
 
   .price {
@@ -114,13 +139,13 @@ const Wrapper = styled.article`
     align-items: flex-start;
   }
   .btn {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     padding: 0.7rem;
     text-transform: uppercase;
   }
   .h2 {
     margin-top: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 
   @media (min-width: 992px) {
@@ -128,6 +153,9 @@ const Wrapper = styled.article`
       grid-template-columns: 1.3fr 1fr;
       align-items: center;
       margin-left: 3rem;
+    }
+    .content {
+      padding-left: 1rem;
     }
     .price {
       font-size: var(--bigger-font-size);
@@ -140,6 +168,40 @@ const Wrapper = styled.article`
         width: 100%;
         border-radius: calc(var(--radius) * 2);
       }
+    }
+    .sizes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      max-width: 70%;
+      margin-top: 0.5rem;
+      margin-bottom: 0.3rem;
+    }
+    .size {
+      position: relative;
+      padding: 0.3rem;
+      text-align: center;
+      transition: 0.3s;
+      letter-spacing: var(--spacing);
+      opacity: 1;
+      font-size: var(--smaller-font-size);
+      border: none;
+      background-color: var(--white-color);
+      font-weight: var(--font-semi-bold);
+    }
+    .size:hover {
+      background-color: var(--dark-color);
+      color: var(--white-color);
+    }
+    .logo {
+      width: 25%;
+      margin-bottom: 1rem;
+    }
+    .flex-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      width: 70%;
     }
   }
 `;
