@@ -1,6 +1,13 @@
 import './index.css';
 import React from 'react';
-import { Navbar, Sidebar, Submenu, Loading, Footer } from './components';
+import {
+  Navbar,
+  Sidebar,
+  Submenu,
+  Loading,
+  Footer,
+  NewCollection,
+} from './components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import {
   MenPage,
@@ -35,6 +42,9 @@ const App = () => {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/new">
+            <NewCollection />
           </Route>
           <Route exact path="/men">
             <MenPage />

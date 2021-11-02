@@ -3,10 +3,14 @@ import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 import { AddToCart } from '.';
 import { ProductImages, Stars } from '.';
+import { useSubmenuContext } from '../context/submenuContext';
 
 const SingleProduct = () => {
   const { id } = useParams();
   const [brandLogo, setBrandLogo] = useState('');
+
+  const { closeSubmenu } = useSubmenuContext();
+
   const logo = [
     'https://res.cloudinary.com/do5rzxmh3/image/upload/v1635788814/my-ecommerce/adidas_logo_do6xd1.png',
     'https://res.cloudinary.com/do5rzxmh3/image/upload/v1635787598/my-ecommerce/nike_logo_wb1pj1.png',
@@ -69,41 +73,43 @@ const SingleProduct = () => {
   }, []);
 
   return (
-    <Wrapper className="section-center">
-      <div className="product-center">
-        <ProductImages images={images} />
-        <section className="content">
-          <img src={brandLogo} alt="nike-logo" className="logo" />
-          <h2>{name}</h2>
-          <Stars stars={stars} reviews={reviews} />
-          <div className="info">
-            <div className="sizes">
-              {sizes.map((size, index) => {
-                return (
-                  <button key={index} type="submit" className="size">
-                    {size}
-                  </button>
-                );
-              })}
+    <div onMouseOver={closeSubmenu}>
+      <Wrapper className="section-center">
+        <div className="product-center">
+          <ProductImages images={images} />
+          <section className="content">
+            <img src={brandLogo} alt="nike-logo" className="logo" />
+            <h2>{name}</h2>
+            <Stars stars={stars} reviews={reviews} />
+            <div className="info">
+              <div className="sizes">
+                {sizes.map((size, index) => {
+                  return (
+                    <button key={index} type="submit" className="size">
+                      {size}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-          <div className="flex-right">
-            <h5 className="price">{price} €</h5>
-            <button type="submit" className="btn">
-              add to cart
-            </button>
-          </div>
+            <div className="flex-right">
+              <h5 className="price">{price} €</h5>
+              <button type="submit" className="btn">
+                add to cart
+              </button>
+            </div>
+          </section>
+        </div>
+        <h2 className="h2">Product Description</h2>
+        <section className="product-desc">
+          <img src="https://res.cloudinary.com/do5rzxmh3/image/upload/v1634654510/my-ecommerce/ourSortiment2_fcyvts.jpg" />
+          <section>
+            <h2>{name}</h2>
+            <p className="desc">{desc}</p>
+          </section>
         </section>
-      </div>
-      <h2 className="h2">Product Description</h2>
-      <section className="product-desc">
-        <img src="https://res.cloudinary.com/do5rzxmh3/image/upload/v1634654510/my-ecommerce/ourSortiment2_fcyvts.jpg" />
-        <section>
-          <h2>{name}</h2>
-          <p className="desc">{desc}</p>
-        </section>
-      </section>
-    </Wrapper>
+      </Wrapper>
+    </div>
   );
 };
 
