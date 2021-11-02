@@ -105,6 +105,7 @@ const NavContainer = styled.nav`
     align-items: center;
     justify-content: space-between;
     img {
+      height: 3.5rem;
       width: 4rem;
       margin-left: -15px;
     }

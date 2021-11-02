@@ -56,6 +56,7 @@ const Wrapper = styled.section`
   }
   hr {
     background-color: var(--dark-color);
+    margin-bottom: 0.5rem;
   }
   .btn-container {
     display: grid;

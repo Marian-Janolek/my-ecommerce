@@ -43,6 +43,9 @@ import SingleProduct from './SingleProduct';
 import AddToCart from './AddToCart';
 import ProductImages from './ProductImages';
 import Stars from './Stars';
+import ListView from './ListView';
+import GridView from './GridView';
+import ProductList from './ProductList';
 
 export {
   Navbar,
@@ -90,4 +93,7 @@ export {
   AddToCart,
   ProductImages,
   Stars,
+  GridView,
+  ListView,
+  ProductList,
 };

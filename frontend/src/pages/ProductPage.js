@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Filters } from '../components';
+import { Filters, ProductList } from '../components';
 import { Sort } from '../components';
 import { useSubmenuContext } from '../context/submenuContext';
 
@@ -14,6 +14,7 @@ const ProductPage = () => {
           <Filters />
           <div>
             <Sort />
+            <ProductList />
           </div>
         </div>
       </Wrapper>
