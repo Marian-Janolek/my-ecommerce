@@ -1,15 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 import { BsFillGridFill, BsList } from 'react-icons/bs';
+import { useFilterContext } from '../context/filterContext';
 
 const Sort = () => {
+  const { grid_view, setGridView, setListView } = useFilterContext();
   return (
     <Wrapper>
       <div className="btn-container">
-        <button type="button" className="active">
+        <button
+          type="button"
+          className={`${grid_view ? 'active' : 'null'}`}
+          onClick={setGridView}
+        >
           <BsFillGridFill />
         </button>
-        <button type="button" className="active">
+        <button
+          type="button"
+          className={`${!grid_view ? 'active' : 'null'}`}
+          onClick={setListView}
+        >
           <BsList />
         </button>
       </div>
@@ -55,7 +65,6 @@ const Wrapper = styled.section`
     margin-bottom: 0;
   }
   hr {
-    background-color: var(--dark-color);
     margin-bottom: 0.5rem;
   }
   .btn-container {
@@ -65,8 +74,8 @@ const Wrapper = styled.section`
     button {
       background-color: transparent;
       border: 1px solid var(--dark-color);
-      color: var(--white-color);
       width: 1.5rem;
+      height: 1.5rem;
       border-radius: var(--radius);
       display: flex;
       align-items: center;

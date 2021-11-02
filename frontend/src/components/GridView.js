@@ -1,37 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
+import { newCollection } from '../utils/constants';
+import { Card } from '.';
 
 const GridView = () => {
-  const products = [
-    {
-      id: 1,
-      image:
-        'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630181/my-ecommerce/women2_gtiblg.png',
-      name: 'nike performance',
-      price: 111,
-      desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat ipsa optio maxime, mollitia natus, ea iste illo non ex, est officia numquam! Numquam porro ipsa dolore in ex quia odio debitis adipisci quos accusantium eveniet cum, sunt nostrum? Ullam, dolorem! Repellendus, nostrum? Possimus ipsam veritatis nobis delectus consequatur maxime doloremque! Sequi itaque eligendi dignissimos inventore hic perspiciatis animi molestias quos?',
-    },
-    {
-      id: 2,
-      image:
-        'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630180/my-ecommerce/women1_hyh6az.png',
-      name: 'nike air max',
-      price: 99.99,
-      desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat ipsa optio maxime, mollitia natus, ea iste illo non ex, est officia numquam! Numquam porro ipsa dolore in ex quia odio debitis adipisci quos accusantium eveniet cum, sunt nostrum? Ullam, dolorem! Repellendus, nostrum? Possimus ipsam veritatis nobis delectus consequatur maxime doloremque! Sequi itaque eligendi dignissimos inventore hic perspiciatis animi molestias quos?',
-    },
-  ];
-
   return (
     <Wrapper>
       <div className="product-container">
-        {products.map((product) => {
-          return;
+        {newCollection.map((newC) => {
+          const { id, name, image, price } = newC;
+          return (
+            <Card
+              key={id}
+              name={name}
+              image={image}
+              price={price}
+              data={newC.size}
+              s
+            />
+          );
         })}
       </div>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.section``;
+const Wrapper = styled.section`
+  .product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem 1.5rem;
+  }
+`;
 
 export default GridView;

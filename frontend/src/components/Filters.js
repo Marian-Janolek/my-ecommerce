@@ -20,7 +20,11 @@ const Filters = () => {
                       {links.map((el) => {
                         const { id, text } = el;
                         return (
-                          <button key={id + index} type="button">
+                          <button
+                            key={id + index}
+                            type="button"
+                            className="filter-btn"
+                          >
                             {text}
                           </button>
                         );
@@ -179,6 +183,11 @@ const Wrapper = styled.section`
     color: var(--white-color);
     padding: 0.25rem 0.5rem;
     border-radius: var(--radius);
+  }
+  .filter-btn:hover {
+    color: var(--dark-color);
+    font-size: var(--smaller-font-size);
+    font-weight: var(--font-bold);
   }
 
   @media (min-width: 768px) {
