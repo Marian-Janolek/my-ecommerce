@@ -76,7 +76,7 @@ const ProductSchema = mongoose.Schema(
       default: 0,
     },
     sizes: {
-      type: [Number],
+      type: [String],
       required: true,
     },
     colors: {
