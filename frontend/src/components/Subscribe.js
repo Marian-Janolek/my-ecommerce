@@ -100,6 +100,24 @@ const SubscribeWrapper = styled.section`
     left: 0%;
     opacity: 1;
   }
+  @media (max-width: 772px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+  }
+  .form-subscribe {
+    grid-area: 2 / 2 / 3/ 3;
+    margin-top: 1rem;
+  }
+  @media (max-width: 660px) {
+    .form-subscribe {
+      width: 80%;
+      grid-area: 2 / 1 / 3/ 3;
+      .input-subscribe {
+        width: 100%;
+      }
+    }
+  }
 `;
 
 export default Subscribe;

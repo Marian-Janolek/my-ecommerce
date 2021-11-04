@@ -39,7 +39,12 @@ const Checkout = () => {
     <div onMouseOver={closeSubmenu}>
       <Wrapper className="section-center">
         <div className="container">
-          <h2>step progress bar</h2>
+          <div className="headings">
+            <h5>sing in</h5>
+            <h5>shipping</h5>
+            <h5>payent method</h5>
+            <h5>checkout</h5>
+          </div>
           <div className="progress-container">
             <div className="progress" id="progress">
               {' '}
@@ -51,19 +56,19 @@ const Checkout = () => {
               </i>
             </div>
 
-            <div className="circle active">
+            <div className="circle">
               <i className="icon-2">
                 <RiNumber2 />
               </i>
             </div>
 
-            <div className="circle active">
+            <div className="circle">
               <i className="icon-3">
                 <RiNumber3 />
               </i>
             </div>
 
-            <div className="circle active">
+            <div className="circle">
               <i className="icon-4">
                 <RiNumber4 />
               </i>
@@ -87,11 +92,11 @@ const Checkout = () => {
           <h2>payment method</h2>
           <div className="form-container">
             <form className="flex-form">
-              <label htmlFor="payment">Select Method</label>
+              <label>Select Method</label>
               <div className="check-flex">
-                <input type="checkbox" name="paypal" id="PayPal" />
-                <label htmlFor="payment">PayPal or Credit Card</label>
-                <input type="checkbox" name="cash" id="cash" />
+                <input type="radio" value="paypal" name="paypal" id="paypal" />
+                <label htmlFor="paypal">PayPal or Credit Card</label>
+                <input type="radio" value="cash" name="cash" id="cash" />
                 <label htmlFor="cash">Cash on delivery</label>
               </div>
             </form>
@@ -141,6 +146,15 @@ const Wrapper = styled.main`
   align-items: center;
   overflow: hidden;
 
+  .headings {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+  h5 {
+    text-transform: capitalize;
+  }
   i {
     font-size: var(--smaller-font-size);
   }
@@ -212,7 +226,7 @@ const Wrapper = styled.main`
     justify-content: center;
     align-items: center;
     background-color: var(--white-color);
-    border: 1px solid var(--dark-color-light);
+    box-shadow: var(--shadow);
     width: 100%;
     transition: 0.3s ease;
   }

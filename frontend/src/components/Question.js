@@ -5,10 +5,10 @@ import { RiArrowUpSLine, RiArrowDownSLine } from 'react-icons/ri';
 const Question = ({ question, info }) => {
   const [showInfo, setShowInfo] = React.useState(false);
   return (
-    <Wrapper>
+    <Wrapper onClick={() => setShowInfo(!showInfo)}>
       <header>
         <h4>{question}</h4>
-        <button className="question-btn" onClick={() => setShowInfo(!showInfo)}>
+        <button className="question-btn">
           {showInfo ? <RiArrowUpSLine /> : <RiArrowDownSLine />}
         </button>
       </header>
@@ -23,6 +23,7 @@ const Wrapper = styled.article`
   margin-bottom: 1rem;
   border-radius: var(--radius);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 
   .question-btn {
     background: transparent;

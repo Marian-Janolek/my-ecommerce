@@ -87,6 +87,7 @@ const FooterWrapper = styled.footer`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
+  gap: 1rem;
   padding-top: 4rem;
   padding-bottom: 6rem;
   position: relative;
@@ -145,6 +146,21 @@ const FooterWrapper = styled.footer`
   }
   .creator:hover {
     color: var(--dark-color-light);
+  }
+  @media (max-width: 772px) {
+    padding-top: 2.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    .social-flex {
+      grid-area: 2 / 3 / 2 / 3;
+    }
+  }
+  @media (max-width: 530px) {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+    padding-left: 2.8rem;
+    .social-flex {
+      grid-area: initial;
+    }
   }
 `;
 

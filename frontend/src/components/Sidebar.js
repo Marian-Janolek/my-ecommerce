@@ -5,6 +5,8 @@ import { links } from '../utils/constants';
 import styled from 'styled-components';
 import { useSidebarContext } from '../context/sidebarContext';
 import CartButtons from './CartButtons';
+import logo from '../assets/logo.png';
+import logoLetters from '../assets/logo_letters.png';
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useSidebarContext();
@@ -15,7 +17,10 @@ const Sidebar = () => {
         className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}
       >
         <div className="sidebar-header">
-          <h1>hello</h1>
+          <Link to="/" className="link-header">
+            <img src={logo} alt="logo" />
+            <img src={logoLetters} alt="logo_letters" />
+          </Link>
           <button className="close-btn" type="button" onClick={closeSidebar}>
             <FaTimes />
           </button>
@@ -102,6 +107,14 @@ const SidebarContainer = styled.div`
     padding-left: 3rem;
     background: var(--dark-color-light);
     color: var(--dark-color-lighten);
+  }
+  .link-header {
+    display: flex;
+    img {
+      height: 3.5rem;
+      width: 4rem;
+      margin-left: -15px;
+    }
   }
 
   @media screen and (min-width: 992px) {
