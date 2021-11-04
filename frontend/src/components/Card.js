@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const Card = ({ id, image, name, price, data }) => {
+const Card = ({ id, image, name, price, data, text }) => {
   return (
     <CardWrapper key={id}>
-      <div className="new">New</div>
+      <div className={text !== '' ? 'new' : ''}>{text}</div>
       <img src={image} alt={name} className="new-img" />
       <div className="new-size-parent">
         {data.map((nested) => {
@@ -55,6 +55,7 @@ const CardWrapper = styled.article`
     font-size: var(--h2-font-size);
     transform: rotate(-90deg);
     letter-spacing: var(--spacing);
+    text-transform: uppercase;
   }
   .new-img {
     width: 220px;

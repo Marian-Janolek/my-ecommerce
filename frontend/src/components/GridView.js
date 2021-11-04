@@ -16,6 +16,7 @@ const GridView = () => {
               image={image}
               price={price}
               data={newC.size}
+              text=""
               s
             />
           );
