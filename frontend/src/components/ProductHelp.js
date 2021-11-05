@@ -35,8 +35,8 @@ const ProductHelp = () => {
           <caption>Men table size</caption>
           <tbody>
             <tr>
-              {tableHeaders.map((header) => {
-                return <th>{header}</th>;
+              {tableHeaders.map((header, index) => {
+                return <th key={index}>{header}</th>;
               })}
             </tr>
 
@@ -119,11 +119,11 @@ const ProductHelp = () => {
           <caption>Women table size</caption>
           <tbody>
             <tr>
-              <th>EUR</th>
-              <th>UK</th>
-              <th>US</th>
-              <th>CM</th>
+              {tableHeaders.map((header, index) => {
+                return <th key={index}>{header}</th>;
+              })}
             </tr>
+
             <tr>
               <td>35.5</td>
               <td>3</td>
@@ -215,11 +215,11 @@ const ProductHelp = () => {
           <caption>Children table size</caption>
           <tbody>
             <tr>
-              <th>EUR</th>
-              <th>UK</th>
-              <th>US</th>
-              <th>CM</th>
+              {tableHeaders.map((header, index) => {
+                return <th key={index}>{header}</th>;
+              })}
             </tr>
+
             <tr>
               <td>26.5</td>
               <td>9k</td>
@@ -352,10 +352,10 @@ const Wrapper = styled.article`
 
   .table-flex {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 2rem;
+    row-gap: 2rem;
   }
   table {
     position: relative;
@@ -366,9 +366,12 @@ const Wrapper = styled.article`
     border: 1px solid var(--dark-color-light);
     border-collapse: collapse;
   }
+  table {
+    font-size: var(--smaller-font-size);
+  }
   th,
   td {
-    padding: 0.7rem 2rem;
+    padding: 0.6rem 1.5rem;
     text-align: center;
   }
   tr {
@@ -383,10 +386,16 @@ const Wrapper = styled.article`
     border-left: 1px solid var(--dark-color-light);
     border-right: 1px solid var(--dark-color-light);
     background-color: var(--white-color);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     letter-spacing: var(--spacing);
     padding: 1rem 0;
     font-weight: var(--font-semi-bold);
+  }
+  @media (max-width: 678px) {
+    .table-flex {
+      align-items: center;
+      justify-content: center;
+    }
   }
 `;
 
