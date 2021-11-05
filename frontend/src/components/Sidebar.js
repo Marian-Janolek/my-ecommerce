@@ -69,7 +69,7 @@ const SidebarContainer = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    width: 60%;
+    width: 70%;
     height: 100%;
     background: var(--dark-color-lighten);
     transition: var(--transition);
@@ -117,7 +117,7 @@ const SidebarContainer = styled.div`
     }
   }
 
-  @media screen and (min-width: 992px) {
+  @media (min-width: 992px) {
     .sidebar {
       display: none;
     }

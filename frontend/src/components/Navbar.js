@@ -113,16 +113,6 @@ const NavContainer = styled.nav`
   .link-header {
     display: flex;
   }
-  .nav-toggle {
-    background: transparent;
-    border: transparent;
-    cursor: pointer;
-    color: var(--dark-color);
-    transition: var(--transition);
-    svg {
-      font-size: 2rem;
-    }
-  }
   .nav-toggle:hover {
     transform: scale(1.06);
   }

@@ -67,6 +67,28 @@ const OurSortimentWrapper = styled.section`
   .sortiment4 {
     grid-area: e;
   }
+  @media (max-width: 662px) {
+    .sortiment-grid {
+      grid-template-areas:
+        'a c'
+        'b c'
+        'd e';
+    }
+  }
+  @media (max-width: 520px) {
+    .sortiment-grid {
+      grid-template-areas:
+        'a c'
+        'b c'
+        'd d'
+        'e e';
+    }
+  }
+  @media (max-width: 420px) {
+    .sortiment-grid {
+      grid-template-areas: 'a' 'b' 'c' 'd' 'e';
+    }
+  }
 `;
 
 export default OurSortiment;

@@ -53,6 +53,19 @@ const SearchBoxWrapper = styled.div`
     font-size: var(--normal-font-size);
     font-family: var(--body-font);
   }
+  @media (max-width: 992px) {
+    .search-form {
+      width: 70vw;
+    }
+    .search-input {
+      width: 100%;
+    }
+  }
+  @media (max-width: 720px) {
+    .search-form {
+      width: 60vw;
+    }
+  }
 `;
 
 export default SearchBox;
