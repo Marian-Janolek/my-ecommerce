@@ -45,7 +45,8 @@ const Wrapper = styled.article`
   }
   .div-center {
     background-color: var(--white-color);
-    border: 1px solid var(--dark-color-light);
+    /* border: 1px solid var(--dark-color-light); */
+    box-shadow: var(--shadow);
   }
 `;
 

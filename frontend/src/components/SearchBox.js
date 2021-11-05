@@ -32,6 +32,7 @@ const SearchBox = () => {
 const SearchBoxWrapper = styled.div`
   .search-form {
     display: flex;
+    justify-content: center;
     align-items: flex-end;
     column-gap: 0.25rem;
     background-color: var(--white-color);
@@ -64,6 +65,18 @@ const SearchBoxWrapper = styled.div`
   @media (max-width: 720px) {
     .search-form {
       width: 60vw;
+    }
+    .search-input {
+      padding: 0.3rem;
+    }
+    .search-input::placeholder {
+      font-size: var(--smaller-font-size);
+      font-weight: var(--font-medium);
+    }
+    .btn {
+      padding: 0.3rem;
+      font-size: var(--smaller-font-size);
+      font-weight: var(--font-medium);
     }
   }
 `;

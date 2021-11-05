@@ -17,7 +17,7 @@ const Sidebar = () => {
         className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}
       >
         <div className="sidebar-header">
-          <Link to="/" className="link-header">
+          <Link to="/" className="link-header" onClick={closeSidebar}>
             <img src={logo} alt="logo" />
             <img src={logoLetters} alt="logo_letters" />
           </Link>

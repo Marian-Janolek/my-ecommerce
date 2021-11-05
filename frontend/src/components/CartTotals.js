@@ -53,7 +53,8 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid var(--dark-color-light);
+  /* border: 1px solid var(--dark-color-light); */
+  box-shadow: var(--shadow);
   border-radius: var(--radius);
   padding: 1.5rem;
   margin-bottom: 3rem;

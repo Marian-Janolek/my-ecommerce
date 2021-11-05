@@ -7,7 +7,7 @@ const ProductReclaim = () => {
   return (
     <Wrapper className="section-center" onMouseOver={closeSubmenu}>
       <h1>product reclaim</h1>
-      <div className="underline"></div>;
+      <div className="underline"></div>
       <div>
         <h2>How to proceed when i want to return the goods?</h2>
         <p>

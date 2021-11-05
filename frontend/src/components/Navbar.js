@@ -48,7 +48,7 @@ const Navbar = () => {
         <div className="nav-header">
           <Link to="/" className="link-header">
             <img src={logo} alt="logo" />
-            <img src={logoLetters} alt="logo_letters" />
+            <img src={logoLetters} alt="logo_letters" id="logo-letters" />
           </Link>
           <SearchBox />
           <button type="button" className="nav-toggle" onClick={openSidebar}>
@@ -107,11 +107,14 @@ const NavContainer = styled.nav`
     img {
       height: 3.5rem;
       width: 4rem;
-      margin-left: -15px;
+      margin-left: -25px;
     }
   }
   .link-header {
     display: flex;
+    /* img#logo-letters {
+      display: none;
+    } */
   }
   .nav-toggle:hover {
     transform: scale(1.06);

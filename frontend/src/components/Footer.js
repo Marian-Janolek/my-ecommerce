@@ -157,7 +157,7 @@ const FooterWrapper = styled.footer`
   @media (max-width: 530px) {
     grid-template-columns: repeat(2, 1fr);
     justify-items: start;
-    padding-left: 2.8rem;
+    padding-left: 1rem;
     .social-flex {
       grid-area: initial;
     }

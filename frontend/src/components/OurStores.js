@@ -125,6 +125,20 @@ const Wrapper = styled.article`
   tbody tr td {
     padding-left: 0.5rem;
   }
+  @media (max-width: 668px) {
+    .info-grid {
+      margin: 0;
+      grid-template-columns: minmax(250px, 1fr);
+    }
+    .info-flex {
+      flex-direction: column;
+      padding-top: 1rem;
+      padding-left: 1rem;
+    }
+    .info-stores {
+      padding: 0;
+    }
+  }
 `;
 
 export default OurStores;

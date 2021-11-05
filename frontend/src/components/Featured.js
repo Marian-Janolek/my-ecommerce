@@ -66,6 +66,7 @@ const FeaturedWrapper = styled.section`
   border-radius: calc(var(--radius) * 2);
   overflow: hidden;
   margin-bottom: 2rem;
+
   article {
     position: absolute;
     display: grid;
