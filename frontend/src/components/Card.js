@@ -66,10 +66,13 @@ const CardWrapper = styled.article`
   }
   .new-name,
   .new-price {
-    font-size: var(--h2-font-size);
+    font-size: var(--normal-font-size);
     letter-spacing: var(--spacing);
     font-weight: var(--font-bold);
     align-self: flex-start;
+  }
+  .new-price {
+    font-size: var(--h2-font-size);
   }
   .new-size-parent {
     position: absolute;

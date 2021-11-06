@@ -29,8 +29,13 @@ const GridView = () => {
 const Wrapper = styled.section`
   .product-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 250px));
     gap: 2rem 1.5rem;
+  }
+  @media (max-width: 580px) {
+    .product-container {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
   }
 `;
 
