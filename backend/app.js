@@ -5,7 +5,8 @@ const app = express();
 
 // rest of the packages
 const morgan = require('morgan');
-
+const cookieParser = require('cookie-parser');
+const cors = require('cors');
 // database
 const connectDB = require('./db/connectDB.js');
 
@@ -18,8 +19,14 @@ const errorHandlerMiddleware = require('./middleware/error-handler');
 
 app.use(morgan('tiny'));
 app.use(express.json());
+app.use(cookieParser(process.env.JWT_SECRET));
+app.use(cors());
 
 app.get('/', (req, res) => {
+  res.send('API is running .....');
+});
+app.get('/api/v1', (req, res) => {
+  console.log(req.signedCookies);
   res.send('API is running .....');
 });
 

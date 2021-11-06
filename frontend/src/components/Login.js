@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import { useSubmenuContext } from '../context/submenuContext';
+// const rootUrl = 'http://localhost:5000';
 
 const Login = () => {
   const { closeSubmenu } = useSubmenuContext();
@@ -23,11 +25,28 @@ const Login = () => {
     wrapper.classList.add('active');
   };
 
-  const registerSubmitHandler = (e) => {
+  const registerSubmitHandler = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
       setMessage('Paswords do not match');
-    } else {
+    }
+    const user = { name, email, password };
+
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    try {
+      // const url = `${rootUrl}/api/v1/auth/register`;
+      const url = `/api/v1/auth/register`;
+      await axios.post(url, user, config);
+      setName('');
+      setEmail('');
+      setPassword('');
+      setConfirmPassword('');
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -60,8 +79,8 @@ const Login = () => {
           <div className="form singin-form">
             <form onSubmit={logSubmitHandler}>
               <h3>Sing In</h3>
-              <input type="text" placeholder="Username" />
-              <input type="text" placeholder="Password" />
+              <input type="email" placeholder="Email" />
+              <input type="password" placeholder="Password" />
               <button
                 type="submit"
                 className="login-btn"
@@ -91,20 +110,22 @@ const Login = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
               <input
-                type="text"
+                type="password"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
               <input
-                type="text"
+                type="password"
                 placeholder="Confirm Password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
+              {/* <Link to="/products"> */}{' '}
               <button type="submit" className="register-btn">
                 Register
               </button>
+              {/* </Link> */}
             </form>
           </div>
         </div>
@@ -215,6 +236,14 @@ const LoginWrapper = styled.section`
     opacity: 1;
     z-index: 1;
   }
+  input {
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-semi-bold);
+  }
+  input::placeholder {
+    font-weight: var(--font-medium);
+  }
+
   .form-container.active {
     left: 50%;
   }
@@ -241,9 +270,10 @@ const LoginWrapper = styled.section`
     margin-bottom: 20px;
     padding: 10px;
     outline: none;
-    font-size: 1rem;
+    font-size: var(--normal-font-size);
     border: 1px solid var(--white-color);
   }
+
   .form-container .form form input[type='submit'] {
     background-color: var(--dark-color-light);
     border: none;
