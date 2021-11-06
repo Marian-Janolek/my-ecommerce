@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useSubmenuContext } from '../context/submenuContext';
 
 const Login = () => {
   const { closeSubmenu } = useSubmenuContext();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [message, setMessage] = useState(null);
 
   const formBtn = document.querySelector('.form-container');
   const wrapper = document.getElementById('wrapper');
@@ -16,6 +21,18 @@ const Login = () => {
   const singUpHandler = () => {
     formBtn.classList.add('active');
     wrapper.classList.add('active');
+  };
+
+  const registerSubmitHandler = (e) => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      setMessage('Paswords do not match');
+    } else {
+    }
+  };
+
+  const logSubmitHandler = (e) => {
+    e.preventDefault();
   };
 
   return (
@@ -41,15 +58,17 @@ const Login = () => {
         </div>
         <div className="form-container">
           <div className="form singin-form">
-            <form>
+            <form onSubmit={logSubmitHandler}>
               <h3>Sing In</h3>
               <input type="text" placeholder="Username" />
               <input type="text" placeholder="Password" />
-              <input
+              <button
                 type="submit"
-                value="Login"
+                className="login-btn"
                 onClick={(e) => e.preventDefault()}
-              />
+              >
+                Login
+              </button>
               <Link to="/" className="forgot">
                 Forgot Password
               </Link>
@@ -57,17 +76,35 @@ const Login = () => {
           </div>
 
           <div className="form singup-form">
-            <form>
+            <form onSubmit={registerSubmitHandler}>
               <h3>Sing Up</h3>
-              <input type="text" placeholder="Username" />
-              <input type="email" placeholder="Email Address" />
-              <input type="text" placeholder="Password" />
-              <input type="text" placeholder="Confirm Password" />
               <input
-                type="submit"
-                value="Register"
-                onClick={(e) => e.preventDefault()}
+                type="text"
+                placeholder="Username"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
+              <input
+                type="email"
+                placeholder="Email Address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                type="text"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <input
+                type="text"
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+              <button type="submit" className="register-btn">
+                Register
+              </button>
             </form>
           </div>
         </div>
@@ -127,6 +164,22 @@ const LoginWrapper = styled.section`
     color: var(--white-color);
     font-weight: var(--font-semi-bold);
     letter-spacing: var(--spacing);
+  }
+  button {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: var(--dark-color-light);
+    font-size: var(--normal-font-size);
+    border: none;
+    color: var(--white-color);
+    font-weight: var(--font-semi-bold);
+    letter-spacing: var(--spacing);
+  }
+  .login-btn {
+    width: 6rem;
+  }
+  .register-btn {
+    width: 7rem;
   }
   .form-container {
     position: absolute;
