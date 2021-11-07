@@ -17,7 +17,7 @@ const ProfileHeader = () => {
       <FaUserCircle />
       <div className="logout">
         <h5>Golden member</h5>
-        <button type="submit" className="btn" onSubmit={logoutSubmitHandler}>
+        <button type="button" className="btn" onClick={logoutSubmitHandler}>
           Log out
         </button>
       </div>
