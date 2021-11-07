@@ -8,10 +8,12 @@ import { useSubmenuContext } from '../context/submenuContext';
 const Login = () => {
   const { closeSubmenu } = useSubmenuContext();
   const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [regEmail, setRegEmail] = useState('');
+  const [regPassword, setRegPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [message, setMessage] = useState(null);
+  const [logEmail, setLogEmail] = useState('');
+  const [logPassword, setLogPassword] = useState('');
 
   const formBtn = document.querySelector('.form-container');
   const wrapper = document.getElementById('wrapper');
@@ -24,34 +26,45 @@ const Login = () => {
     formBtn.classList.add('active');
     wrapper.classList.add('active');
   };
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
 
   const registerSubmitHandler = async (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
+    if (regPassword !== confirmPassword) {
       setMessage('Paswords do not match');
     }
-    const user = { name, email, password };
+    const user = { name, email: regEmail, password: regPassword };
 
-    const config = {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    };
     try {
       // const url = `${rootUrl}/api/v1/auth/register`;
       const url = `/api/v1/auth/register`;
       await axios.post(url, user, config);
       setName('');
-      setEmail('');
-      setPassword('');
+      setRegEmail('');
+      setRegPassword('');
       setConfirmPassword('');
     } catch (error) {
       console.log(error);
     }
   };
 
-  const logSubmitHandler = (e) => {
+  const logSubmitHandler = async (e) => {
     e.preventDefault();
+    if (!logEmail || !logPassword) return;
+    const user = { email: logEmail, password: logPassword };
+
+    try {
+      const url = `/api/v1/auth/login`;
+      await axios.post(url, user, config);
+      setLogEmail('');
+      setLogPassword('');
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -79,13 +92,19 @@ const Login = () => {
           <div className="form singin-form">
             <form onSubmit={logSubmitHandler}>
               <h3>Sing In</h3>
-              <input type="email" placeholder="Email" />
-              <input type="password" placeholder="Password" />
-              <button
-                type="submit"
-                className="login-btn"
-                onClick={(e) => e.preventDefault()}
-              >
+              <input
+                type="email"
+                placeholder="Email"
+                value={logEmail}
+                onChange={(e) => setLogEmail(e.target.value)}
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                value={logPassword}
+                onChange={(e) => setLogPassword(e.target.value)}
+              />
+              <button type="submit" className="login-btn">
                 Login
               </button>
               <Link to="/" className="forgot">
@@ -106,14 +125,14 @@ const Login = () => {
               <input
                 type="email"
                 placeholder="Email Address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={regEmail}
+                onChange={(e) => setRegEmail(e.target.value)}
               />
               <input
                 type="password"
                 placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={regPassword}
+                onChange={(e) => setRegPassword(e.target.value)}
               />
               <input
                 type="password"
