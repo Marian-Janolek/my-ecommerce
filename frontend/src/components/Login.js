@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useSubmenuContext } from '../context/submenuContext';
+import { useUserContext } from '../context/userContext';
 // const rootUrl = 'http://localhost:5000';
 
 const Login = () => {
   const { closeSubmenu } = useSubmenuContext();
+  const { register, login } = useUserContext();
   const [name, setName] = useState('');
   const [regEmail, setRegEmail] = useState('');
   const [regPassword, setRegPassword] = useState('');
@@ -32,39 +34,27 @@ const Login = () => {
     },
   };
 
-  const registerSubmitHandler = async (e) => {
+  const registerSubmitHandler = (e) => {
     e.preventDefault();
     if (regPassword !== confirmPassword) {
       setMessage('Paswords do not match');
     }
-    const user = { name, email: regEmail, password: regPassword };
 
-    try {
-      // const url = `${rootUrl}/api/v1/auth/register`;
-      const url = `/api/v1/auth/register`;
-      await axios.post(url, user, config);
-      setName('');
-      setRegEmail('');
-      setRegPassword('');
-      setConfirmPassword('');
-    } catch (error) {
-      console.log(error);
-    }
+    register({ myUser: { name, email: regEmail, password: regPassword } });
+    setName('');
+    setRegEmail('');
+    setRegPassword('');
+    setConfirmPassword('');
   };
 
-  const logSubmitHandler = async (e) => {
+  const logSubmitHandler = (e) => {
     e.preventDefault();
     if (!logEmail || !logPassword) return;
     const user = { email: logEmail, password: logPassword };
+    login({ myUser: user });
 
-    try {
-      const url = `/api/v1/auth/login`;
-      await axios.post(url, user, config);
-      setLogEmail('');
-      setLogPassword('');
-    } catch (error) {
-      console.log(error);
-    }
+    setLogEmail('');
+    setLogPassword('');
   };
 
   return (

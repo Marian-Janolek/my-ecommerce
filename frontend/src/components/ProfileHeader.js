@@ -1,15 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaUserCircle } from 'react-icons/fa';
+import { useUserContext } from '../context/userContext';
 
 const ProfileHeader = () => {
+  const { logout } = useUserContext();
+
+  const logoutSubmitHandler = (e) => {
+    e.preventDefault();
+    logout();
+  };
+
   return (
     <Wrapper>
       <h2>Welcome, Majko</h2>
       <FaUserCircle />
       <div className="logout">
         <h5>Golden member</h5>
-        <button type="submit" className="btn">
+        <button type="submit" className="btn" onSubmit={logoutSubmitHandler}>
           Log out
         </button>
       </div>
