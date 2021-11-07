@@ -7,7 +7,12 @@ const ProfileHeader = () => {
     <Wrapper>
       <h2>Welcome, Majko</h2>
       <FaUserCircle />
-      <h5>Golden member</h5>
+      <div className="logout">
+        <h5>Golden member</h5>
+        <button type="submit" className="btn">
+          Log out
+        </button>
+      </div>
     </Wrapper>
   );
 };
@@ -26,6 +31,22 @@ const Wrapper = styled.section`
   }
   h5 {
     color: var(--dark-color);
+  }
+  .logout {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    button {
+      position: absolute;
+      right: 0;
+      transition: none;
+    }
+    button:active {
+      transform: scale(0.95);
+    }
   }
 `;
 
