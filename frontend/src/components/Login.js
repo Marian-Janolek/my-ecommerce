@@ -85,12 +85,14 @@ const Login = () => {
               <input
                 type="email"
                 placeholder="Email"
+                required
                 value={logEmail}
                 onChange={(e) => setLogEmail(e.target.value)}
               />
               <input
                 type="password"
                 placeholder="Password"
+                required
                 value={logPassword}
                 onChange={(e) => setLogPassword(e.target.value)}
               />
@@ -109,24 +111,28 @@ const Login = () => {
               <input
                 type="text"
                 placeholder="Username"
+                required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
               <input
                 type="email"
                 placeholder="Email Address"
+                required
                 value={regEmail}
                 onChange={(e) => setRegEmail(e.target.value)}
               />
               <input
                 type="password"
                 placeholder="Password"
+                required
                 value={regPassword}
                 onChange={(e) => setRegPassword(e.target.value)}
               />
               <input
                 type="password"
                 placeholder="Confirm Password"
+                required
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
