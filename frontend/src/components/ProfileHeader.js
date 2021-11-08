@@ -1,19 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 import { FaUserCircle } from 'react-icons/fa';
 import { useUserContext } from '../context/userContext';
 
 const ProfileHeader = () => {
   const { logout } = useUserContext();
-
+  const { myUser } = useUserContext();
+  const name = myUser.data.user.name;
+  const history = useHistory();
   const logoutSubmitHandler = (e) => {
     e.preventDefault();
     logout();
+    history.push('/');
   };
 
   return (
     <Wrapper>
-      <h2>Welcome, Majko</h2>
+      <h2>Welcome, {name}</h2>
       <FaUserCircle />
       <div className="logout">
         <h5>Golden member</h5>
@@ -55,6 +59,9 @@ const Wrapper = styled.section`
     button:active {
       transform: scale(0.95);
     }
+  }
+  h2 {
+    text-transform: capitalize;
   }
 `;
 

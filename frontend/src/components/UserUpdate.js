@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useUserContext } from '../context/userContext';
 
 const UserUpdate = () => {
+  const { myUser, updateCredentials, updatePassword } = useUserContext();
+  const {
+    data: { user },
+  } = myUser;
+
   const [value, setValue] = useState(1);
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassoword] = useState('');
   const [confirmNewPassword, setConfirmNewPassword] = useState('');
-  const [name, setName] = useState('');
+  const [newName, setNewName] = useState('');
   const [email, setEmail] = useState('');
 
   const clearPasswordHandler = (e) => {
@@ -17,8 +23,37 @@ const UserUpdate = () => {
   };
   const clearCredentialsHandler = (e) => {
     e.preventDefault();
-    setName('');
+    setNewName('');
     setEmail('');
+  };
+  const credentialSubmitHandler = (e) => {
+    e.preventDefault();
+
+    updateCredentials({
+      myUser: {
+        name: newName === '' ? user.name : newName,
+        email: email === '' ? user.email : email,
+      },
+    });
+
+    setEmail('');
+    setNewName('');
+  };
+
+  const passwordSubmitHandler = (e) => {
+    e.preventDefault();
+
+    updatePassword({
+      myUser: {
+        oldPassword,
+        newPassword,
+        // confirmNewPassword,
+      },
+    });
+
+    setOldPassword('');
+    setNewPassoword('');
+    // setConfirmNewPassword('');
   };
 
   return (
@@ -39,20 +74,20 @@ const UserUpdate = () => {
       </div>
       <div>
         {value === 1 && (
-          <form className="credentials">
+          <form className="credentials" onSubmit={credentialSubmitHandler}>
             <div>
               <h4>current name :</h4>
-              <h3>majko</h3>
+              <h3>{user.name}</h3>
               <h4>current email :</h4>
-              <h3>majko@example.com</h3>
+              <h3>{user.email}</h3>
             </div>
             <div className="form-flex">
               <label htmlFor="name">Set new name</label>
               <input
                 type="namr"
                 placeholder="new name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={newName}
+                onChange={(e) => setNewName(e.target.value)}
               />
               <label htmlFor="email">Set new email</label>
               <input
@@ -69,11 +104,7 @@ const UserUpdate = () => {
                 >
                   Clear
                 </button>
-                <button
-                  type="submit"
-                  className="btn"
-                  onClick={(e) => e.preventDefault()}
-                >
+                <button type="submit" className="btn">
                   Confirm
                 </button>
               </div>
@@ -81,7 +112,7 @@ const UserUpdate = () => {
           </form>
         )}
         {value === 2 && (
-          <form>
+          <form onSubmit={passwordSubmitHandler}>
             <label htmlFor="password">Enter old password</label>
             <input
               type="password"
@@ -98,14 +129,14 @@ const UserUpdate = () => {
               value={newPassword}
               onChange={(e) => setNewPassoword(e.target.value)}
             />
-            <label htmlFor="password">Confirm new password</label>
+            {/* <label htmlFor="password">Confirm new password</label>
             <input
               type="password"
               placeholder="confirm new password"
               required
               value={confirmNewPassword}
               onChange={(e) => setConfirmNewPassword(e.target.value)}
-            />
+            /> */}
             <div className="btn-flex">
               <button
                 type="submit"
@@ -114,11 +145,7 @@ const UserUpdate = () => {
               >
                 Clear
               </button>
-              <button
-                type="submit"
-                className="btn"
-                onClick={(e) => e.preventDefault()}
-              >
+              <button type="submit" className="btn">
                 Confirm
               </button>
             </div>

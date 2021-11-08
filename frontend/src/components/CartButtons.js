@@ -1,17 +1,25 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import { BiCart } from 'react-icons/bi';
 import { FiUserMinus, FiUserPlus } from 'react-icons/fi';
 import styled from 'styled-components';
+import { useUserContext } from '../context/userContext';
 
 const CartButtons = () => {
-  const [user, setUser] = useState(false);
+  const { myUser } = useUserContext();
 
   return (
     <Wrapper>
-      <Link to="/login" className="user-icon">
-        {user ? <FiUserMinus /> : <FiUserPlus />}
-      </Link>
+      {myUser ? (
+        <Link to="/profile" className="user-icon">
+          <FiUserMinus />
+        </Link>
+      ) : (
+        <Link to="/login" className="user-icon">
+          <FiUserPlus />
+        </Link>
+      )}
 
       <Link to="cart" className="cart-icon">
         <BiCart />

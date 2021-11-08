@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { Link, useHistory } from 'react-router-dom';
 import { useSubmenuContext } from '../context/submenuContext';
 import { useUserContext } from '../context/userContext';
 // const rootUrl = 'http://localhost:5000';
@@ -9,6 +8,7 @@ import { useUserContext } from '../context/userContext';
 const Login = () => {
   const { closeSubmenu } = useSubmenuContext();
   const { register, login } = useUserContext();
+  const history = useHistory();
   const [name, setName] = useState('');
   const [regEmail, setRegEmail] = useState('');
   const [regPassword, setRegPassword] = useState('');
@@ -27,11 +27,6 @@ const Login = () => {
   const singUpHandler = () => {
     formBtn.classList.add('active');
     wrapper.classList.add('active');
-  };
-  const config = {
-    headers: {
-      'Content-Type': 'application/json',
-    },
   };
 
   const registerSubmitHandler = (e) => {
@@ -96,7 +91,11 @@ const Login = () => {
                 value={logPassword}
                 onChange={(e) => setLogPassword(e.target.value)}
               />
-              <button type="submit" className="login-btn">
+              <button
+                type="submit"
+                className="login-btn"
+                onClick={() => history.push('/')}
+              >
                 Login
               </button>
               <Link to="/" className="forgot">
