@@ -17,7 +17,7 @@ const ProfileHeader = () => {
 
   return (
     <Wrapper>
-      <h2>Welcome, {name}</h2>
+      <h2>Welcome, {name} </h2>
       <FaUserCircle />
       <div className="logout">
         <h5>Golden member</h5>

@@ -242,3 +242,45 @@ Card
   left: 0%;
   opacity: 1;
 }
+
+.profile-btn-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 2rem;
+}
+
+.profile-btn-links {
+  border: none;
+  color: var(--dark-color-light);
+  font-weight: var(--font-semi-bold);
+}
+.profile-btn-links:hover {
+  color: var(--dark-color);
+}
+button {
+  position: relative;
+}
+.profile-btn-links::after,
+.profile-btn-active::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 0.1rem;
+  background-color: var(--dark-color);
+  bottom: 0%;
+  left: 50%;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.profile-btn-active::after {
+  width: 100%;
+  left: 0%;
+}
+.profile-btn-links:hover::after {
+  left: 0%;
+  width: 100%;
+}
+.profile-btn-active {
+  color: var(--dark-color);
+}

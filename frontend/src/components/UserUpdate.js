@@ -58,15 +58,19 @@ const UserUpdate = () => {
 
   return (
     <Wrapper>
-      <div className="btn-flex">
+      <div className="profile-btn-flex">
         <button
-          className={`btn-links ${value === 1 && `btn-active`}`}
+          className={`profile-btn-links btn-links ${
+            value === 1 && `profile-btn-active`
+          }`}
           onClick={() => setValue(1)}
         >
           Change credentials
         </button>
         <button
-          className={`btn-links ${value === 2 && `btn-active`}`}
+          className={`profile-btn-links btn-links ${
+            value === 2 && `profile-btn-active`
+          }`}
           onClick={() => setValue(2)}
         >
           Change password
@@ -96,7 +100,7 @@ const UserUpdate = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <div className="btn-flex">
+              <div className="profile-btn-flex">
                 <button
                   type="submit"
                   className="btn"
@@ -137,7 +141,7 @@ const UserUpdate = () => {
               value={confirmNewPassword}
               onChange={(e) => setConfirmNewPassword(e.target.value)}
             /> */}
-            <div className="btn-flex">
+            <div className="profile-btn-flex">
               <button
                 type="submit"
                 className="btn"
@@ -190,58 +194,21 @@ const Wrapper = styled.section`
   form label {
     margin-bottom: 1rem;
   }
-  .btn-flex {
-    display: flex;
-    margin-top: 1rem;
-  }
-  .btn-flex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    column-gap: 2rem;
-  }
-  .btn-links {
-    border: none;
-    color: var(--dark-color-light);
-    font-weight: var(--font-semi-bold);
-    font-size: var(--smaller-font-size);
-  }
-  .btn-links:hover {
-    color: var(--dark-color);
-  }
+
   button {
     position: relative;
   }
-  .btn-links::after,
-  .btn-active::after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 0.1rem;
-    background-color: var(--dark-color);
-    bottom: 0%;
-    left: 50%;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-  }
-  .btn-active::after {
-    width: 100%;
-    left: 0%;
-  }
-  .btn-links:hover::after {
-    left: 0%;
-    width: 100%;
-  }
-  .btn-active {
-    color: var(--dark-color);
-  }
+
   label {
     text-transform: capitalize;
+  }
+  .profile-btn-links {
+    font-size: var(--smaller-font-size);
   }
   .credentials {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     gap: 2rem;
   }
   .form-flex {

@@ -40,6 +40,7 @@ const Login = () => {
     setRegEmail('');
     setRegPassword('');
     setConfirmPassword('');
+    history.push('/');
   };
 
   const logSubmitHandler = (e) => {
@@ -91,11 +92,7 @@ const Login = () => {
                 value={logPassword}
                 onChange={(e) => setLogPassword(e.target.value)}
               />
-              <button
-                type="submit"
-                className="login-btn"
-                onClick={() => history.push('/')}
-              >
+              <button type="submit" className="login-btn">
                 Login
               </button>
               <Link to="/" className="forgot">
