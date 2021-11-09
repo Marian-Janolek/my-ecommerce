@@ -34,9 +34,10 @@ const ProductSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    images: {
+    image: {
       type: String,
       required: true,
+      default: '/uploads/default.png',
     },
     brand: {
       type: String,
