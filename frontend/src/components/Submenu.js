@@ -23,10 +23,6 @@ const Submenu = () => {
     submenu.style.top = `${bottom}px`;
   }, [location, links]);
 
-  const displayPreviewImg = ({ index }) => {
-    setImg(submenuImg.image[index]);
-  };
-
   return (
     <SubmenuContainer>
       <aside
@@ -45,7 +41,7 @@ const Submenu = () => {
             })}
           </ul>
           <section className="submenu-img">
-            <img src={img} />
+            <img src={img} alt="" />
           </section>
         </div>
       </aside>

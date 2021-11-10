@@ -222,29 +222,6 @@ export const sublinks = [
   },
 ];
 
-export const featured = [
-  {
-    id: 1,
-    image:
-      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630181/my-ecommerce/featured1_c78blm.png',
-    name: 'Nike Jordan',
-    price: 149.99,
-  },
-  {
-    id: 2,
-    image:
-      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630181/my-ecommerce/featured2_fowjzh.png',
-    name: 'Nike Free RN',
-    price: 129.99,
-  },
-  {
-    id: 3,
-    image:
-      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630180/my-ecommerce/featured3_xorptb.png',
-    name: 'Yeezy boost ',
-    price: 179.99,
-  },
-];
 export const newCollection = [
   {
     id: 1,

@@ -31,7 +31,7 @@ app.use(express.static('./public'));
 app.use(fileupload());
 app.use(cors());
 
-importData();
+// importData();
 
 app.get('/', (req, res) => {
   res.send('API is running .....');

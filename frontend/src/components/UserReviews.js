@@ -6,7 +6,10 @@ const UserReviews = () => {
   return (
     <Wrapper>
       <div className="review">
-        <img src="https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630180/my-ecommerce/women1_hyh6az.png" />
+        <img
+          src="https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630180/my-ecommerce/women1_hyh6az.png"
+          alt="review img"
+        />
         <h4>Nike Performance </h4>
         <Link to="products" className="btn">
           rate product

@@ -7,7 +7,10 @@ const CartItem = () => {
   return (
     <Wrapper>
       <div className="title">
-        <img src="https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630180/my-ecommerce/women1_hyh6az.png" />
+        <img
+          src="https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630180/my-ecommerce/women1_hyh6az.png"
+          alt=""
+        />
         <div>
           <h5 className="name">nike performance</h5>
           <p className="color">

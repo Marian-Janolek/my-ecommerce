@@ -1876,7 +1876,7 @@ const products = [
     featured: false,
   },
   {
-    name: 'adidas trx vintage',
+    name: 'nike trx vintage',
     image:
       'https://res.cloudinary.com/do5rzxmh3/image/upload/v1635926806/my-ecommerce/SNEAKERS/nike_sneakers/pngegg_12_vrz6sl.png',
     brand: 'nike',
@@ -1892,7 +1892,7 @@ const products = [
     featured: true,
   },
   {
-    name: 'adidas trx vintage',
+    name: 'nike trx rebound air',
     image:
       'https://res.cloudinary.com/do5rzxmh3/image/upload/v1635926806/my-ecommerce/SNEAKERS/nike_sneakers/featured3_sg1byo.png',
     brand: 'nike',
@@ -1908,7 +1908,7 @@ const products = [
     featured: true,
   },
   {
-    name: 'adidas wien top',
+    name: 'nike wien top',
     image:
       'https://res.cloudinary.com/do5rzxmh3/image/upload/v1635926805/my-ecommerce/SNEAKERS/nike_sneakers/featured1_rqqtwo.png',
     brand: 'nike',
@@ -1924,7 +1924,7 @@ const products = [
     featured: true,
   },
   {
-    name: 'adidas forum buckle',
+    name: 'nike forum buckle',
     image:
       'https://res.cloudinary.com/do5rzxmh3/image/upload/v1635926809/my-ecommerce/SNEAKERS/nike_sneakers/pngegg_22_dtgubq.png',
     brand: 'nike',

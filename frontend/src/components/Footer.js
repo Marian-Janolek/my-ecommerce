@@ -71,6 +71,7 @@ const Footer = () => {
             <a
               href="https://www.facebook.com/majko.janolek"
               target="_blank"
+              rel="noreferrer"
               className="creator"
             >
               {' '}

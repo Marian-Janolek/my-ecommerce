@@ -11,7 +11,7 @@ const UserUpdate = () => {
   const [value, setValue] = useState(1);
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassoword] = useState('');
-  const [confirmNewPassword, setConfirmNewPassword] = useState('');
+  // const [confirmNewPassword, setConfirmNewPassword] = useState('');
   const [newName, setNewName] = useState('');
   const [email, setEmail] = useState('');
 
@@ -19,7 +19,7 @@ const UserUpdate = () => {
     e.preventDefault();
     setOldPassword('');
     setNewPassoword('');
-    setConfirmNewPassword('');
+    // setConfirmNewPassword('');
   };
   const clearCredentialsHandler = (e) => {
     e.preventDefault();

@@ -26,7 +26,7 @@ const OurStores = () => {
           const { id, image } = store;
           return (
             <div className="sortiment-card" key={id}>
-              <img src={image} className="sortiment-img" />
+              <img src={image} className="sortiment-img" alt="" />
             </div>
           );
         })}

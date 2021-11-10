@@ -34,7 +34,10 @@ const Order = () => {
 
       <h3>order items</h3>
       <section className="order-grid">
-        <img src="https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630180/my-ecommerce/women1_hyh6az.png" />
+        <img
+          src="https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630180/my-ecommerce/women1_hyh6az.png"
+          alt=""
+        />
         <p>
           <Link to="/products">nike performance </Link>
         </p>

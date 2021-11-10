@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { useParams } from 'react-router-dom';
-import { AddToCart } from '.';
 import { ProductImages, Stars } from '.';
 import { useSubmenuContext } from '../context/submenuContext';
 
 const SingleProduct = () => {
-  const { id } = useParams();
   const [brandLogo, setBrandLogo] = useState('');
 
   const { closeSubmenu } = useSubmenuContext();
@@ -70,7 +67,7 @@ const SingleProduct = () => {
     } else if (brand === 'puma') {
       setBrandLogo(logo[2]);
     }
-  }, []);
+  }, [brand, logo]);
 
   return (
     <div onMouseOver={closeSubmenu}>
@@ -102,7 +99,10 @@ const SingleProduct = () => {
         </div>
         <h2 className="h2">Product Description</h2>
         <section className="product-desc">
-          <img src="https://res.cloudinary.com/do5rzxmh3/image/upload/v1634654510/my-ecommerce/ourSortiment2_fcyvts.jpg" />
+          <img
+            src="https://res.cloudinary.com/do5rzxmh3/image/upload/v1634654510/my-ecommerce/ourSortiment2_fcyvts.jpg"
+            alt=""
+          />
           <section>
             <h2>{name}</h2>
             <p className="desc">{desc}</p>

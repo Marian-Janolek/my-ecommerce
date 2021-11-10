@@ -1,5 +1,5 @@
 import React, { useReducer, useContext, useState } from 'react';
-import { sublinks, links } from '../utils/constants';
+import { sublinks } from '../utils/constants';
 import reducer from '../reducer/submenuReducer';
 import { SUBMENU_CLOSE, SUBMENU_OPEN } from '../actions';
 

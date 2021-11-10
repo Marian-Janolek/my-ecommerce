@@ -1,23 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useSubmenuContext } from '../context/submenuContext';
-import { featured } from '../utils/constants';
 import { Link } from 'react-router-dom';
+import { useProductContext } from '../context/productsContext';
+import { Loading } from './';
 
 const Featured = () => {
   const { closeSubmenu } = useSubmenuContext();
-  const [people, setPeople] = useState(featured);
   const [index, setIndex] = useState(0);
 
+  const {
+    products_loading: loading,
+    products_error: error,
+    featured_products: featured,
+  } = useProductContext();
+
   useEffect(() => {
-    const lastIndex = people.length - 1;
+    const lastIndex = featured.length - 1;
     if (index < 0) {
       setIndex(lastIndex);
     }
     if (index > lastIndex) {
       setIndex(0);
     }
-  }, [index, people]);
+  }, [index, featured]);
 
   useEffect(() => {
     let slider = setInterval(() => {
@@ -26,10 +32,17 @@ const Featured = () => {
     return () => clearInterval(slider);
   }, [index]);
 
+  if (loading) {
+    return <Loading />;
+  }
+  // if(error){
+  //   return <Error />
+  // }
+
   return (
     <FeaturedWrapper className="section-center" onMouseOver={closeSubmenu}>
       {featured.map((feat, featIndex) => {
-        const { id, image, name, price } = feat;
+        const { _id, image, name, price } = feat;
         let position = 'nextSlide';
         if (featIndex === index) {
           position = 'activeSlide';
@@ -41,11 +54,11 @@ const Featured = () => {
           position = 'lastSlide';
         }
         return (
-          <article className={position} key={id}>
+          <article className={position} key={_id}>
             <div className="featured-flex">
               <h2>{name}</h2>
               <h3>{price} €</h3>
-              <Link to="/" className="btn">
+              <Link to="/products" className="btn">
                 explore now
               </Link>
             </div>
