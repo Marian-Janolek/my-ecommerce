@@ -609,6 +609,7 @@ const products = [
     ],
     colors: ['#FF00FF', '#FF0000'],
     featured: false,
+    new: true,
   },
   {
     name: 'nike dunk',
@@ -625,6 +626,7 @@ const products = [
     sizes: ['36 2/3', '38', '38 2/3', '39 1/3', '42', '42 2/3', '44'],
     colors: ['#FF00FF', '#FF0000', '#FFFFFF'],
     featured: false,
+    new: true,
   },
   {
     name: 'nike air force 1',
@@ -653,6 +655,7 @@ const products = [
     ],
     colors: ['#FF00FF', '#800080', '#FFFFFF'],
     featured: false,
+    new: true,
   },
   {
     name: 'nike sportswear air',
@@ -669,6 +672,7 @@ const products = [
     sizes: ['35.5', '36', '38', '39 1/3', '40', '41 1/3', '42', '44'],
     colors: ['#FF00FF', '#FFFF00'],
     featured: false,
+    new: true,
   },
   {
     name: 'nike waffle one',
@@ -781,6 +785,7 @@ const products = [
     sizes: ['36', '39 1/3', '40', '42 2/3'],
     colors: ['#C0C0C0'],
     featured: false,
+    new: true,
   },
   {
     name: 'puma cali wedge',
@@ -877,6 +882,7 @@ const products = [
     sizes: ['36', '38', '39 1/3', '40 2/3', '41 1/3', '42'],
     colors: ['#000', '#fff'],
     featured: false,
+    new: true,
   },
   {
     name: 'puma shuffle',
@@ -936,6 +942,7 @@ const products = [
     sizes: ['35.5', '36', '36 2/3', '38', '38 2/3', '39 1/3', '40'],
     colors: ['#FF00FF', '#fff'],
     featured: false,
+    new: true,
   },
   {
     name: 'puma cali wedge',
@@ -2105,22 +2112,7 @@ const products = [
     colors: ['#fff', '#FF00FF'],
     featured: false,
   },
-  {
-    name: 'puma roma',
-    image:
-      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1635926807/my-ecommerce/SNEAKERS/puma_sneakers/pngegg_ltzzbz.png',
-    brand: 'puma',
-    category: 'women',
-    subCategory: 'sneakers',
-    desc: 'Simplicity, versatility and comfort. Lace up these running-inspired shoes on action-filled days. They are quick to slip on when you are racing out the door. The rubber outsole gives you traction on slippery and uneven surfaces. A Cloudfoam midsole is for a soft feel and all-day cushioning. This product is made with Primegreen, a series of high-performance recycled materials. 50% of the upper is recycled content. No virgin polyester.',
-    rating: 4.2,
-    numReviews: 29,
-    price: 73.99,
-    countInStock: 18,
-    sizes: ['35.5', '36', '38', '40', '40 2/3', '41 1/3', '42 2/3'],
-    colors: ['#fff', '#808080'],
-    featured: false,
-  },
+
   {
     name: 'puma ca pro',
     image:

@@ -1,21 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
-import { newCollection } from '../utils/constants';
 import { Card } from '.';
+import { useProductContext } from '../context/productsContext';
 
 const GridView = () => {
+  const { products } = useProductContext();
+
   return (
     <Wrapper>
       <div className="product-container">
-        {newCollection.map((newC) => {
-          const { id, name, image, price } = newC;
+        {products.map((newC) => {
+          const { _id, name, image, price } = newC;
           return (
             <Card
-              key={id}
+              key={_id}
               name={name}
               image={image}
               price={price}
-              data={newC.size}
+              data={newC.sizes}
               text=""
               s
             />

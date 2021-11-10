@@ -1,11 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import Card from './Card';
-import { newCollection } from '../utils/constants';
+// import { newCollection } from '../utils/constants';
 import { useSubmenuContext } from '../context/submenuContext';
+import { useProductContext } from '../context/productsContext';
 
 const NewCollection = () => {
   const { closeSubmenu } = useSubmenuContext();
+  const {
+    products_loading: loading,
+    products_error: error,
+    new_products: newCollection,
+  } = useProductContext();
 
   return (
     <div className="bg" onMouseOver={closeSubmenu}>
@@ -14,14 +20,14 @@ const NewCollection = () => {
         <div className="underline"></div>
         <div className="new-card">
           {newCollection.map((newC) => {
-            const { id, name, image, price } = newC;
+            const { _id, name, image, price } = newC;
             return (
               <Card
-                key={id}
+                key={_id}
                 name={name}
                 image={image}
                 price={price}
-                data={newC.size}
+                data={newC.sizes}
                 text="new"
               />
             );

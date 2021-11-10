@@ -6,7 +6,11 @@ const Card = ({ id, image, name, price, data, text }) => {
   return (
     <CardWrapper key={id}>
       <div className={text !== '' ? 'new' : ''}>{text}</div>
-      <img src={image} alt={name} className="new-img" />
+      <img
+        src={image}
+        alt={name}
+        className={text === '' ? 'new-img rotate' : 'new-img'}
+      />
       <div className="new-size-parent">
         {data.map((nested) => {
           return (
@@ -16,9 +20,10 @@ const Card = ({ id, image, name, price, data, text }) => {
           );
         })}{' '}
       </div>
-
-      <span className="new-price">{price} €</span>
-      <span className="new-name">{name}</span>
+      <div className="new-info">
+        <span className="new-price">{price} €</span>
+        <span className="new-name">{name}</span>
+      </div>
     </CardWrapper>
   );
 };
@@ -28,6 +33,7 @@ const CardWrapper = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 300px;
   padding: 1.5rem;
   transition: 0.3s;
   background-color: var(--dark-color-lighten);
@@ -58,11 +64,25 @@ const CardWrapper = styled.article`
     text-transform: uppercase;
   }
   .new-img {
-    width: 220px;
+    width: 100%;
+    /* height: 120px; */
+    height: 100%;
     margin-top: 1.5rem;
     margin-bottom: 3rem;
     transform: rotate(-30deg);
     filter: drop-shadow(0 12px 8p rgba(0, 0, 0, 0.2));
+    object-fit: scale-down;
+  }
+  .rotate {
+    transform: none;
+  }
+
+  .new-info {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 3%;
+    left: 5%;
   }
   .new-name,
   .new-price {
@@ -70,6 +90,7 @@ const CardWrapper = styled.article`
     letter-spacing: var(--spacing);
     font-weight: var(--font-bold);
     align-self: flex-start;
+    text-transform: capitalize;
   }
   .new-price {
     font-size: var(--h2-font-size);
