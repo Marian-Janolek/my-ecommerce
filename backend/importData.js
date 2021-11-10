@@ -1,15 +1,16 @@
 const Product = require('./models/Product');
+const User = require('./models/User');
 const products = require('./data/newDB');
-const userId = '6188d7663210caf9819fc84b';
 
 const importData = async () => {
   await Product.deleteMany();
+  const adminId = await User.findOne({ role: 'admin' }).select('_id');
+
   try {
     const dbProducts = products.map((product) => {
-      return { ...product, user: userId };
+      return { ...product, user: adminId };
     });
     await Product.insertMany(dbProducts);
-    process.exit();
   } catch (error) {
     console.log(error);
   }
