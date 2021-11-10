@@ -503,7 +503,7 @@ const products = [
     featured: false,
   },
   {
-    nike: 'nike revolution',
+    name: 'nike revolution',
     image:
       'https://res.cloudinary.com/do5rzxmh3/image/upload/v1635926620/my-ecommerce/BOTS/nike_bots/pngegg_26_juigyp.png',
     brand: 'nike',
@@ -1200,7 +1200,7 @@ const products = [
     featured: false,
   },
   {
-    nike: 'nike revolution',
+    name: 'nike revolution',
     image:
       'https://res.cloudinary.com/do5rzxmh3/image/upload/v1635926789/my-ecommerce/OUTDOOR/nike_outdoor/pngegg_2_biiuvl.png',
     brand: 'nike',
@@ -1519,7 +1519,7 @@ const products = [
     featured: false,
   },
   {
-    nike: 'nike revolution',
+    name: 'nike revolution',
     image:
       'https://res.cloudinary.com/do5rzxmh3/image/upload/v1635926800/my-ecommerce/SANDALS/nike_sandals/pngegg_2_tds3ho.png',
     brand: 'nike',
@@ -2948,3 +2948,5 @@ const products = [
     featured: false,
   },
 ];
+
+module.exports = products;

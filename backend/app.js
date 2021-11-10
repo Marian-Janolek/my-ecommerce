@@ -3,6 +3,8 @@ require('express-async-handler');
 const express = require('express');
 const app = express();
 
+const importData = require('./importData');
+
 // rest of the packages
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
@@ -28,6 +30,8 @@ app.use(cookieParser(process.env.JWT_SECRET));
 app.use(express.static('./public'));
 app.use(fileupload());
 app.use(cors());
+
+importData();
 
 app.get('/', (req, res) => {
   res.send('API is running .....');

@@ -7,7 +7,7 @@ import { useUserContext } from '../context/userContext';
 const ProfileHeader = () => {
   const { logout } = useUserContext();
   const { myUser } = useUserContext();
-  const name = myUser.data.user.name;
+  // const name = myUser.data.user.name;
   const history = useHistory();
   const logoutSubmitHandler = (e) => {
     e.preventDefault();
@@ -17,7 +17,7 @@ const ProfileHeader = () => {
 
   return (
     <Wrapper>
-      <h2>Welcome, {name} </h2>
+      <h2>Welcome, </h2>
       <FaUserCircle />
       <div className="logout">
         <h5>Golden member</h5>
