@@ -12,7 +12,7 @@ const products = [
     price: 102,
     countInStock: 13,
     sizes: ['36', '36 2/3', '38', '39 1/3', '40', '40 2/3', '43 1/3'],
-    colors: ['#000000', '#FF0000', '#00FFFF'],
+    colors: ['#000', '#FF0000', '#00FFFF'],
     featured: false,
   },
   {
@@ -28,7 +28,7 @@ const products = [
     price: 155,
     countInStock: 9,
     sizes: ['39 1/3', '41 1/3', '42', '42 2/3', '43 1/3'],
-    colors: ['#000000', '#FFFFFF', '#00FFFF'],
+    colors: ['#000', '#fff', '#00FFFF'],
     featured: false,
   },
   {
@@ -44,7 +44,7 @@ const products = [
     price: 155.99,
     countInStock: 11,
     sizes: ['36', '36 2/3', '39 1/3', '41 1/3', '43 1/3'],
-    colors: ['#000000', '#C0C0C0'],
+    colors: ['#000', '#C0C0C0'],
     featured: false,
   },
   {
@@ -263,7 +263,7 @@ const products = [
     price: 121,
     countInStock: 7,
     sizes: ['35.5', '36', '38', '38 2/3', '39 1/3', '40', '40 2/3', '42'],
-    colors: ['#FFFFFF', '#FF00FF'],
+    colors: ['#fff', '#FF00FF'],
     featured: false,
   },
   {
@@ -419,7 +419,7 @@ const products = [
     price: 59,
     countInStock: 11,
     sizes: ['36', '36 2/3', '38', '39 1/3', '40', '40 2/3', '42', '43 1/3'],
-    colors: ['#0000FF', '#FFFFFF'],
+    colors: ['#0000FF', '#fff'],
     featured: false,
   },
   {
@@ -435,7 +435,7 @@ const products = [
     price: 79,
     countInStock: 17,
     sizes: ['36', '36 2/3', '38', '40', '40 2/3', '43 1/3'],
-    colors: ['#000', '#FFFFFF'],
+    colors: ['#000', '#fff'],
     featured: false,
   },
   {
@@ -467,7 +467,7 @@ const products = [
     price: 179,
     countInStock: 19,
     sizes: ['36 2/3', '37 1/3', '38', '39 1/3', '40', '40 2/3', '41 1/3', '42'],
-    colors: ['#C0C0C0', '#000000'],
+    colors: ['#C0C0C0', '#000'],
     featured: false,
   },
   {
@@ -483,7 +483,7 @@ const products = [
     price: 89,
     countInStock: 9,
     sizes: ['36 2/3', '37 1/3', '40 2/3', '41 1/3', '42'],
-    colors: ['#C0C0C0', '#000000', '#fff'],
+    colors: ['#C0C0C0', '#000', '#fff'],
     featured: false,
   },
   {
@@ -624,7 +624,7 @@ const products = [
     price: 89,
     countInStock: 12,
     sizes: ['36 2/3', '38', '38 2/3', '39 1/3', '42', '42 2/3', '44'],
-    colors: ['#FF00FF', '#FF0000', '#FFFFFF'],
+    colors: ['#FF00FF', '#FF0000', '#fff'],
     featured: false,
     new: true,
   },
@@ -653,7 +653,7 @@ const products = [
       '42 2/3',
       '44',
     ],
-    colors: ['#FF00FF', '#800080', '#FFFFFF'],
+    colors: ['#FF00FF', '#800080', '#fff'],
     featured: false,
     new: true,
   },
@@ -983,7 +983,7 @@ const products = [
     price: 49,
     countInStock: 11,
     sizes: ['26.5', '27.5', '28', '29', '31', '31.5', '32', '33'],
-    colors: ['#C0C0C0', '#000000'],
+    colors: ['#C0C0C0', '#000'],
     featured: false,
   },
   {
@@ -1230,7 +1230,7 @@ const products = [
       '42 2/3',
       '44',
     ],
-    colors: ['#0000FF', '#000000', '#C0C0C0'],
+    colors: ['#0000FF', '#000', '#C0C0C0'],
     featured: false,
   },
   {
@@ -1709,7 +1709,7 @@ const products = [
       '42',
       '42 2/3',
     ],
-    colors: ['#FF00FF', '#FFFFFF', '#00FFFF'],
+    colors: ['#FF00FF', '#fff', '#00FFFF'],
     featured: false,
   },
   {
@@ -2520,7 +2520,7 @@ const products = [
       '42',
       '44',
     ],
-    colors: ['#000000'],
+    colors: ['#000'],
     featured: false,
   },
   {
@@ -2536,7 +2536,7 @@ const products = [
     price: 119.99,
     countInStock: 8,
     sizes: ['35.5', '38 2/3', '39 1/3', '40', '40 2/3', '41 1/3'],
-    colors: ['#000000'],
+    colors: ['#000'],
     featured: false,
   },
   {

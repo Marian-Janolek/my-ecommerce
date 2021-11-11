@@ -3,13 +3,21 @@ import { GridView, ListView } from '.';
 import { useFilterContext } from '../context/filterContext';
 
 const ProductList = () => {
-  const { grid_view } = useFilterContext();
+  const { filtered_products: products, grid_view } = useFilterContext();
 
-  if (grid_view === false) {
-    return <ListView />;
+  if (products.length < 1) {
+    return (
+      <h5 style={{ textTransform: 'none' }}>
+        Sorry no product matched your search ...
+      </h5>
+    );
   }
 
-  return <GridView />;
+  if (grid_view === false) {
+    return <ListView products={products} />;
+  }
+
+  return <GridView products={products} />;
 };
 
 export default ProductList;

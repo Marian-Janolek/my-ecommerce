@@ -1,23 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Card } from '.';
-import { useProductContext } from '../context/productsContext';
 
-const GridView = () => {
-  const { products } = useProductContext();
-
+const GridView = ({ products }) => {
   return (
     <Wrapper>
       <div className="product-container">
-        {products.map((newC) => {
-          const { _id, name, image, price } = newC;
+        {products.map((product) => {
+          const { _id, name, image, price } = product;
           return (
             <Card
               key={_id}
               name={name}
               image={image}
               price={price}
-              data={newC.sizes}
+              data={product.sizes}
               text=""
               s
             />

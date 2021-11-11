@@ -1,9 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaCheck } from 'react-icons/fa';
-import { sublinks } from '../utils/constants';
+import { getUniqueValues } from '../utils/helpers';
+import { useFilterContext } from '../context/filterContext';
 
 const Filters = () => {
+  const {
+    filters: {
+      category,
+      subCategory,
+      color,
+      min_price,
+      max_price,
+      price,
+      shipping,
+      brand,
+    },
+    updateFilters,
+    clearFilters,
+    all_products,
+  } = useFilterContext();
+  const categories = getUniqueValues(all_products, 'category');
+  const subCategories = getUniqueValues(all_products, 'subCategory');
+  const colors = getUniqueValues(all_products, 'colors');
+  const brands = getUniqueValues(all_products, 'brand');
+
   return (
     <Wrapper>
       <div className="content">
@@ -12,37 +33,58 @@ const Filters = () => {
           <div className="form-control">
             <h5>category</h5>
             <div>
-              {sublinks.map((link, index) => {
-                const { page, links } = link;
-                if (page === 'men') {
-                  return (
-                    <>
-                      {links.map((el) => {
-                        const { id, text } = el;
-                        return (
-                          <button
-                            key={id + index}
-                            type="button"
-                            className="filter-btn"
-                          >
-                            {text}
-                          </button>
-                        );
-                      })}
-                    </>
-                  );
-                }
+              {categories.map((category, index) => {
+                return (
+                  <button
+                    key={index}
+                    type="button"
+                    className="filter-btn"
+                    onClick={updateFilters}
+                    name="category"
+                  >
+                    {category}
+                  </button>
+                );
               })}
             </div>
           </div>
           {/* end of categories */}
+          {/* sub categories */}
+          <div className="form-control">
+            <h5>sortiment</h5>
+            <div>
+              {subCategories.map((sub, index) => {
+                return (
+                  <button
+                    key={index}
+                    type="button"
+                    className="filter-btn"
+                    onClick={updateFilters}
+                    name="subCategory"
+                  >
+                    {sub}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+          {/* end of sub categories */}
           {/* brands */}
           <div className="form-control">
             <h5>brands</h5>
-            <select name="brand" className="brands">
-              <option value="nike">nike</option>
-              <option value="adidas">adidas</option>
-              <option value="puma">puma</option>
+            <select
+              name="brand"
+              value={brand}
+              className="brands"
+              onChange={updateFilters}
+            >
+              {brands.map((b, index) => {
+                return (
+                  <option key={index} value={b}>
+                    {b}
+                  </option>
+                );
+              })}
             </select>
           </div>
           {/* end of brands */}
@@ -61,17 +103,52 @@ const Filters = () => {
           <div className="form-control">
             <h5>colors</h5>
             <div className="colors">
-              <button className="colors-btn" name="color">
-                <FaCheck />
-              </button>
+              {colors.map((c, index) => {
+                if (c === 'all') {
+                  return (
+                    <button
+                      name="color"
+                      onClick={updateFilters}
+                      key={index}
+                      data-color="all"
+                      className={`${
+                        color === 'all' ? 'all-btn active' : 'all-btn'
+                      }`}
+                    >
+                      all
+                    </button>
+                  );
+                }
+                return (
+                  <button
+                    key={index}
+                    name="color"
+                    style={{ background: c }}
+                    className={`${
+                      color === c ? 'color-btn active' : 'color-btn'
+                    }`}
+                    data-color={c}
+                    onClick={updateFilters}
+                  >
+                    {color === c ? <FaCheck /> : null}
+                  </button>
+                );
+              })}
             </div>
           </div>
           {/* end of colors */}
           {/* prices */}
           <div className="form-control">
             <h5>price</h5>
-            <p></p>
-            <input type="range" name="price" min="20" max="200" />
+            <p className="price">{price}</p>
+            <input
+              type="range"
+              name="price"
+              min={min_price}
+              max={max_price}
+              onChange={updateFilters}
+              value={price}
+            />
           </div>
           {/* end of prices */}
           {/* shipping */}
@@ -81,7 +158,7 @@ const Filters = () => {
           </div>
           {/* end of shipping */}
         </form>
-        <button type="button" className="clear-btn">
+        <button type="button" className="clear-btn" onClick={clearFilters}>
           clear filters
         </button>
       </div>
@@ -109,9 +186,9 @@ const Wrapper = styled.section`
     letter-spacing: var(--spacing);
     color: var(--dark-color);
     cursor: pointer;
-  }
-  .active {
-    border-color: var(--dark-color-light);
+    .active {
+      border-color: var(--dark-color);
+    }
   }
   .brands {
     background-color: var(--white-color);
@@ -142,8 +219,9 @@ const Wrapper = styled.section`
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
-    background-color: var(--dark-color);
+    background: #222;
     margin-right: 0.5rem;
+    border: none;
     cursor: pointer;
     opacity: 0.5;
     display: flex;
@@ -154,15 +232,15 @@ const Wrapper = styled.section`
       color: var(--white-color);
     }
   }
-  .active {
-    opacity: 1;
-  }
   .all-btn {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 0.5rem;
     opacity: 0.5;
+  }
+  .active {
+    opacity: 1;
   }
   .all-btn .active {
     text-decoration: underline;
@@ -192,7 +270,7 @@ const Wrapper = styled.section`
 
   @media (min-width: 768px) {
     .content {
-      position: sticky;
+      /* position: sticky; */
       top: 1rem;
     }
   }
