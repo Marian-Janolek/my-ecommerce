@@ -22,6 +22,7 @@ const initialState = {
     brand: 'all',
     category: 'all',
     subCategory: 'all',
+    size: 'all',
     color: 'all',
     min_price: 0,
     max_price: 0,
@@ -63,6 +64,15 @@ export const FilterProvider = ({ children }) => {
 
     if (name === 'category') {
       value = e.target.textContent;
+    }
+    if (name === 'subCategory') {
+      value = e.target.textContent;
+    }
+    if (name === 'size') {
+      value = e.target.textContent;
+    }
+    if (name === 'color') {
+      value = e.target.dataset.color;
     }
     if (name === 'price') {
       value = Number(value);

@@ -22,8 +22,9 @@ const Filters = () => {
   } = useFilterContext();
   const categories = getUniqueValues(all_products, 'category');
   const subCategories = getUniqueValues(all_products, 'subCategory');
-  const colors = getUniqueValues(all_products, 'colors');
   const brands = getUniqueValues(all_products, 'brand');
+  const sizes = getUniqueValues(all_products, 'sizes');
+  const colors = getUniqueValues(all_products, 'colors');
 
   return (
     <Wrapper>
@@ -92,10 +93,19 @@ const Filters = () => {
           <div className="form-control">
             <h5>sizes</h5>
             <div className="sizes">
-              <button className="sizes-btn">35</button>
-              <button className="sizes-btn">36</button>
-              <button className="sizes-btn">37</button>
-              <button className="sizes-btn">38</button>
+              {sizes.map((size, index) => {
+                return (
+                  <button
+                    key={index}
+                    type="button"
+                    className="sizes-btn"
+                    onClick={updateFilters}
+                    name="size"
+                  >
+                    {size}
+                  </button>
+                );
+              })}
             </div>
           </div>
           {/* end of sizes */}
@@ -182,14 +192,13 @@ const Wrapper = styled.section`
     text-transform: capitalize;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid transparent;
     letter-spacing: var(--spacing);
-    color: var(--dark-color);
     cursor: pointer;
     .active {
-      border-color: var(--dark-color);
+      color: var(--dark-color);
     }
   }
+
   .brands {
     background-color: var(--white-color);
     border-radius: var(--radius);
@@ -201,7 +210,9 @@ const Wrapper = styled.section`
   .colors {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
+
   .sizes {
     column-gap: 0.5rem;
   }
