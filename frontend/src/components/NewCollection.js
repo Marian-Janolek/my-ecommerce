@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Card from './Card';
-// import { newCollection } from '../utils/constants';
 import { useSubmenuContext } from '../context/submenuContext';
 import { useProductContext } from '../context/productsContext';
 
@@ -24,6 +23,7 @@ const NewCollection = () => {
             return (
               <Card
                 key={_id}
+                id={_id}
                 name={name}
                 image={image}
                 price={price}

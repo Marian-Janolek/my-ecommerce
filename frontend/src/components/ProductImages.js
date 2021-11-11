@@ -27,9 +27,10 @@ const ProductImages = ({ images = [{ url: '' }] }) => {
 const Wrapper = styled.section`
   img {
     width: 100%;
+    height: 400px;
     display: block;
     border-radius: var(--radius);
-    /* object-fit: cover; */
+    object-fit: contain;
   }
   .gallery {
     margin-top: 1rem;
@@ -59,7 +60,7 @@ const Wrapper = styled.section`
 
   @media (min-width: 992px) {
     .main {
-      height: 500px;
+      height: 300px;
     }
     .gallery {
       img {

@@ -1,8 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useProductContext } from '../context/productsContext';
+import Loading from './Loading';
 
 const Card = ({ id, image, name, price, data, text }) => {
+  const { products_loading: loading, products_error: error } =
+    useProductContext();
+
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <CardWrapper key={id}>
       <div className={text !== '' ? 'new' : ''}>{text}</div>
@@ -14,7 +22,7 @@ const Card = ({ id, image, name, price, data, text }) => {
       <div className="new-size-parent">
         {data.map((nested) => {
           return (
-            <Link to="/" className="new-size" key={id + nested}>
+            <Link to={`/products/${id}`} className="new-size" key={id + nested}>
               {nested}
             </Link>
           );

@@ -1,33 +1,67 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { useParams, useHistory } from 'react-router-dom';
 import { ProductImages, Stars } from '.';
+import { useProductContext } from '../context/productsContext';
 import { useSubmenuContext } from '../context/submenuContext';
+import Loading from './Loading';
+import { products_url } from '../utils/constants';
 
 const SingleProduct = () => {
+  const { id } = useParams();
+  const history = useHistory();
+  const {
+    single_product_loading: loading,
+    single_product_error: error,
+    single_product: product,
+    fetchSingleProduct,
+  } = useProductContext();
   const [brandLogo, setBrandLogo] = useState('');
-
   const { closeSubmenu } = useSubmenuContext();
 
+  useEffect(() => {
+    fetchSingleProduct(`${products_url}/${id}`);
+  }, [id]);
+
+  useEffect(() => {
+    if (error) {
+      setTimeout(() => {
+        history.push('/');
+      }, 3000);
+    }
+    // eslint-disable-next-line
+  }, [error]);
+  const {
+    name,
+    price,
+    desc,
+    rating: stars,
+    numReviews: reviews,
+    brand,
+    image,
+    sizes,
+  } = product;
+  console.log(product);
   const logo = [
     'https://res.cloudinary.com/do5rzxmh3/image/upload/v1635788814/my-ecommerce/adidas_logo_do6xd1.png',
     'https://res.cloudinary.com/do5rzxmh3/image/upload/v1635787598/my-ecommerce/nike_logo_wb1pj1.png',
     'https://res.cloudinary.com/do5rzxmh3/image/upload/v1635788814/my-ecommerce/puma_logo_a73rvr.png',
   ];
+  useEffect(() => {
+    if (brand === 'adidas') {
+      setBrandLogo(logo[0]);
+    } else if (brand === 'nike') {
+      setBrandLogo(logo[1]);
+    } else if (brand === 'puma') {
+      setBrandLogo(logo[2]);
+    }
+  }, [brand, logo]);
 
   const products = {
-    id: 1,
-    name: 'nike performance',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum aliquid pariatur, consequuntur nobis molestias laudantium reiciendis. Minima reiciendis nulla fugiat explicabo deleniti id exercitationem, eaque facilis ipsam vero iusto ipsa quibusdam placeat quaerat beatae tenetur magni veritatis quod debitis ipsum inventore corporis non! Iusto eius amet at veritatis adipisci nihil, omnis architecto tempora voluptate, accusamus possimus non alias repellendus consectetur!',
-    stars: 4.6,
-    reviews: 22,
-    price: 119,
-    brand: 'nike',
-    sizes: ['36', '37 1/3', '40', '40 2/3', '42', '42 2/3', '42', '42 2/3'],
     images: [
       {
-        id: '2413432432',
-        url: 'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630180/my-ecommerce/women1_hyh6az.png',
+        id,
+        url: image,
       },
       {
         id: '123123123555d',
@@ -48,26 +82,11 @@ const SingleProduct = () => {
     ],
   };
 
-  const {
-    name,
-    description: desc,
-    stars,
-    reviews,
-    brand,
-    images,
-    sizes,
-    price,
-  } = products;
+  if (loading) {
+    return <Loading />;
+  }
 
-  useEffect(() => {
-    if (brand === 'adidas') {
-      setBrandLogo(logo[0]);
-    } else if (brand === 'nike') {
-      setBrandLogo(logo[1]);
-    } else if (brand === 'puma') {
-      setBrandLogo(logo[2]);
-    }
-  }, [brand, logo]);
+  const { images } = products;
 
   return (
     <div onMouseOver={closeSubmenu}>
@@ -80,10 +99,10 @@ const SingleProduct = () => {
             <Stars stars={stars} reviews={reviews} />
             <div className="info">
               <div className="sizes">
-                {sizes.map((size, index) => {
+                {sizes.map((s, index) => {
                   return (
                     <button key={index} type="submit" className="size">
-                      {size}
+                      {s}
                     </button>
                   );
                 })}
@@ -207,7 +226,7 @@ const Wrapper = styled.article`
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      width: 70%;
+      width: 65%;
     }
   }
 `;

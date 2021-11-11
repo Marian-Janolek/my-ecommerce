@@ -9,6 +9,7 @@ import {
   GET_SINGLE_PRODUCT_FAIL,
   GET_SINGLE_PRODUCT_SUCCESS,
 } from '../actions';
+import { products_url } from '../utils/constants';
 
 const initialState = {
   products_loading: false,
@@ -25,7 +26,6 @@ const ProductsContext = React.createContext();
 
 export const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const products_url = `/api/v1/products`;
 
   const fetchProducts = async (url) => {
     dispatch({ type: GET_PRODUCTS_REQUEST });
@@ -42,7 +42,7 @@ export const ProductsProvider = ({ children }) => {
     dispatch({ type: GET_SINGLE_PRODUCT_REQUEST });
     try {
       const response = await axios.get(url);
-      const singleProduct = response.data;
+      const singleProduct = response.data.product;
       dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: singleProduct });
     } catch (error) {
       dispatch({ type: GET_SINGLE_PRODUCT_FAIL });

@@ -11,6 +11,7 @@ const GridView = ({ products }) => {
           return (
             <Card
               key={_id}
+              id={_id}
               name={name}
               image={image}
               price={price}
