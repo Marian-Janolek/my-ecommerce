@@ -222,49 +222,6 @@ export const sublinks = [
   },
 ];
 
-export const newCollection = [
-  {
-    id: 1,
-    image:
-      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630180/my-ecommerce/women1_hyh6az.png',
-    name: 'Nike Performance',
-    price: 89.9,
-    size: ['36', '37 1/3', '40', '40 2/3', '42', '42 2/3'],
-  },
-  {
-    id: 2,
-    image:
-      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630181/my-ecommerce/women2_gtiblg.png',
-    name: 'Nike Air Huarache',
-    price: 59.9,
-    size: ['36', '36 2/3', '39 1/3', ' 40 2/3', '42', '43 1/3'],
-  },
-  {
-    id: 3,
-    image:
-      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630180/my-ecommerce/women3_xl4gal.png',
-    name: 'Nike Air Max LTD 3',
-    price: 49.9,
-    size: ['35.5', '36', '37 1/3', '38', '39 1/3', '40', '42', '44'],
-  },
-  {
-    id: 4,
-    image:
-      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630181/my-ecommerce/women4_rc5vix.png',
-    name: 'Nike Air Max 270',
-    price: 109.9,
-    size: ['38', '39 1/3', '40', '40 2/3', '41 1/3', '42', '42 2/3'],
-  },
-  {
-    id: 5,
-    image:
-      'https://res.cloudinary.com/do5rzxmh3/image/upload/v1634648111/my-ecommerce/new5_h7jlhd.png',
-    name: 'Nike Revolution 5',
-    price: 109.9,
-    size: ['36 2/3', '37 1/3', '40', '40 2/3', '41 1/3', '42', '43 1/3'],
-  },
-];
-
 export const ourSortiment = [
   {
     id: 1,
