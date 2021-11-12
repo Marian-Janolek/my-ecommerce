@@ -21,7 +21,7 @@ const LoaderWrapper = styled.div`
     margin-left: -2.7em;
     width: 5.4em;
     height: 5.4em;
-    background-color: var(--dark-color-lighten);
+    background-color: transparent;
   }
 
   #hill {

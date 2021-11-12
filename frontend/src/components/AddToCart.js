@@ -100,7 +100,7 @@ const Wrapper = styled.div`
     justify-content: center;
     svg {
       font-size: 0.75rem;
-      color: var(--clr-white);
+      color: var(--dark-color);
     }
   }
   .active {

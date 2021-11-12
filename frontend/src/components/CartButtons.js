@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BiCart } from 'react-icons/bi';
-import { FiUserMinus, FiUserPlus } from 'react-icons/fi';
+import { FiUserPlus } from 'react-icons/fi';
 import styled from 'styled-components';
 import { useUserContext } from '../context/userContext';
 import { useCartContext } from '../context/cartContext';
+import { AiOutlineCheck } from 'react-icons/ai';
+import { BiUser } from 'react-icons/bi';
 
 const CartButtons = () => {
   const { myUser } = useUserContext();
@@ -13,7 +15,10 @@ const CartButtons = () => {
     <Wrapper>
       {myUser ? (
         <Link to="/profile" className="user-icon">
-          <FiUserMinus />
+          <BiUser />
+          <span className="cart-check">
+            <AiOutlineCheck />
+          </span>
         </Link>
       ) : (
         <Link to="/login" className="user-icon">
@@ -41,7 +46,8 @@ const Wrapper = styled.div`
     position: relative;
   }
 
-  .cart-value {
+  .cart-value,
+  .cart-check {
     position: absolute;
     top: -10px;
     right: -16px;
@@ -54,7 +60,7 @@ const Wrapper = styled.div`
     border-radius: 50%;
     font-size: 0.75rem;
     color: var(--white-color);
-    padding: 12px;
+    padding: 11px;
   }
 `;
 
