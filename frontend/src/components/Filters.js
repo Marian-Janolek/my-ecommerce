@@ -191,12 +191,10 @@ const Wrapper = styled.section`
     padding: 0.25rem 0;
     text-transform: capitalize;
     background-color: transparent;
+    border-bottom: 1px solid transparent;
     border: none;
     letter-spacing: var(--spacing);
     cursor: pointer;
-    .active {
-      color: var(--dark-color);
-    }
   }
 
   .brands {
@@ -273,6 +271,7 @@ const Wrapper = styled.section`
     padding: 0.25rem 0.5rem;
     border-radius: var(--radius);
   }
+
   .filter-btn:hover {
     color: var(--dark-color);
     font-size: var(--smaller-font-size);

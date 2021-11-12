@@ -17,7 +17,7 @@ const GridView = ({ products }) => {
               price={price}
               data={product.sizes}
               text=""
-              s
+              style={{ background: '#fff' }}
             />
           );
         })}

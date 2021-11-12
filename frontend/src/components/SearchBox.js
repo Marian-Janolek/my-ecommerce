@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const SearchBox = () => {
-  const [keyword, setKeyword] = useState('');
-
   const submitHandler = (e) => {
     e.preventDefault();
   };
@@ -14,7 +12,6 @@ const SearchBox = () => {
         <input
           type="text"
           placeholder="Search for products..."
-          // value={keyword}
           className="search-input"
         />
         <button

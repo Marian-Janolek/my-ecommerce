@@ -46,6 +46,7 @@ const CardWrapper = styled.article`
   transition: 0.3s;
   background-color: var(--dark-color-lighten);
   border-radius: calc(var(--radius) * 2);
+
   :hover .new-size {
     transform: translateY(-50%);
     background-color: var(--dark-color-lighten);
