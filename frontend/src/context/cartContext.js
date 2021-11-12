@@ -8,8 +8,8 @@ import {
   COUNT_CART_TOTALS,
 } from '../actions';
 
-const getLoclStorage = () => {
-  let cart = localStorage.get('cart');
+const getLocalStorage = () => {
+  let cart = localStorage.getItem('cart');
   if (cart) {
     return JSON.parse(localStorage.getItem('cart'));
   } else {
@@ -18,7 +18,7 @@ const getLoclStorage = () => {
 };
 
 const initialState = {
-  cart: getLoclStorage(),
+  cart: getLocalStorage(),
   total_items: 0,
   total_amount: 0,
   shipping_fee: 3.99,
@@ -29,17 +29,17 @@ const CartContext = React.createContext();
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const addToCart = (_id, color, amount, product) => {
-    dispatch({ type: ADD_TO_CART, payload: { _id, color, amount, product } });
+  const addToCart = (id, color, amount, product) => {
+    dispatch({ type: ADD_TO_CART, payload: { id, color, amount, product } });
   };
 
-  const removeItem = () => {
+  const removeItem = (id) => {
     dispatch({ type: REMOVE_CART_ITEM, payload: id });
   };
   const clearCart = () => {
     dispatch({ type: CLEAR_CART });
   };
-  const toggleAmount = () => {
+  const toggleAmount = (id, value) => {
     dispatch({ type: TOGGLE_CART_ITEM_AMOUNT, payload: { id, value } });
   };
 

@@ -4,23 +4,24 @@ import CartHeader from './CartHeader';
 import CartItem from './CartItem';
 import { useSubmenuContext } from '../context/submenuContext';
 import { CartTotals } from '.';
+import { useCartContext } from '../context/cartContext';
 
 const CartContent = () => {
   const { closeSubmenu } = useSubmenuContext();
+  const { cart, clearCart } = useCartContext();
 
   return (
     <div onMouseOver={closeSubmenu}>
       <Wrapper className="section-center">
         <div>
           <CartHeader />
-          <CartItem />
-          <hr />
-          <CartItem />
-          <hr />
-          <CartItem />
-          <hr />
-          <CartItem />
-          <hr />
+          {cart.map((item) => {
+            return (
+              <>
+                <CartItem key={item._id} {...item} /> <hr />
+              </>
+            );
+          })}
         </div>
         <CartTotals />
       </Wrapper>

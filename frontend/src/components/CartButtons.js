@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import { BiCart } from 'react-icons/bi';
 import { FiUserMinus, FiUserPlus } from 'react-icons/fi';
 import styled from 'styled-components';
 import { useUserContext } from '../context/userContext';
+import { useCartContext } from '../context/cartContext';
 
 const CartButtons = () => {
   const { myUser } = useUserContext();
-
+  const { total_items } = useCartContext();
   return (
     <Wrapper>
       {myUser ? (
@@ -23,6 +23,7 @@ const CartButtons = () => {
 
       <Link to="cart" className="cart-icon">
         <BiCart />
+        <span className="cart-value">{total_items}</span>
       </Link>
     </Wrapper>
   );
@@ -37,6 +38,23 @@ const Wrapper = styled.div`
   .cart-icon {
     font-size: 1.5rem;
     cursor: pointer;
+    position: relative;
+  }
+
+  .cart-value {
+    position: absolute;
+    top: -10px;
+    right: -16px;
+    background: var(--dark-color);
+    width: 0.9rem;
+    height: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    color: var(--white-color);
+    padding: 12px;
   }
 `;
 

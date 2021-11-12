@@ -1,8 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useCartContext } from '../context/cartContext';
+import { useUserContext } from '../context/userContext';
 
 const CartTotals = () => {
+  const { total_amount, shipping_fee } = useCartContext();
+
   return (
     <Wrapper>
       <div className="coupon">
@@ -26,14 +30,15 @@ const CartTotals = () => {
       <div className="totals">
         <article>
           <h5>
-            subtotal : <span>222 €</span>
+            subtotal : <span>{total_amount.toFixed(2)} €</span>
           </h5>
           <p>
-            shipping fee : <span>4.99 €</span>
+            shipping fee : <span>{shipping_fee.toFixed(2)} €</span>
           </p>
           <hr />
           <h4>
-            order total : <span>282 €</span>
+            order total :{' '}
+            <span>{(total_amount + shipping_fee).toFixed(2)}€</span>
           </h4>
         </article>
         <div className="btns">

@@ -2,27 +2,38 @@ import React from 'react';
 import { FaTrash } from 'react-icons/fa';
 import styled from 'styled-components';
 import { AmountButtons } from '.';
+import { useCartContext } from '../context/cartContext';
 
-const CartItem = () => {
+const CartItem = ({ id, image, name, color, price, amount }) => {
+  const { removeItem, toggleAmount } = useCartContext();
+  const increase = () => {
+    toggleAmount(id, 'inc');
+  };
+
+  const decrease = () => {
+    toggleAmount(id, 'dec');
+  };
+
   return (
     <Wrapper>
       <div className="title">
-        <img
-          src="https://res.cloudinary.com/do5rzxmh3/image/upload/v1634630180/my-ecommerce/women1_hyh6az.png"
-          alt=""
-        />
+        <img src={image} alt={name} />
         <div>
-          <h5 className="name">nike performance</h5>
+          <h5 className="name">{name}</h5>
           <p className="color">
-            color: <span></span>
+            color: <span style={{ background: color }}></span>
           </p>
-          <h5 className="price-small">129</h5>
+          <h5 className="price-small">{price}</h5>
         </div>
       </div>
-      <h5 className="price">100</h5>
-      <AmountButtons />
-      <h5 className="subtotal">899</h5>
-      <button type="button" className="remove-btn">
+      <h5 className="price">{price.toFixed(2)} €</h5>
+      <AmountButtons amount={amount} increase={increase} decrease={decrease} />
+      <h5 className="subtotal">{(price * amount).toFixed(2)} €</h5>
+      <button
+        type="button"
+        className="remove-btn"
+        onClick={() => removeItem(id)}
+      >
         <FaTrash />
       </button>
     </Wrapper>

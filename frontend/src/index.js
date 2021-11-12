@@ -7,6 +7,7 @@ import { SubmenuProvider } from './context/submenuContext';
 import { FilterProvider } from './context/filterContext';
 import { UserProvider } from './context/userContext';
 import { ProductsProvider } from './context/productsContext';
+import { CartProvider } from './context/cartContext';
 
 ReactDOM.render(
   <UserProvider>
@@ -14,7 +15,9 @@ ReactDOM.render(
       <SubmenuProvider>
         <SidebarProvider>
           <FilterProvider>
-            <App />
+            <CartProvider>
+              <App />
+            </CartProvider>
           </FilterProvider>
         </SidebarProvider>
       </SubmenuProvider>

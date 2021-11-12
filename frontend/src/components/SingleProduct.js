@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useParams, useHistory } from 'react-router-dom';
-import { ProductImages, Stars } from '.';
+import { AddToCart, ProductImages, Stars } from '.';
 import { useProductContext } from '../context/productsContext';
 import { useSubmenuContext } from '../context/submenuContext';
 import Loading from './Loading';
@@ -40,6 +40,7 @@ const SingleProduct = () => {
     brand,
     image,
     sizes,
+    countInStock,
   } = product;
   console.log(product);
   const logo = [
@@ -99,20 +100,18 @@ const SingleProduct = () => {
             <Stars stars={stars} reviews={reviews} />
             <div className="info">
               <div className="sizes">
-                {sizes.map((s, index) => {
+                {/* {sizes.map((s, index) => {
                   return (
                     <button key={index} type="submit" className="size">
                       {s}
                     </button>
                   );
-                })}
+                })} */}
               </div>
             </div>
             <div className="flex-right">
               <h5 className="price">{price} €</h5>
-              <button type="submit" className="btn">
-                add to cart
-              </button>
+              {countInStock > 0 && <AddToCart product={product} />}
             </div>
           </section>
         </div>
