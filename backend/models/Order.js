@@ -1,5 +1,29 @@
 const mongoose = require('mongoose');
 
+const SingleCartItemSchema = mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  amount: {
+    type: Number,
+    required: true,
+  },
+  image: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+  },
+  product: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: 'Product',
+  },
+});
+
 const OrderSchema = mongoose.Schema(
   {
     user: {
@@ -7,31 +31,7 @@ const OrderSchema = mongoose.Schema(
       required: true,
       ref: 'User',
     },
-    orderItems: [
-      {
-        name: {
-          type: String,
-          required: true,
-        },
-        quantity: {
-          type: Number,
-          required: true,
-        },
-        image: {
-          type: String,
-          required: true,
-        },
-        price: {
-          type: Number,
-          required: true,
-        },
-        product: {
-          type: mongoose.Schema.Types.ObjectId,
-          required: true,
-          ref: 'Product',
-        },
-      },
-    ],
+    orderItems: [SingleCartItemSchema],
     shippingAddress: {
       address: {
         type: String,
@@ -62,12 +62,12 @@ const OrderSchema = mongoose.Schema(
       update_time: { type: String },
       email_address: { type: String },
     },
-    taxPrice: {
+    tax: {
       type: Number,
       required: true,
       default: 0.0,
     },
-    shippingPrice: {
+    shippingFee: {
       type: Number,
       required: true,
       default: 0.0,
