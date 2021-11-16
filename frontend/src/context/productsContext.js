@@ -51,7 +51,7 @@ export const ProductsProvider = ({ children }) => {
 
   useEffect(() => {
     fetchProducts(products_url);
-  }, [products_url]);
+  }, []);
 
   return (
     <ProductsContext.Provider value={{ ...state, fetchSingleProduct }}>

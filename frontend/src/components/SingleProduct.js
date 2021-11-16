@@ -100,13 +100,13 @@ const SingleProduct = () => {
             <Stars stars={stars} reviews={reviews} />
             <div className="info">
               <div className="sizes">
-                {/* {sizes.map((s, index) => {
+                {sizes?.map((s, index) => {
                   return (
                     <button key={index} type="submit" className="size">
                       {s}
                     </button>
                   );
-                })} */}
+                })}
               </div>
             </div>
             <div className="flex-right">

@@ -1,7 +1,7 @@
 import { FaFacebook, FaTwitter, FaTumblrSquare } from 'react-icons/fa';
 import { FiInstagram } from 'react-icons/fi';
 
-export const products_url = `/api/v1/products`;
+export const products_url = `http://localhost:5000/api/v1/products`;
 
 export const links = [
   { id: 1, text: 'home', url: '/' },
