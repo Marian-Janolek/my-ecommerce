@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useOrderContext } from '../context/orderContext';
 
 const Order = () => {
+  const { my_orders: orders, showMyOrders } = useOrderContext();
+
   return (
     <Wrapper>
       <h2>
@@ -10,6 +13,10 @@ const Order = () => {
       </h2>
       <article className="order-flex">
         <div>
+          <button onClick={showMyOrders}>
+            click me
+            {console.log(orders)}{' '}
+          </button>
           <h3>shipping</h3>
           <h5>
             name : <span>majko</span>{' '}

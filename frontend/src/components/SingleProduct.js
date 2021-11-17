@@ -21,7 +21,7 @@ const SingleProduct = () => {
 
   useEffect(() => {
     fetchSingleProduct(`${products_url}/${id}`);
-  }, [id]);
+  }, []);
 
   useEffect(() => {
     if (error) {

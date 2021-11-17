@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import CartHeader from './CartHeader';
 import CartItem from './CartItem';
@@ -8,7 +8,7 @@ import { useCartContext } from '../context/cartContext';
 
 const CartContent = () => {
   const { closeSubmenu } = useSubmenuContext();
-  const { cart, clearCart } = useCartContext();
+  const { cart } = useCartContext();
 
   return (
     <div onMouseOver={closeSubmenu}>

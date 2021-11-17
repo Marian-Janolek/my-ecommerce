@@ -8,6 +8,7 @@ import { FilterProvider } from './context/filterContext';
 import { UserProvider } from './context/userContext';
 import { ProductsProvider } from './context/productsContext';
 import { CartProvider } from './context/cartContext';
+import { OrderProvider } from './context/orderContext';
 
 ReactDOM.render(
   <UserProvider>
@@ -16,7 +17,9 @@ ReactDOM.render(
         <SidebarProvider>
           <FilterProvider>
             <CartProvider>
-              <App />
+              <OrderProvider>
+                <App />
+              </OrderProvider>
             </CartProvider>
           </FilterProvider>
         </SidebarProvider>

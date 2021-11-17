@@ -40,9 +40,8 @@ const orderReducer = (state, action) => {
         single_order_error: true,
       };
     case SHOW_USER_ORDERS_REQUEST:
-      return { ...state };
-    case SHOW_USER_ORDERS_SUCCESS:
       return { ...state, my_orders_loading: true };
+
     case SHOW_USER_ORDERS_SUCCESS:
       return { ...state, my_orders_loading: false, my_order: action.payload };
     case SHOW_USER_ORDERS_FAIL:
@@ -51,3 +50,5 @@ const orderReducer = (state, action) => {
       return state;
   }
 };
+
+export default orderReducer;

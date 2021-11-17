@@ -4,7 +4,7 @@ import {
   Navbar,
   Sidebar,
   Submenu,
-  Loading,
+  // Loading,
   Footer,
   NewCollection,
 } from './components';

@@ -1,5 +1,6 @@
-import React, { createContext, useState, useReducer } from 'react';
+import React, { createContext, useContext, useReducer } from 'react';
 import axios from 'axios';
+import reducer from '../reducer/orderReducer';
 import {
   GET_ALL_ORDERS_FAIL,
   GET_ALL_ORDERS_REQUEST,
@@ -53,8 +54,8 @@ export const OrderProvider = ({ children }) => {
   };
 
   const showMyOrders = async () => {
-    dispatch({ type: SHOW_USER_ORDERS_REQUEST });
     try {
+      dispatch({ type: SHOW_USER_ORDERS_REQUEST });
       const response = await axios.get(`${orders_url}/showAllMyOrders`);
       const myOrders = response.data;
       dispatch({ type: SHOW_USER_ORDERS_SUCCESS, payload: myOrders });

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { BiCart } from 'react-icons/bi';
 import { FiUserPlus } from 'react-icons/fi';
