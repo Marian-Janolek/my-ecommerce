@@ -19,12 +19,16 @@ const productsReducer = (state, action) => {
       const new_products = action.payload.filter(
         (product) => product.new === true
       );
+      const sale_products = action.payload.filter(
+        (product) => product.sale === true
+      );
       return {
         ...state,
         products_loading: false,
         products: action.payload,
         featured_products,
         new_products,
+        sale_products,
       };
     case GET_PRODUCTS_FAIL:
       return { ...state, products_loading: false, product_error: true };

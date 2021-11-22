@@ -8,7 +8,7 @@ const OurSortiment = () => {
   const { closeSubmenu } = useSubmenuContext();
 
   return (
-    <div className="bg-dark-lighten" onMouseOver={closeSubmenu}>
+    <div className="bg" onMouseOver={closeSubmenu}>
       <OurSortimentWrapper className="section-center">
         <h2>our sortiment</h2>
         <div className="underline"></div>
@@ -31,10 +31,9 @@ const OurSortiment = () => {
 };
 
 const OurSortimentWrapper = styled.section`
-  padding-bottom: 5rem;
-  .bg {
-    background-color: var(--dark-color-lighten);
-  }
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+
   h2 {
     text-transform: uppercase;
     text-align: center;

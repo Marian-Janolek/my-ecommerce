@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useCartContext } from '../context/cartContext';
-import { useUserContext } from '../context/userContext';
 
 const CartTotals = () => {
   const { total_amount, shipping_fee } = useCartContext();
+  const [coupon, setCoupon] = useState('');
 
   return (
     <Wrapper>
@@ -16,6 +16,8 @@ const CartTotals = () => {
             type="text"
             placeholder="Coupon Code"
             className="input-coupon"
+            value={coupon}
+            onChange={(e) => setCoupon(e.target.value)}
             required
           />
           <button
@@ -30,7 +32,7 @@ const CartTotals = () => {
       <div className="totals">
         <article>
           <h5>
-            subtotal : <span>{total_amount.toFixed(2)} €</span>
+            subtotal : <span>{total_amount.toFixed(2)}€</span>
           </h5>
           <p>
             shipping fee : <span>{shipping_fee.toFixed(2)} €</span>
@@ -126,6 +128,7 @@ const Wrapper = styled.section`
     font-weight: var(--font-bold);
     font-size: var(--fonts-semi-bold);
     width: 8rem;
+    text-transform: uppercase;
   }
   .input-coupon::placeholder {
     color: var(--dark-color-light);

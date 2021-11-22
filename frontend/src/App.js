@@ -7,6 +7,7 @@ import {
   // Loading,
   Footer,
   NewCollection,
+  Sale,
 } from './components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import {
@@ -45,6 +46,9 @@ const App = () => {
           </Route>
           <Route exact path="/new">
             <NewCollection />
+          </Route>
+          <Route exact path="/sale">
+            <Sale />
           </Route>
           <Route exact path="/men">
             <MenPage />

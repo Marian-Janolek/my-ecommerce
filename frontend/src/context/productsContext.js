@@ -20,6 +20,7 @@ const initialState = {
   single_product_error: false,
   single_product: {},
   new_products: [],
+  sale_products: [],
 };
 
 const ProductsContext = React.createContext();

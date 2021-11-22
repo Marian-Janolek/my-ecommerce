@@ -46,6 +46,7 @@ const products = [
     sizes: ['36', '36 2/3', '39 1/3', '41 1/3', '43 1/3'],
     colors: ['#000', '#C0C0C0'],
     featured: false,
+    sale: true,
   },
   {
     name: 'adidas zx 420',
@@ -469,6 +470,7 @@ const products = [
     sizes: ['36 2/3', '37 1/3', '38', '39 1/3', '40', '40 2/3', '41 1/3', '42'],
     colors: ['#C0C0C0', '#000'],
     featured: false,
+    sale: true,
   },
   {
     name: 'nike air force luxe',
@@ -485,6 +487,7 @@ const products = [
     sizes: ['36 2/3', '37 1/3', '40 2/3', '41 1/3', '42'],
     colors: ['#C0C0C0', '#000', '#fff'],
     featured: false,
+    sale: true,
   },
   {
     name: 'nike af crater',
@@ -1157,6 +1160,7 @@ const products = [
     sizes: ['35.5', '36', '38', '40', '40 2/3', '42', '42 2/3', '43 1/3', '44'],
     colors: ['#FF0000'],
     featured: false,
+    sale: true,
   },
   {
     name: 'nike sportswear air',
@@ -1189,6 +1193,7 @@ const products = [
     sizes: ['36 2/3', '37 1/3', '40', '40 2/3', '41 1/3', '42'],
     colors: ['#0000FF'],
     featured: false,
+    sale: true,
   },
   {
     name: 'nike blazer',
@@ -1817,6 +1822,7 @@ const products = [
     sizes: ['35.5', '36', '36 2/3', '37 1/3', '38', '38 2/3', '39 1/3'],
     colors: ['#000', '#FF00FF'],
     featured: false,
+    sale: true,
   },
   {
     name: 'nike sportswear air',
@@ -1956,6 +1962,7 @@ const products = [
     ],
     colors: ['#FF00FF', '#800000'],
     featured: false,
+    sale: true,
   },
   {
     name: 'nike blazer',
@@ -2170,6 +2177,7 @@ const products = [
     sizes: ['26.5', '28', '30', '31', '32', '33'],
     colors: ['#00FF00'],
     featured: false,
+    sale: true,
   },
   {
     name: 'adidas nmd r1',
@@ -2602,6 +2610,7 @@ const products = [
     sizes: ['S', 'M', 'L', 'XL', '2XL'],
     colors: ['#0000FF'],
     featured: false,
+    sale: true,
   },
   {
     name: 'adidas basic capri',
@@ -2682,6 +2691,7 @@ const products = [
     sizes: ['S', 'M', 'L', 'XL', '2XL'],
     colors: ['#fff'],
     featured: false,
+    sale: true,
   },
   {
     name: 'puma originals',

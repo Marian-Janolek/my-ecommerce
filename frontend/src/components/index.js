@@ -46,6 +46,7 @@ import Stars from './Stars';
 import ListView from './ListView';
 import GridView from './GridView';
 import ProductList from './ProductList';
+import Sale from './Sale';
 
 export {
   Navbar,
@@ -96,4 +97,5 @@ export {
   GridView,
   ListView,
   ProductList,
+  Sale,
 };

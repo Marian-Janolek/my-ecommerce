@@ -67,6 +67,10 @@ const ProductSchema = mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    sale: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true, toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );
