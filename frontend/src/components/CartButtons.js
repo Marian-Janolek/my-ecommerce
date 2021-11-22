@@ -7,6 +7,7 @@ import { useUserContext } from '../context/userContext';
 import { useCartContext } from '../context/cartContext';
 import { AiOutlineCheck } from 'react-icons/ai';
 import { BiUser } from 'react-icons/bi';
+import { AiFillCheckCircle } from 'react-icons/ai';
 
 const CartButtons = () => {
   const { myUser } = useUserContext();
@@ -17,7 +18,7 @@ const CartButtons = () => {
         <Link to="/profile" className="user-icon">
           <BiUser />
           <span className="cart-check">
-            <AiOutlineCheck />
+            <AiFillCheckCircle />
           </span>
         </Link>
       ) : (
@@ -51,15 +52,15 @@ const Wrapper = styled.div`
     position: absolute;
     top: -10px;
     right: -16px;
-    background: var(--dark-color);
     width: 0.9rem;
     height: 0.9rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
     font-size: 0.75rem;
+    background: var(--dark-color);
     color: var(--white-color);
+    border-radius: 50%;
     padding: 11px;
   }
 `;

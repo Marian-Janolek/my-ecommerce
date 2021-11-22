@@ -108,11 +108,11 @@ export const supportLinks = [
     text: 'customer care',
     url: '/care',
   },
-  {
-    id: 3,
-    text: 'authorized service',
-    url: '/service',
-  },
+  // {
+  //   id: 3,
+  //   text: 'authorized service',
+  //   url: '/service',
+  // },
 ];
 
 export const sublinks = [

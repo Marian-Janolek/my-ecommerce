@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Card from './Card';
 import { useSubmenuContext } from '../context/submenuContext';
 import { useProductContext } from '../context/productsContext';
+import discount from '../assets/discount.png';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
 import 'swiper/swiper-bundle.min.css';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
@@ -18,9 +19,12 @@ const Sale = () => {
   return (
     <div className="bg-dark-lighten" onMouseOver={closeSubmenu}>
       <Wrapper className="section-center">
-        <h2>Sale</h2>
+        <h2>mega sale</h2>
         <div className="underline"></div>
-
+        <div className="flex">
+          <h2>Start your new season with an amazing sales.</h2>
+          <img src={discount} alt="discount" />
+        </div>
         <Swiper
           spaceBetween={30}
           navigation
@@ -67,6 +71,7 @@ const Wrapper = styled.div`
   background-color: var(--dark-color-lighten);
   padding-top: 1rem;
   padding-bottom: 4rem;
+  position: relative;
 
   h2 {
     text-transform: uppercase;
@@ -74,19 +79,38 @@ const Wrapper = styled.div`
     letter-spacing: var(--spacing);
     margin-top: 1rem;
   }
-  .new-card {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    grid-gap: 2rem;
+  .underline {
+    margin-bottom: 6.5rem;
   }
+  .flex {
+    position: absolute;
+    left: 10%;
+    top: 6%;
+    display: flex;
+    align-items: flex-end;
+    gap: 3.5rem;
+  }
+  .flex h2 {
+    text-transform: initial;
+  }
+  .flex img {
+    width: 11rem;
+    height: 8rem;
+    object-fit: contain;
+  }
+
   .swiper-pagination {
     bottom: 0px;
   }
   .swiper {
-    padding: 0rem 0rem 2rem;
+    padding: 1rem 1rem 2rem;
   }
   .swiper-pagination-bullet-active {
     background-color: var(--dark-color);
+  }
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    color: var(--dark-color);
   }
 `;
 

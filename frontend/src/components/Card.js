@@ -29,7 +29,18 @@ const Card = ({ id, image, name, price, data, text }) => {
         })}{' '}
       </div>
       <div className="new-info">
-        <span className="new-price">{price} €</span>
+        <div>
+          <div className="flex-sale">
+            <span
+              className={text === 'sale' ? 'new-price sale-price' : 'new-price'}
+            >
+              {price} €
+            </span>
+            {text === 'sale' && (
+              <span className="sale">{(price * 0.7).toFixed(2)} €</span>
+            )}
+          </div>
+        </div>
         <span className="new-name">{name}</span>
       </div>
     </CardWrapper>
@@ -100,9 +111,23 @@ const CardWrapper = styled.article`
     align-self: flex-start;
     text-transform: capitalize;
   }
+  .sale-price {
+    text-decoration-line: line-through;
+    text-decoration-color: red;
+  }
+
+  .sale {
+    color: red;
+  }
   .new-price {
     font-size: var(--h2-font-size);
   }
+  .flex-sale {
+    display: flex;
+    gap: 1rem;
+    font-size: var(--h2-font-size);
+  }
+
   .new-size-parent {
     position: absolute;
     bottom: 22%;
